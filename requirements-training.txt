@@ -1,0 +1,11 @@
+# GPU training / export side (python 3.11)
+-r requirements-runtime.txt
+tensorflow[and-cuda]==2.15.1
+csbdeep
+tf2onnx
+onnx==1.16.2         # newer onnx conflicts with TF 2.15's ml_dtypes
+nncf
+scikit-image
+tqdm
+matplotlib
+pytest

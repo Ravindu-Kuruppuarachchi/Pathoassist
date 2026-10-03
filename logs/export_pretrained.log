@@ -1,0 +1,9 @@
+Found model '2D_versatile_he' for 'StarDist2D'.
+Loading network weights from 'weights_best.h5'.
+Loading thresholds from 'thresholds.json'.
+Using default values: prob_thresh=0.692478, nms_thresh=0.3.
+wrote models/stardist_he_pretrained.onnx
+wrote models/stardist_he_pretrained_fp32.xml
+Statistics collection ━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 300/300 • 0:00:15 • 0:00:00
+Applying Fast Bias correction ━━━━━━━━━━━━━━━━━━━ 100% 19/19 • 0:00:01 • 0:00:00
+wrote models/stardist_he_pretrained_int8.xml

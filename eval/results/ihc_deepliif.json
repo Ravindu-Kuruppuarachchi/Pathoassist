@@ -1,0 +1,344 @@
+{
+  "stardist_he_pretrained_int8": {
+    "n_images": 6,
+    "detection": {
+      "precision": 0.9368635437881874,
+      "recall": 0.5221339387060159,
+      "f1": 0.6705539358600583
+    },
+    "positivity": {
+      "accuracy": 1.0,
+      "sensitivity": 1.0,
+      "specificity": 1.0,
+      "n_matched": 460
+    },
+    "field_pct": {
+      "n": 6,
+      "icc": 0.6182994329876721,
+      "icc_ci95": [
+        0.3056312713245115,
+        0.8810937065167248
+      ],
+      "mae_pct": 19.944086307758266,
+      "bias_pct": 19.644480075948646,
+      "limits_of_agreement": [
+        -25.352707589160648,
+        64.64166774105794
+      ],
+      "category_agreement": 1.0,
+      "category_kappa": 1.0,
+      "category_confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "category_labels": [
+        "Negative",
+        "Low positive",
+        "Positive"
+      ]
+    },
+    "reference_pct_range": [
+      5.780346820809249,
+      48.275862068965516
+    ],
+    "with_augmented_copies": {
+      "n_images": 65,
+      "detection": {
+        "precision": 0.94993441189331,
+        "recall": 0.4978801420877736,
+        "f1": 0.6533343357642283
+      },
+      "positivity": {
+        "accuracy": 0.9995397008055236,
+        "sensitivity": 1.0,
+        "specificity": 0.9993736298152208,
+        "n_matched": 4345
+      },
+      "field_pct": {
+        "n": 65,
+        "icc": 0.5574469043347419,
+        "icc_ci95": [
+          0.4846956558447415,
+          0.6227374692873366
+        ],
+        "mae_pct": 21.40368807979276,
+        "bias_pct": 21.20147500437505,
+        "limits_of_agreement": [
+          -22.66326480024159,
+          65.06621480899169
+        ],
+        "category_agreement": 1.0,
+        "category_kappa": 1.0,
+        "category_confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            0,
+            44
+          ]
+        ],
+        "category_labels": [
+          "Negative",
+          "Low positive",
+          "Positive"
+        ]
+      },
+      "reference_pct_range": [
+        5.780346820809249,
+        51.633986928104584
+      ]
+    },
+    "dab_threshold_calibrated_on_train": 0.42499999999999993,
+    "calibration_balanced_accuracy": 0.996274450790336
+  },
+  "stardist_he_ft_int8": {
+    "n_images": 6,
+    "detection": {
+      "precision": 0.8453738910012675,
+      "recall": 0.757094211123723,
+      "f1": 0.7988023952095809
+    },
+    "positivity": {
+      "accuracy": 0.9910044977511244,
+      "sensitivity": 0.9942196531791907,
+      "specificity": 0.9898785425101214,
+      "n_matched": 667
+    },
+    "field_pct": {
+      "n": 6,
+      "icc": 0.8088101121098381,
+      "icc_ci95": [
+        0.5495892581858816,
+        0.9935996981443465
+      ],
+      "mae_pct": 9.414616647620258,
+      "bias_pct": 9.414616647620258,
+      "limits_of_agreement": [
+        -16.218374963777173,
+        35.04760825901769
+      ],
+      "category_agreement": 1.0,
+      "category_kappa": 1.0,
+      "category_confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "category_labels": [
+        "Negative",
+        "Low positive",
+        "Positive"
+      ]
+    },
+    "reference_pct_range": [
+      5.780346820809249,
+      48.275862068965516
+    ],
+    "with_augmented_copies": {
+      "n_images": 65,
+      "detection": {
+        "precision": 0.8655186551865519,
+        "recall": 0.7256789274664833,
+        "f1": 0.7894540014958863
+      },
+      "positivity": {
+        "accuracy": 0.9887888836254539,
+        "sensitivity": 0.9889982628836133,
+        "specificity": 0.9887103777681285,
+        "n_matched": 6333
+      },
+      "field_pct": {
+        "n": 65,
+        "icc": 0.7760574591861532,
+        "icc_ci95": [
+          0.724263250375019,
+          0.8176945499046991
+        ],
+        "mae_pct": 10.830205712493788,
+        "bias_pct": 10.721206612559998,
+        "limits_of_agreement": [
+          -12.073034783250717,
+          33.51544800837071
+        ],
+        "category_agreement": 1.0,
+        "category_kappa": 1.0,
+        "category_confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            0,
+            44
+          ]
+        ],
+        "category_labels": [
+          "Negative",
+          "Low positive",
+          "Positive"
+        ]
+      },
+      "reference_pct_range": [
+        5.780346820809249,
+        51.633986928104584
+      ]
+    },
+    "dab_threshold_calibrated_on_train": 0.40499999999999997,
+    "calibration_balanced_accuracy": 0.9878893025845901
+  },
+  "stardist_he_ihc_ft_int8": {
+    "n_images": 6,
+    "detection": {
+      "precision": 0.8839712918660287,
+      "recall": 0.8388195232690124,
+      "f1": 0.8608037274315666
+    },
+    "positivity": {
+      "accuracy": 0.9878213802435724,
+      "sensitivity": 0.9836065573770492,
+      "specificity": 0.9892086330935251,
+      "n_matched": 739
+    },
+    "field_pct": {
+      "n": 6,
+      "icc": 0.8975758265701202,
+      "icc_ci95": [
+        0.7370075598370448,
+        0.9906426006984471
+      ],
+      "mae_pct": 5.648387295381835,
+      "bias_pct": 4.968325153546181,
+      "limits_of_agreement": [
+        -12.9775626662916,
+        22.914212973383965
+      ],
+      "category_agreement": 1.0,
+      "category_kappa": 1.0,
+      "category_confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "category_labels": [
+        "Negative",
+        "Low positive",
+        "Positive"
+      ]
+    },
+    "reference_pct_range": [
+      5.780346820809249,
+      48.275862068965516
+    ],
+    "with_augmented_copies": {
+      "n_images": 65,
+      "detection": {
+        "precision": 0.8859306301905228,
+        "recall": 0.8312134754211069,
+        "f1": 0.8577002660360626
+      },
+      "positivity": {
+        "accuracy": 0.9877309070857458,
+        "sensitivity": 0.984264785675529,
+        "specificity": 0.9889114766216965,
+        "n_matched": 7254
+      },
+      "field_pct": {
+        "n": 65,
+        "icc": 0.901389349298048,
+        "icc_ci95": [
+          0.8720309532840385,
+          0.9302428984740584
+        ],
+        "mae_pct": 5.421023805132114,
+        "bias_pct": 4.6403744690820075,
+        "limits_of_agreement": [
+          -9.858885109762298,
+          19.139634047926315
+        ],
+        "category_agreement": 1.0,
+        "category_kappa": 1.0,
+        "category_confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            21,
+            0
+          ],
+          [
+            0,
+            0,
+            44
+          ]
+        ],
+        "category_labels": [
+          "Negative",
+          "Low positive",
+          "Positive"
+        ]
+      },
+      "reference_pct_range": [
+        5.780346820809249,
+        51.633986928104584
+      ]
+    },
+    "dab_threshold_calibrated_on_train": 0.5199999999999999,
+    "calibration_balanced_accuracy": 0.9813636259866858
+  }
+}

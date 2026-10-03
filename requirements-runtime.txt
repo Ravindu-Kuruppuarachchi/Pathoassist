@@ -1,0 +1,8 @@
+# App-side (CPU inference) - no TensorFlow needed
+numpy<2
+opencv-python-headless
+openvino>=2024.0
+onnxruntime
+stardist==0.9.1      # only for its compiled polygon NMS / rendering
+setuptools<70        # stardist imports pkg_resources
+pandas

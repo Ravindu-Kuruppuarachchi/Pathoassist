@@ -1,0 +1,19 @@
+verifier samples: train 14017 (4347 mitosis), holdout 1359
+/home/ravindu/rashmika/pathoasisst/training/mitosis/train_verifier.py:159: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  sched.step()
+epoch 1: loss 3.1188  holdout best F1 0.498 (36s)
+epoch 2: loss 1.1708  holdout best F1 0.680 (31s)
+epoch 3: loss 0.4997  holdout best F1 0.701 (18s)
+epoch 4: loss 0.4432  holdout best F1 0.707 (18s)
+epoch 5: loss 0.4040  holdout best F1 0.715 (17s)
+epoch 6: loss 0.3829  holdout best F1 0.722 (17s)
+epoch 7: loss 0.3698  holdout best F1 0.723 (16s)
+epoch 8: loss 0.3547  holdout best F1 0.723 (19s)
+epoch 9: loss 0.3367  holdout best F1 0.726 (22s)
+epoch 10: loss 0.3252  holdout best F1 0.715 (24s)
+epoch 11: loss 0.3204  holdout best F1 0.716 (20s)
+epoch 12: loss 0.3107  holdout best F1 0.717 (26s)
+epoch 13: loss 0.3138  holdout best F1 0.718 (25s)
+epoch 14: loss 0.3124  holdout best F1 0.716 (25s)
+epoch 15: loss 0.3053  holdout best F1 0.718 (25s)
+val (detector + verifier): {'det_thresh': 0.2, 'ver_thresh': 0.8, 'tp': 89, 'fp': 25, 'fn': 41, 'f1': 0.7295081967213115}

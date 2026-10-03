@@ -1,0 +1,468 @@
+{
+  "detector_only": {
+    "tp": 223,
+    "fp": 61,
+    "fn": 116,
+    "precision": 0.7852112676056338,
+    "recall": 0.6578171091445427,
+    "f1": 0.7158908507223114,
+    "count_spearman": 0.9202268594624776,
+    "score_agreement": 0.8484848484848485,
+    "score_weighted_kappa": 0.8827292110874201,
+    "score_confusion": [
+      [
+        20,
+        0,
+        0
+      ],
+      [
+        2,
+        3,
+        0
+      ],
+      [
+        0,
+        3,
+        5
+      ]
+    ],
+    "cpu_sec_per_slide": 8.663899877927069,
+    "slide_px": [
+      4862,
+      6467
+    ],
+    "per_slide": [
+      {
+        "file": "006.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 6,
+        "pred": 5
+      },
+      {
+        "file": "007.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 22,
+        "pred": 9
+      },
+      {
+        "file": "014.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 8,
+        "pred": 4
+      },
+      {
+        "file": "015.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 3,
+        "pred": 3
+      },
+      {
+        "file": "018.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 3,
+        "pred": 2
+      },
+      {
+        "file": "026.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 0,
+        "pred": 0
+      },
+      {
+        "file": "029.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 3,
+        "pred": 5
+      },
+      {
+        "file": "031.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 2,
+        "pred": 4
+      },
+      {
+        "file": "032.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 11,
+        "pred": 12
+      },
+      {
+        "file": "035.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 7,
+        "pred": 6
+      },
+      {
+        "file": "050.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 19,
+        "pred": 15
+      },
+      {
+        "file": "052.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 0,
+        "pred": 1
+      },
+      {
+        "file": "057.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 7,
+        "pred": 4
+      },
+      {
+        "file": "058.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 13,
+        "pred": 11
+      },
+      {
+        "file": "059.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 11,
+        "pred": 11
+      },
+      {
+        "file": "064.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 25,
+        "pred": 27
+      },
+      {
+        "file": "066.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 4,
+        "pred": 3
+      },
+      {
+        "file": "074.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 1,
+        "pred": 2
+      },
+      {
+        "file": "088.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 3,
+        "pred": 5
+      },
+      {
+        "file": "093.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 6,
+        "pred": 6
+      },
+      {
+        "file": "095.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 1,
+        "pred": 0
+      },
+      {
+        "file": "100.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 44,
+        "pred": 45
+      },
+      {
+        "file": "102.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 22,
+        "pred": 15
+      },
+      {
+        "file": "104.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 4,
+        "pred": 3
+      },
+      {
+        "file": "107.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 17,
+        "pred": 10
+      },
+      {
+        "file": "109.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 6,
+        "pred": 3
+      },
+      {
+        "file": "115.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 2,
+        "pred": 4
+      },
+      {
+        "file": "116.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 8,
+        "pred": 6
+      },
+      {
+        "file": "123.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 36,
+        "pred": 32
+      },
+      {
+        "file": "124.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 5,
+        "pred": 5
+      },
+      {
+        "file": "128.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 30,
+        "pred": 20
+      },
+      {
+        "file": "147.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 0,
+        "pred": 0
+      },
+      {
+        "file": "150.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 10,
+        "pred": 6
+      }
+    ]
+  },
+  "detector+verifier": {
+    "tp": 225,
+    "fp": 63,
+    "fn": 114,
+    "precision": 0.78125,
+    "recall": 0.6637168141592921,
+    "f1": 0.7177033492822966,
+    "count_spearman": 0.9283632719804715,
+    "score_agreement": 0.9090909090909091,
+    "score_weighted_kappa": 0.9287257019438445,
+    "score_confusion": [
+      [
+        20,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        3,
+        5
+      ]
+    ],
+    "cpu_sec_per_slide": 9.32106532300399,
+    "slide_px": [
+      4862,
+      6467
+    ],
+    "per_slide": [
+      {
+        "file": "006.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 6,
+        "pred": 3
+      },
+      {
+        "file": "007.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 22,
+        "pred": 10
+      },
+      {
+        "file": "014.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 8,
+        "pred": 3
+      },
+      {
+        "file": "015.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 3,
+        "pred": 3
+      },
+      {
+        "file": "018.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 3,
+        "pred": 1
+      },
+      {
+        "file": "026.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 0,
+        "pred": 0
+      },
+      {
+        "file": "029.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 3,
+        "pred": 5
+      },
+      {
+        "file": "031.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 2,
+        "pred": 2
+      },
+      {
+        "file": "032.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 11,
+        "pred": 10
+      },
+      {
+        "file": "035.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 7,
+        "pred": 5
+      },
+      {
+        "file": "050.jpg",
+        "scanner": "Hamammatsu XR",
+        "gt": 19,
+        "pred": 11
+      },
+      {
+        "file": "052.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 0,
+        "pred": 0
+      },
+      {
+        "file": "057.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 7,
+        "pred": 5
+      },
+      {
+        "file": "058.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 13,
+        "pred": 9
+      },
+      {
+        "file": "059.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 11,
+        "pred": 9
+      },
+      {
+        "file": "064.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 25,
+        "pred": 23
+      },
+      {
+        "file": "066.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 4,
+        "pred": 5
+      },
+      {
+        "file": "074.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 1,
+        "pred": 2
+      },
+      {
+        "file": "088.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 3,
+        "pred": 5
+      },
+      {
+        "file": "093.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 6,
+        "pred": 6
+      },
+      {
+        "file": "095.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 1,
+        "pred": 0
+      },
+      {
+        "file": "100.jpg",
+        "scanner": "Hamamatsu S360",
+        "gt": 44,
+        "pred": 49
+      },
+      {
+        "file": "102.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 22,
+        "pred": 15
+      },
+      {
+        "file": "104.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 4,
+        "pred": 4
+      },
+      {
+        "file": "107.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 17,
+        "pred": 13
+      },
+      {
+        "file": "109.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 6,
+        "pred": 4
+      },
+      {
+        "file": "115.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 2,
+        "pred": 3
+      },
+      {
+        "file": "116.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 8,
+        "pred": 8
+      },
+      {
+        "file": "123.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 36,
+        "pred": 36
+      },
+      {
+        "file": "124.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 5,
+        "pred": 3
+      },
+      {
+        "file": "128.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 30,
+        "pred": 24
+      },
+      {
+        "file": "147.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 0,
+        "pred": 1
+      },
+      {
+        "file": "150.jpg",
+        "scanner": "Aperio CS2",
+        "gt": 10,
+        "pred": 11
+      }
+    ]
+  }
+}

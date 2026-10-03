@@ -1,0 +1,15 @@
+{
+  "grid": [
+    2,
+    2
+  ],
+  "n_rays": 32,
+  "um_per_px": 0.25,
+  "prob_thresh": 0.6924782541382084,
+  "nms_thresh": 0.3,
+  "norm_percentiles": [
+    1.0,
+    99.8
+  ],
+  "source": "pretrained"
+}

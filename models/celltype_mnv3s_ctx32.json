@@ -1,0 +1,11 @@
+{
+  "crop": 64,
+  "um_per_px": 0.5,
+  "classes": [
+    "tumour",
+    "lymphocyte",
+    "stroma",
+    "other"
+  ],
+  "source": "PanNuke folds 1-2 (+pseudo-IHC)"
+}

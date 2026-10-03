@@ -1,0 +1,213 @@
+{
+  "case_id": "DEEPLIIF-28",
+  "stain": "ER",
+  "n_fields": 7,
+  "score": {
+    "n_tumour": 65,
+    "counts": [
+      45,
+      2,
+      1,
+      17
+    ],
+    "pct_positive": 30.77,
+    "pct_by_bin": [
+      69.23,
+      3.08,
+      1.54,
+      26.15
+    ],
+    "h_score": 84.6,
+    "allred_ps": 3,
+    "allred_is": 3,
+    "allred_total": 6,
+    "status": "Positive",
+    "warnings": [
+      "Only 65 tumour nuclei counted (< 500); score more fields."
+    ]
+  },
+  "fields": [
+    {
+      "index": 0,
+      "frame": "fields/000.jpg",
+      "n_nuclei": 166,
+      "n_corrected": 0,
+      "n_tumour": 3,
+      "counts": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "pct_positive": 33.33,
+      "pct_by_bin": [
+        66.67,
+        0.0,
+        0.0,
+        33.33
+      ],
+      "h_score": 100.0,
+      "allred_ps": 4,
+      "allred_is": 3,
+      "allred_total": 7,
+      "status": "Positive",
+      "warnings": []
+    },
+    {
+      "index": 1,
+      "frame": "fields/001.jpg",
+      "n_nuclei": 158,
+      "n_corrected": 0,
+      "n_tumour": 4,
+      "counts": [
+        3,
+        1,
+        0,
+        0
+      ],
+      "pct_positive": 25.0,
+      "pct_by_bin": [
+        75.0,
+        25.0,
+        0.0,
+        0.0
+      ],
+      "h_score": 25.0,
+      "allred_ps": 3,
+      "allred_is": 1,
+      "allred_total": 4,
+      "status": "Positive",
+      "warnings": []
+    },
+    {
+      "index": 2,
+      "frame": "fields/002.jpg",
+      "n_nuclei": 132,
+      "n_corrected": 0,
+      "n_tumour": 15,
+      "counts": [
+        12,
+        0,
+        0,
+        3
+      ],
+      "pct_positive": 20.0,
+      "pct_by_bin": [
+        80.0,
+        0.0,
+        0.0,
+        20.0
+      ],
+      "h_score": 60.0,
+      "allred_ps": 3,
+      "allred_is": 3,
+      "allred_total": 6,
+      "status": "Positive",
+      "warnings": []
+    },
+    {
+      "index": 3,
+      "frame": "fields/003.jpg",
+      "n_nuclei": 137,
+      "n_corrected": 0,
+      "n_tumour": 7,
+      "counts": [
+        5,
+        0,
+        0,
+        2
+      ],
+      "pct_positive": 28.57,
+      "pct_by_bin": [
+        71.43,
+        0.0,
+        0.0,
+        28.57
+      ],
+      "h_score": 85.7,
+      "allred_ps": 3,
+      "allred_is": 3,
+      "allred_total": 6,
+      "status": "Positive",
+      "warnings": []
+    },
+    {
+      "index": 4,
+      "frame": "fields/004.jpg",
+      "n_nuclei": 126,
+      "n_corrected": 0,
+      "n_tumour": 14,
+      "counts": [
+        8,
+        1,
+        0,
+        5
+      ],
+      "pct_positive": 42.86,
+      "pct_by_bin": [
+        57.14,
+        7.14,
+        0.0,
+        35.71
+      ],
+      "h_score": 114.3,
+      "allred_ps": 4,
+      "allred_is": 3,
+      "allred_total": 7,
+      "status": "Positive",
+      "warnings": []
+    },
+    {
+      "index": 5,
+      "frame": "fields/005.jpg",
+      "n_nuclei": 120,
+      "n_corrected": 0,
+      "n_tumour": 16,
+      "counts": [
+        11,
+        0,
+        1,
+        4
+      ],
+      "pct_positive": 31.25,
+      "pct_by_bin": [
+        68.75,
+        0.0,
+        6.25,
+        25.0
+      ],
+      "h_score": 87.5,
+      "allred_ps": 3,
+      "allred_is": 3,
+      "allred_total": 6,
+      "status": "Positive",
+      "warnings": []
+    },
+    {
+      "index": 6,
+      "frame": "fields/006.jpg",
+      "n_nuclei": 146,
+      "n_corrected": 0,
+      "n_tumour": 6,
+      "counts": [
+        4,
+        0,
+        0,
+        2
+      ],
+      "pct_positive": 33.33,
+      "pct_by_bin": [
+        66.67,
+        0.0,
+        0.0,
+        33.33
+      ],
+      "h_score": 100.0,
+      "allred_ps": 4,
+      "allred_is": 3,
+      "allred_total": 7,
+      "status": "Positive",
+      "warnings": []
+    }
+  ]
+}

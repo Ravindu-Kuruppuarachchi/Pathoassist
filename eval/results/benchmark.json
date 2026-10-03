@@ -1,0 +1,182 @@
+[
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft_int8.xml",
+    "threads": 4,
+    "nuclei": 561,
+    "preprocess": 0.026,
+    "network": 0.728,
+    "postprocess": 0.265,
+    "total": 1.024
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft_int8.xml",
+    "threads": 8,
+    "nuclei": 561,
+    "preprocess": 0.026,
+    "network": 0.499,
+    "postprocess": 0.265,
+    "total": 0.8
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft_int8.xml",
+    "threads": "all",
+    "nuclei": 561,
+    "preprocess": 0.029,
+    "network": 0.446,
+    "postprocess": 0.272,
+    "total": 0.747
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft_fp32.xml",
+    "threads": 4,
+    "nuclei": 565,
+    "preprocess": 0.03,
+    "network": 2.2,
+    "postprocess": 0.288,
+    "total": 2.519
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft_fp32.xml",
+    "threads": 8,
+    "nuclei": 565,
+    "preprocess": 0.028,
+    "network": 1.305,
+    "postprocess": 0.278,
+    "total": 1.614
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft_fp32.xml",
+    "threads": "all",
+    "nuclei": 565,
+    "preprocess": 0.029,
+    "network": 1.133,
+    "postprocess": 0.272,
+    "total": 1.435
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft.onnx",
+    "threads": 4,
+    "nuclei": 565,
+    "preprocess": 0.029,
+    "network": 2.262,
+    "postprocess": 0.275,
+    "total": 2.562
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft.onnx",
+    "threads": 8,
+    "nuclei": 565,
+    "preprocess": 0.029,
+    "network": 1.339,
+    "postprocess": 0.272,
+    "total": 1.64
+  },
+  {
+    "frame": "1920x1080",
+    "model": "stardist_he_ft.onnx",
+    "threads": "all",
+    "nuclei": 565,
+    "preprocess": 0.026,
+    "network": 1.264,
+    "postprocess": 0.33,
+    "total": 1.62
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft_int8.xml",
+    "threads": 4,
+    "nuclei": 1442,
+    "preprocess": 0.067,
+    "network": 2.068,
+    "postprocess": 0.617,
+    "total": 2.759
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft_int8.xml",
+    "threads": 8,
+    "nuclei": 1442,
+    "preprocess": 0.066,
+    "network": 1.39,
+    "postprocess": 0.61,
+    "total": 2.068
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft_int8.xml",
+    "threads": "all",
+    "nuclei": 1442,
+    "preprocess": 0.067,
+    "network": 1.24,
+    "postprocess": 0.64,
+    "total": 1.947
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft_fp32.xml",
+    "threads": 4,
+    "nuclei": 1455,
+    "preprocess": 0.066,
+    "network": 6.073,
+    "postprocess": 0.675,
+    "total": 6.822
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft_fp32.xml",
+    "threads": 8,
+    "nuclei": 1455,
+    "preprocess": 0.066,
+    "network": 3.622,
+    "postprocess": 0.643,
+    "total": 4.335
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft_fp32.xml",
+    "threads": "all",
+    "nuclei": 1455,
+    "preprocess": 0.066,
+    "network": 3.176,
+    "postprocess": 0.634,
+    "total": 3.88
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft.onnx",
+    "threads": 4,
+    "nuclei": 1455,
+    "preprocess": 0.066,
+    "network": 6.254,
+    "postprocess": 0.635,
+    "total": 6.994
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft.onnx",
+    "threads": 8,
+    "nuclei": 1455,
+    "preprocess": 0.066,
+    "network": 3.698,
+    "postprocess": 0.628,
+    "total": 4.389
+  },
+  {
+    "frame": "2448x2048 (5MP)",
+    "model": "stardist_he_ft.onnx",
+    "threads": "all",
+    "nuclei": 1455,
+    "preprocess": 0.066,
+    "network": 3.482,
+    "postprocess": 0.645,
+    "total": 4.173
+  }
+]

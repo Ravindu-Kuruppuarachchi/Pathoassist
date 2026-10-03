@@ -1,0 +1,120 @@
+{
+  "cases": [
+    {
+      "case": "28",
+      "fields": 7,
+      "skipped_duplicates": 4,
+      "ref_pct_all": 13.81578947368421,
+      "assisted_pct_all": 19.390862944162436,
+      "assisted_pct_tumour": 30.77,
+      "n_tumour": 65,
+      "h_score": 84.6,
+      "allred": 6,
+      "status": "Positive",
+      "warnings": 1
+    },
+    {
+      "case": "31",
+      "fields": 9,
+      "skipped_duplicates": 2,
+      "ref_pct_all": 7.640449438202247,
+      "assisted_pct_all": 7.886435331230284,
+      "assisted_pct_tumour": 11.11,
+      "n_tumour": 9,
+      "h_score": 33.3,
+      "allred": 6,
+      "status": "Positive",
+      "warnings": 2
+    },
+    {
+      "case": "326",
+      "fields": 9,
+      "skipped_duplicates": 2,
+      "ref_pct_all": 36.654804270462634,
+      "assisted_pct_all": 40.13921113689095,
+      "assisted_pct_tumour": 44.29,
+      "n_tumour": 280,
+      "h_score": 113.6,
+      "allred": 7,
+      "status": "Positive",
+      "warnings": 1
+    },
+    {
+      "case": "40",
+      "fields": 8,
+      "skipped_duplicates": 3,
+      "ref_pct_all": 49.47826086956522,
+      "assisted_pct_all": 68.61702127659575,
+      "assisted_pct_tumour": 77.64,
+      "n_tumour": 237,
+      "h_score": 225.7,
+      "allred": 8,
+      "status": "Positive",
+      "warnings": 1
+    },
+    {
+      "case": "7",
+      "fields": 7,
+      "skipped_duplicates": 4,
+      "ref_pct_all": 35.06276150627615,
+      "assisted_pct_all": 33.050127442650805,
+      "assisted_pct_tumour": 32.43,
+      "n_tumour": 925,
+      "h_score": 84.3,
+      "allred": 6,
+      "status": "Positive",
+      "warnings": 0
+    },
+    {
+      "case": "22",
+      "fields": 7,
+      "skipped_duplicates": 3,
+      "ref_pct_all": 6.18374558303887,
+      "assisted_pct_all": 6.475485661424607,
+      "assisted_pct_tumour": 0.0,
+      "n_tumour": 7,
+      "h_score": 0.0,
+      "allred": 0,
+      "status": "Negative",
+      "warnings": 1
+    }
+  ],
+  "agreement": {
+    "n": 6,
+    "icc": 0.9220297630772673,
+    "icc_ci95": [
+      0.7758077618059802,
+      0.9936293291417181
+    ],
+    "mae_pct": 5.124766796496032,
+    "bias_pct": 4.453888775287583,
+    "limits_of_agreement": [
+      -10.593199885403676,
+      19.50097743597884
+    ],
+    "category_agreement": 1.0,
+    "category_kappa": 1.0,
+    "category_confusion": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "category_labels": [
+      "Negative",
+      "Low positive",
+      "Positive"
+    ]
+  }
+}

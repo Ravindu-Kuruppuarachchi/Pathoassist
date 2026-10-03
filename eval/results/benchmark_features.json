@@ -1,0 +1,35 @@
+[
+  {
+    "threads": 4,
+    "erpr_frame_s": 1.6293846955522895,
+    "erpr_nuclei": 1329,
+    "mitosis_frame_s": 0.946024059318006,
+    "hotspot_10x_s": 0.38321823067963123,
+    "hotspot_px": [
+      1353,
+      1804
+    ]
+  },
+  {
+    "threads": 8,
+    "erpr_frame_s": 1.3066221177577972,
+    "erpr_nuclei": 1329,
+    "mitosis_frame_s": 0.7066487222909927,
+    "hotspot_10x_s": 0.27051729802042246,
+    "hotspot_px": [
+      1353,
+      1804
+    ]
+  },
+  {
+    "threads": "all",
+    "erpr_frame_s": 1.263130383566022,
+    "erpr_nuclei": 1329,
+    "mitosis_frame_s": 0.5297058885917068,
+    "hotspot_10x_s": 0.20032158587127924,
+    "hotspot_px": [
+      1353,
+      1804
+    ]
+  }
+]

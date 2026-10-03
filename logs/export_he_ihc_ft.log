@@ -1,0 +1,8 @@
+Loading network weights from 'weights_best.h5'.
+Loading thresholds from 'thresholds.json'.
+Using default values: prob_thresh=0.486803, nms_thresh=0.3.
+wrote models/stardist_he_ihc_ft.onnx
+wrote models/stardist_he_ihc_ft_fp32.xml
+Statistics collection ━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 300/300 • 0:00:14 • 0:00:00
+Applying Fast Bias correction ━━━━━━━━━━━━━━━━━━━ 100% 19/19 • 0:00:00 • 0:00:00
+wrote models/stardist_he_ihc_ft_int8.xml

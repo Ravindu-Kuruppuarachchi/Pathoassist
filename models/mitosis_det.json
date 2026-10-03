@@ -1,0 +1,10 @@
+{
+  "um_per_px": 0.25,
+  "stride": 4,
+  "cand_thresh": 0.05,
+  "det_thresh": 0.2,
+  "ver_thresh": 0.8,
+  "det_only_thresh": 0.4,
+  "ver_crop": 96,
+  "source": "MIDOG++ human breast (train split), thresholds tuned on 15 val slides"
+}
