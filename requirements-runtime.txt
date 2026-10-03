@@ -6,3 +6,8 @@ onnxruntime
 stardist==0.9.1      # only for its compiled polygon NMS / rendering
 setuptools<70        # stardist imports pkg_resources
 pandas
+scipy
+scikit-image
+lightgbm
+reportlab
+PySide6-Essentials   # desktop app

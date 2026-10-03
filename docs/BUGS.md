@@ -21,10 +21,10 @@ When the fix changes a model or a threshold, also log it in [UPDATES.md](UPDATES
 
 ## 1. Open issues
 
-### O-01 — Runtime requirements file is incomplete  (open)
+### O-01 — Runtime requirements file is incomplete  (fixed 2026-10-04: packages added, unpinned in requirements-runtime.txt, pinned in packaging/linux/requirements-app.txt)
 `requirements-runtime.txt` does not list `lightgbm`, `scipy`, `scikit-image` or `reportlab`, all of which `core/` imports. It also omits `PySide6`, which the desktop app needs. A fresh install from the file fails at import. Add them, pinned to the versions in the `pathoassist` conda env (`pip freeze`).
 
-### O-02 — Desktop bundle is missing the newer models  (open)
+### O-02 — Desktop bundle is missing the newer models  (fixed 2026-10-04: list updated; Phikon-v2 ships, the app falls back to the LightGBM pleomorphism model if it is absent)
 `RUNTIME_MODEL_FILES` in [app/desktop/paths.py](../app/desktop/paths.py) predates Features 7–9. It leaves out:
 - `phikon_v2_int8w.xml` and `phikon_v2_int8w.bin`
 - `pleomorphism_phikon.npz` and `pleomorphism_phikon.json`

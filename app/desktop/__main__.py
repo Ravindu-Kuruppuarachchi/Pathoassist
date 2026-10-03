@@ -48,9 +48,15 @@ def self_test() -> int:
             os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
         from PySide6.QtWidgets import QApplication
         from .main_window import MainWindow
+        from .modules import MODULES
+        from .annotation import TASKS
         app = QApplication.instance() or QApplication([])
+        from . import theme
+        theme.apply(app)
         w = MainWindow()
         report["qt_platform"] = app.platformName()
+        report["analysis_modules"] = [m.key for m in MODULES]
+        report["annotation_tasks"] = [t.key for t in TASKS]
         w.close()
     except Exception:  # noqa: BLE001
         report["error"] = traceback.format_exc()
@@ -69,6 +75,8 @@ def run_app() -> int:
 
     app = QApplication(sys.argv)
     app.setApplicationName("PathoAssist")
+    from . import theme
+    theme.apply(app)
     app.setDesktopFileName("pathoassist")
 
     def excepthook(etype, value, tb):
@@ -80,6 +88,7 @@ def run_app() -> int:
 
     w = MainWindow()
     w.show()
+    w.ask_operator()
     return app.exec()
 
 

@@ -73,21 +73,41 @@ python app/breast_case.py --case-id B-001 --specimen "core biopsy" \
 
 Each folder in `breast_case.py` is optional. If one is left out, that module is skipped, and a missing grade component can be supplied with `--override mitoses=3`. The grade is signed only when `--pathologist` is given and all three components are present. A worked example is in [demo_outputs/breast_case_demo/](demo_outputs/breast_case_demo/).
 
-### 4. Desktop app (early)
+### 4. Desktop app (the workstation)
 
 ```bash
-python -m app.desktop               # USB microscope camera: live view, freeze, capture, nuclei detection
-python -m app.desktop --self-test   # headless: checks the bundled models load and detection runs
+python -m app.desktop               # the application (USB microscope camera)
+python -m app.desktop --self-test   # headless: bundled models load, detection runs, the window builds
+PATHOASSIST_DATA=/data/pathoassist python -m app.desktop    # keep cases elsewhere (lab share, backup disk)
 ```
 
-The desktop app is the start of the camera app (Feature 0). So far it only runs nuclei detection. Scoring, the overlays, the mini-map and the grading wizard still live in `core/` and the CLI tools. [packaging/](packaging/) holds the PyInstaller entry point and Linux AppImage files.
+On this development laptop the runtime venv is `~/venvs/pathoassist-app` (Python 3.12, `requirements-runtime.txt`).
+
+| Page | What it does |
+|---|---|
+| **Home** | What to do next: microscope set-up steps, new or recent cases, how much local training data exists. |
+| **Cases** | New case (case ID + **patient ID** + request details), search, open, browse the case's frames. The slide label in the sidebar always shows the open patient and case. |
+| **Microscope** | Camera bar (camera, start, colour lock, flat-field, objective 4x-40x or Auto, calibrate). One **analysis per feature** (F1-F8), run separately and in any order: analyse fields (Enter, or automatically whenever the image shows Ready), review fields, click to correct, **Save to case**. |
+| **Report** | Nottingham components (from F6-F8 or chosen by the pathologist with a reason), ER/PR/HER2/Ki-67, other findings, images, audit log, draft PDF, **Sign report** (locks the case). |
+| **Annotate** | Nine labelling tasks with step-by-step instructions, model pre-fill, QuPath GeoJSON / mask / CSV export, and re-fitting of the ER/PR, Ki-67 and HER2 thresholds from completed labels. |
+
+First use on a microscope: Home lists the steps (start the camera, **Calibrate** each objective with a stage micrometer, capture a blank per objective). The ? button in the sidebar (F1) has the full workflow.
+
+Data folder (`~/.local/share/PathoAssist`, `%LOCALAPPDATA%\PathoAssist`, or `$PATHOASSIST_DATA`):
+```
+cases/<case_id>/   case.json (patient, results, grade) · audit.jsonl · frames/<stain>/*.png+json · modules/<module>/<run>/ · snapshots/ · reports/
+profiles/          microscope calibration (µm/px per objective) + flat-field blanks
+annotations/<task>/<image>/   image.png · annotation.json · annotation.geojson · points.csv / mask.png ; manifest.csv
+calibration/       thresholds fitted on local labels (used instead of the public-data defaults)
+```
+Frames and annotations carry the case ID only; patient details never leave `case.json` and the report.
 
 ---
 
 ## Repository layout
 
 ```
-app/              command-line tools (one per feature) and app/desktop (PySide6 camera app)
+app/              command-line tools (one per feature) and app/desktop (PySide6 workstation app)
 core/             runtime engines; CPU only; no training dependencies
   nuclei/         F1  StarDist detector (OpenVINO INT8 / ONNX), tiling, calibration
   ihc/            F2  stain deconvolution, ER/PR scoring, cell type, de-duplication, case, report
@@ -134,7 +154,7 @@ demo_outputs/     example overlays and reports
 | 7 Pleomorphism | ✅ | κ 0.56 (grade used as a proxy label) | TCGA-BRCA labels (waiting on GDC); local scores |
 | 8 Tubules | ✅, score unreliable | lumen AUC 0.87; does not separate grades | 150–300 annotated local 10× fields |
 | 9 Grade + report | ✅ | n/a | on-screen wizard in the camera app |
-| 0 Camera app | started | nuclei detection only | overlays, wizard, mini-map |
+| 0 Camera app | ✅ | full workstation: cases, all modules, report, annotation | full day of use at the partner lab; Windows installer |
 | 10 Validation / product | ❌ | n/a | local cases, pathologists, regulatory work |
 
 **Licences:** several training datasets are for research or non-commercial use only. Check them before any commercial release (see the licence section of FEATURES.md).

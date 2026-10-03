@@ -16,6 +16,26 @@ Retraining a model counts as an update: record the old and new held-out metrics 
 
 ---
 
+## 2026-10-04 — Desktop app redesign
+**Area:** app/desktop (UI only; no change to any analysis)
+**Change:** new visual system (`app/desktop/theme.py`): colours taken from the stains (haematoxylin indigo for actions, eosin only for the open-case slide label, DAB amber for warnings), a neutral dark stage behind images, IBM Plex Sans (static Regular/Medium/SemiBold cut from the variable font, SIL OFL, `app/desktop/assets/fonts/OFL.txt`), and an inline icon set. Sidebar navigation (Home, Cases, Microscope, Report, Annotate) replaces tabs and menus; the open case is drawn as a slide label (case ID on the frosted end, patient on the glass). New Home page with the microscope set-up steps, recent cases and local-data status. Microscope page: camera bar with an objective selector, module list grouped by stain with saved/unsaved state, image overlay with Ready state and a zoom-aware scale bar, headline result with progress to the minimum count (500 nuclei, 10 HPF, 3 fields, 1 mm²). Report page: grade badge, 1/2/3 control per component with a link to its analysis, biomarker tiles. Toast confirmations; plain-language messages throughout.
+**Why:** the first version worked but read as a bare tool; pathologists need to see what to do next and the state of the case at a glance.
+**Impact:** modules gained `headline()`, `group` and `short`. `fonttools` was used once to cut the font weights (not a runtime dependency).
+
+## 2026-10-04 — Desktop workstation app (Feature 0 + all modules in one application)
+**Area:** app/desktop, core/grading, core/her2
+**Change:** `python -m app.desktop` is now the full application for a USB microscope camera, with four pages:
+- **Cases**: create / search / open cases; each case keeps the patient ID and request details (`case.json`), its frames, every module run, snapshots, reports and the audit log.
+- **Microscope & Analysis**: live view with flat-field correction, motion + focus READY gate (dwell detection), objective selector (keys 1-4 or the magnification model), calibrated µm/px, frame logger. Each feature runs as a separate module (F1 nuclei, F2 ER, F2 PR, F3 Ki-67, F4 HER2 + field-classifier cross-check, F5 region map + mini-map + mitosis hotspots, F6 10-HPF mitoses, F7 pleomorphism, F8 tubules) with running results, field gallery, click-to-correct and "Save result to case".
+- **Grade & Report**: Nottingham components with pathologist overrides (reason logged), biomarkers, other findings, snapshots, audit viewer, draft PDF, sign & lock.
+- **Annotate**: nine annotation tasks with instructions (nuclei outlines, cell types, ER/PR intensity, Ki-67 positivity, HER2 membrane, regions, mitoses, pleomorphism score, tubule lumina), model pre-fill, QuPath GeoJSON / masks / CSV export, manifest, and threshold calibration (ER/PR, Ki-67, HER2) written to `<data>/calibration/` and used by new analysis runs.
+- Calibration wizard (stage micrometer, two clicks) and microscope profiles in `<data>/profiles/`.
+- `core/grading/case.py`: patient details, `BreastCase.open()` (reopen a saved case), `set_extra()`, `store_component()` (shared by the wizard and the modules), IHC-only signing (`allow_no_grade`; a partial grade is still refused), atomic `case.json` writes. `core/grading/report.py`: patient block, "grade not assessed", other findings, Ki-67 primary index.
+- `core/her2/field_classifier.py`: runtime for `her2_field_effb0.onnx` (plan step 4.6).
+**Why:** the CLI tools needed saved frames and could not keep a patient case across modules; the plan's Feature 0 and the annotation loop for local data (O-04 … O-07) needed a UI.
+**Privacy:** patient details stay in the case folder and the report. Frame sidecars and annotation exports carry the case ID only (`tests/test_desktop.py`).
+**Impact:** `tests/test_desktop.py` (8 tests). `RUNTIME_MODEL_FILES` now includes Phikon-v2, pleomorphism and tubule models (O-02). Data root can be moved with `PATHOASSIST_DATA`. Still to do: Windows installer, local validation of every module.
+
 ## 2026-10-03 — Engineering docs
 **Change:** added [README.md](../README.md), [docs/FEATURES.md](FEATURES.md), [docs/algorithms.html](algorithms.html), this file and [BUGS.md](BUGS.md).
 **Why:** to hand the project over to future engineers. FEATURES.md explains each feature and the reasons behind its technology choices; algorithms.html explains each algorithm visually.
