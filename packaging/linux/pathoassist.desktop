@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PathoAssist
+Comment=Microscope camera assistant for pathologists (research use only)
+Exec=PathoAssist
+Icon=pathoassist
+Categories=Science;MedicalSoftware;
+Terminal=false
+StartupWMClass=PathoAssist

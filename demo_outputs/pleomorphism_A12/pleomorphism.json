@@ -1,0 +1,31 @@
+{
+  "score": 1,
+  "probs": [
+    0.669,
+    0.233,
+    0.098
+  ],
+  "expected": 1.43,
+  "n_fields": 6,
+  "n_tumour": 1797,
+  "field_scores": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    2
+  ],
+  "warnings": [
+    "Score model NOT validated (public data, 11 slides): use the measurements, not the score, until it is refitted on local cases.",
+    "Field scores differ ([1, 1, 2, 1, 1, 2]); review the fields with the highest score."
+  ],
+  "measurements": {
+    "area_median": 34.414,
+    "major_p90": 9.953,
+    "area_cv": 0.401,
+    "area_max_rel": 1.727,
+    "area_rel_lymph": 1.962,
+    "area_rel_ref": 0.906
+  }
+}

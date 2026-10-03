@@ -1,0 +1,12 @@
+{
+  "um_per_px": 1.0,
+  "crop_um": 512,
+  "input": 384,
+  "classes": [
+    "0",
+    "1+",
+    "2+",
+    "3+"
+  ],
+  "licence": "trained on BCI (non-commercial) - research/validation only"
+}

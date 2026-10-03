@@ -1,0 +1,5942 @@
+{
+  "BC-DeepLIIF validation (breast)": {
+    "n": 6,
+    "within_5pts": 0.8333333333333334,
+    "mae": 5.648387295381838,
+    "bias": 4.968325153546184,
+    "loa": [
+      -12.977562666291613,
+      22.914212973383982
+    ],
+    "icc": 0.8975758265701202,
+    "icc_ci95": [
+      0.7370075598370447,
+      0.9906426006984471
+    ],
+    "band_agreement": 1.0,
+    "band_kappa": 1.0,
+    "ref_range": [
+      5.780346820809249,
+      48.275862068965516
+    ],
+    "nucleus_positivity": {
+      "n": 739,
+      "sensitivity": 0.9836065573770492,
+      "specificity": 0.9892086330935251
+    },
+    "detection_recall": 0.8388195232690124,
+    "tumour_only": {
+      "n_fields_with_tumour": 5,
+      "median_tumour_fraction": 0.16250149111296672,
+      "within_5pts": 0.2
+    },
+    "cases": [
+      {
+        "case": "BC-all",
+        "fields": 6,
+        "ref_global": 22.93,
+        "global_": 24.64,
+        "ref_hotspot": 33.33,
+        "hotspot": 36.06,
+        "same_hotspot_fields": true
+      }
+    ],
+    "fields": [
+      {
+        "name": "22",
+        "ref_n": 173,
+        "ref_pos": 10,
+        "n": 166,
+        "pos": 10,
+        "n_tumour": 1,
+        "pos_tumour": 0
+      },
+      {
+        "name": "28",
+        "ref_n": 145,
+        "ref_pos": 19,
+        "n": 166,
+        "pos": 28,
+        "n_tumour": 3,
+        "pos_tumour": 1
+      },
+      {
+        "name": "31",
+        "ref_n": 177,
+        "ref_pos": 15,
+        "n": 168,
+        "pos": 15,
+        "n_tumour": 0,
+        "pos_tumour": 0
+      },
+      {
+        "name": "326",
+        "ref_n": 33,
+        "ref_pos": 12,
+        "n": 54,
+        "pos": 22,
+        "n_tumour": 37,
+        "pos_tumour": 16
+      },
+      {
+        "name": "40",
+        "ref_n": 174,
+        "ref_pos": 84,
+        "n": 101,
+        "pos": 72,
+        "n_tumour": 31,
+        "pos_tumour": 24
+      },
+      {
+        "name": "7",
+        "ref_n": 179,
+        "ref_pos": 62,
+        "n": 181,
+        "pos": 59,
+        "n_tumour": 132,
+        "pos_tumour": 41
+      }
+    ]
+  },
+  "DeepLIIF test set (lung + bladder)": {
+    "n": 598,
+    "within_5pts": 0.5217391304347826,
+    "mae": 7.496149279941066,
+    "bias": -6.426905909416518,
+    "loa": [
+      -24.81278046809935,
+      11.958968649266314
+    ],
+    "icc": 0.4877868560335453,
+    "icc_ci95": [
+      0.4084520312237313,
+      0.5632841421164045
+    ],
+    "band_agreement": 0.7123745819397993,
+    "band_kappa": 0.3549842129003158,
+    "ref_range": [
+      0.0,
+      60.0
+    ],
+    "nucleus_positivity": {
+      "n": 28480,
+      "sensitivity": 0.5515530629853321,
+      "specificity": 0.9934574735782586
+    },
+    "detection_recall": 0.6874577580380419,
+    "tumour_only": {
+      "n_fields_with_tumour": 598,
+      "median_tumour_fraction": 0.39769782738688464,
+      "within_5pts": 0.3862876254180602
+    },
+    "cases": [
+      {
+        "case": "Bladder_38000_38000",
+        "fields": 9,
+        "ref_global": 29.84,
+        "global_": 19.36,
+        "ref_hotspot": 29.84,
+        "hotspot": 19.36,
+        "same_hotspot_fields": true
+      },
+      {
+        "case": "Bladder_38000_40000",
+        "fields": 14,
+        "ref_global": 20.23,
+        "global_": 16.67,
+        "ref_hotspot": 25.36,
+        "hotspot": 20.26,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_38000_42000",
+        "fields": 12,
+        "ref_global": 17.54,
+        "global_": 12.28,
+        "ref_hotspot": 21.51,
+        "hotspot": 15.93,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_38000_46000",
+        "fields": 14,
+        "ref_global": 10.71,
+        "global_": 5.07,
+        "ref_hotspot": 21.15,
+        "hotspot": 7.84,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_48000_56000",
+        "fields": 14,
+        "ref_global": 6.52,
+        "global_": 4.66,
+        "ref_hotspot": 9.3,
+        "hotspot": 7.52,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_48000_62000",
+        "fields": 13,
+        "ref_global": 13.47,
+        "global_": 7.92,
+        "ref_hotspot": 18.17,
+        "hotspot": 10.68,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_48000_68000",
+        "fields": 12,
+        "ref_global": 23.42,
+        "global_": 7.53,
+        "ref_hotspot": 26.49,
+        "hotspot": 8.43,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_48000_72000",
+        "fields": 12,
+        "ref_global": 28.71,
+        "global_": 5.43,
+        "ref_hotspot": 30.67,
+        "hotspot": 5.76,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_48000_74000",
+        "fields": 13,
+        "ref_global": 29.99,
+        "global_": 7.77,
+        "ref_hotspot": 33.75,
+        "hotspot": 8.87,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Bladder_48000_78000",
+        "fields": 12,
+        "ref_global": 38.64,
+        "global_": 2.43,
+        "ref_hotspot": 39.59,
+        "hotspot": 2.43,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_28000",
+        "fields": 11,
+        "ref_global": 10.34,
+        "global_": 9.32,
+        "ref_hotspot": 12.19,
+        "hotspot": 10.57,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_30000",
+        "fields": 14,
+        "ref_global": 9.25,
+        "global_": 6.16,
+        "ref_hotspot": 13.08,
+        "hotspot": 7.75,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_32000",
+        "fields": 13,
+        "ref_global": 17.83,
+        "global_": 7.37,
+        "ref_hotspot": 22.14,
+        "hotspot": 9.34,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_34000",
+        "fields": 13,
+        "ref_global": 15.1,
+        "global_": 13.32,
+        "ref_hotspot": 19.04,
+        "hotspot": 16.09,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_36000",
+        "fields": 11,
+        "ref_global": 17.71,
+        "global_": 14.01,
+        "ref_hotspot": 20.46,
+        "hotspot": 14.87,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_38000",
+        "fields": 11,
+        "ref_global": 9.08,
+        "global_": 9.03,
+        "ref_hotspot": 11.97,
+        "hotspot": 10.87,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_40000",
+        "fields": 13,
+        "ref_global": 14.4,
+        "global_": 8.64,
+        "ref_hotspot": 19.57,
+        "hotspot": 11.19,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_42000",
+        "fields": 15,
+        "ref_global": 15.03,
+        "global_": 6.84,
+        "ref_hotspot": 20.32,
+        "hotspot": 10.93,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_26000_44000",
+        "fields": 13,
+        "ref_global": 11.66,
+        "global_": 2.33,
+        "ref_hotspot": 15.19,
+        "hotspot": 3.73,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_14000",
+        "fields": 12,
+        "ref_global": 11.0,
+        "global_": 9.03,
+        "ref_hotspot": 13.42,
+        "hotspot": 9.94,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_16000",
+        "fields": 14,
+        "ref_global": 13.06,
+        "global_": 11.02,
+        "ref_hotspot": 16.41,
+        "hotspot": 12.98,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_18000",
+        "fields": 12,
+        "ref_global": 11.6,
+        "global_": 10.01,
+        "ref_hotspot": 14.53,
+        "hotspot": 12.23,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_20000",
+        "fields": 12,
+        "ref_global": 45.72,
+        "global_": 11.32,
+        "ref_hotspot": 47.84,
+        "hotspot": 13.58,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_22000",
+        "fields": 14,
+        "ref_global": 20.72,
+        "global_": 15.61,
+        "ref_hotspot": 25.0,
+        "hotspot": 18.5,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_24000",
+        "fields": 13,
+        "ref_global": 17.08,
+        "global_": 13.62,
+        "ref_hotspot": 20.07,
+        "hotspot": 15.83,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_26000",
+        "fields": 14,
+        "ref_global": 21.12,
+        "global_": 22.02,
+        "ref_hotspot": 28.39,
+        "hotspot": 27.95,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_28000",
+        "fields": 16,
+        "ref_global": 8.03,
+        "global_": 7.2,
+        "ref_hotspot": 11.92,
+        "hotspot": 11.32,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_30000",
+        "fields": 12,
+        "ref_global": 11.66,
+        "global_": 11.8,
+        "ref_hotspot": 14.65,
+        "hotspot": 13.11,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_32000",
+        "fields": 12,
+        "ref_global": 16.62,
+        "global_": 15.51,
+        "ref_hotspot": 21.92,
+        "hotspot": 17.86,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_34000",
+        "fields": 11,
+        "ref_global": 12.57,
+        "global_": 7.97,
+        "ref_hotspot": 15.6,
+        "hotspot": 7.97,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_36000",
+        "fields": 13,
+        "ref_global": 20.23,
+        "global_": 13.03,
+        "ref_hotspot": 27.04,
+        "hotspot": 16.5,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_40000",
+        "fields": 12,
+        "ref_global": 7.02,
+        "global_": 6.45,
+        "ref_hotspot": 9.36,
+        "hotspot": 7.52,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_28000_42000",
+        "fields": 11,
+        "ref_global": 18.84,
+        "global_": 8.01,
+        "ref_hotspot": 21.4,
+        "hotspot": 9.75,
+        "same_hotspot_fields": true
+      },
+      {
+        "case": "Lung_28000_44000",
+        "fields": 13,
+        "ref_global": 11.25,
+        "global_": 5.88,
+        "ref_hotspot": 15.83,
+        "hotspot": 7.72,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_30000_40000",
+        "fields": 13,
+        "ref_global": 10.77,
+        "global_": 6.25,
+        "ref_hotspot": 14.84,
+        "hotspot": 8.58,
+        "same_hotspot_fields": true
+      },
+      {
+        "case": "Lung_32000_32000",
+        "fields": 14,
+        "ref_global": 11.32,
+        "global_": 11.34,
+        "ref_hotspot": 16.2,
+        "hotspot": 13.84,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_32000_34000",
+        "fields": 11,
+        "ref_global": 19.08,
+        "global_": 13.26,
+        "ref_hotspot": 23.84,
+        "hotspot": 15.45,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_32000_36000",
+        "fields": 12,
+        "ref_global": 20.71,
+        "global_": 18.04,
+        "ref_hotspot": 25.99,
+        "hotspot": 22.69,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_32000_40000",
+        "fields": 15,
+        "ref_global": 17.65,
+        "global_": 14.3,
+        "ref_hotspot": 24.28,
+        "hotspot": 20.98,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_34000_26000",
+        "fields": 15,
+        "ref_global": 24.74,
+        "global_": 15.64,
+        "ref_hotspot": 33.81,
+        "hotspot": 21.21,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_34000_32000",
+        "fields": 14,
+        "ref_global": 20.28,
+        "global_": 19.97,
+        "ref_hotspot": 24.25,
+        "hotspot": 22.49,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_34000_34000",
+        "fields": 11,
+        "ref_global": 14.15,
+        "global_": 10.86,
+        "ref_hotspot": 17.26,
+        "hotspot": 13.24,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_34000_40000",
+        "fields": 11,
+        "ref_global": 19.69,
+        "global_": 17.44,
+        "ref_hotspot": 22.27,
+        "hotspot": 18.2,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_36000_32000",
+        "fields": 11,
+        "ref_global": 17.1,
+        "global_": 16.81,
+        "ref_hotspot": 21.86,
+        "hotspot": 19.27,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_36000_34000",
+        "fields": 13,
+        "ref_global": 21.81,
+        "global_": 15.61,
+        "ref_hotspot": 29.4,
+        "hotspot": 21.99,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_36000_38000",
+        "fields": 14,
+        "ref_global": 17.62,
+        "global_": 12.55,
+        "ref_hotspot": 21.56,
+        "hotspot": 15.97,
+        "same_hotspot_fields": false
+      },
+      {
+        "case": "Lung_36000_42000",
+        "fields": 14,
+        "ref_global": 20.23,
+        "global_": 14.35,
+        "ref_hotspot": 24.36,
+        "hotspot": 18.53,
+        "same_hotspot_fields": false
+      }
+    ],
+    "fields": [
+      {
+        "name": "Bladder_38000_38000_0_2",
+        "ref_n": 49,
+        "ref_pos": 14,
+        "n": 44,
+        "pos": 4,
+        "n_tumour": 28,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_38000_38000_0_3",
+        "ref_n": 55,
+        "ref_pos": 20,
+        "n": 44,
+        "pos": 6,
+        "n_tumour": 35,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_38000_38000_1_0",
+        "ref_n": 55,
+        "ref_pos": 16,
+        "n": 52,
+        "pos": 9,
+        "n_tumour": 17,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Bladder_38000_38000_1_2",
+        "ref_n": 67,
+        "ref_pos": 14,
+        "n": 49,
+        "pos": 10,
+        "n_tumour": 23,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_38000_38000_2_2",
+        "ref_n": 81,
+        "ref_pos": 21,
+        "n": 60,
+        "pos": 12,
+        "n_tumour": 18,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_38000_38000_2_3",
+        "ref_n": 82,
+        "ref_pos": 22,
+        "n": 65,
+        "pos": 11,
+        "n_tumour": 38,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_38000_38000_3_0",
+        "ref_n": 57,
+        "ref_pos": 14,
+        "n": 50,
+        "pos": 6,
+        "n_tumour": 39,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_38000_38000_3_1",
+        "ref_n": 62,
+        "ref_pos": 19,
+        "n": 60,
+        "pos": 16,
+        "n_tumour": 45,
+        "pos_tumour": 14
+      },
+      {
+        "name": "Bladder_38000_38000_3_2",
+        "ref_n": 55,
+        "ref_pos": 28,
+        "n": 46,
+        "pos": 17,
+        "n_tumour": 38,
+        "pos_tumour": 17
+      },
+      {
+        "name": "Bladder_38000_40000_0_0",
+        "ref_n": 69,
+        "ref_pos": 10,
+        "n": 56,
+        "pos": 9,
+        "n_tumour": 10,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_40000_0_1",
+        "ref_n": 91,
+        "ref_pos": 10,
+        "n": 75,
+        "pos": 6,
+        "n_tumour": 23,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_40000_0_2",
+        "ref_n": 97,
+        "ref_pos": 21,
+        "n": 81,
+        "pos": 14,
+        "n_tumour": 38,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Bladder_38000_40000_0_3",
+        "ref_n": 105,
+        "ref_pos": 19,
+        "n": 77,
+        "pos": 14,
+        "n_tumour": 39,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Bladder_38000_40000_1_1",
+        "ref_n": 68,
+        "ref_pos": 6,
+        "n": 53,
+        "pos": 12,
+        "n_tumour": 26,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_38000_40000_1_2",
+        "ref_n": 109,
+        "ref_pos": 15,
+        "n": 97,
+        "pos": 11,
+        "n_tumour": 38,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_38000_40000_1_3",
+        "ref_n": 129,
+        "ref_pos": 28,
+        "n": 106,
+        "pos": 19,
+        "n_tumour": 36,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Bladder_38000_40000_2_0",
+        "ref_n": 54,
+        "ref_pos": 12,
+        "n": 45,
+        "pos": 7,
+        "n_tumour": 30,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_38000_40000_2_1",
+        "ref_n": 70,
+        "ref_pos": 14,
+        "n": 54,
+        "pos": 7,
+        "n_tumour": 25,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_38000_40000_2_2",
+        "ref_n": 76,
+        "ref_pos": 19,
+        "n": 65,
+        "pos": 11,
+        "n_tumour": 38,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Bladder_38000_40000_2_3",
+        "ref_n": 129,
+        "ref_pos": 34,
+        "n": 106,
+        "pos": 25,
+        "n_tumour": 30,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Bladder_38000_40000_3_0",
+        "ref_n": 57,
+        "ref_pos": 12,
+        "n": 47,
+        "pos": 6,
+        "n_tumour": 22,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_38000_40000_3_1",
+        "ref_n": 67,
+        "ref_pos": 26,
+        "n": 60,
+        "pos": 16,
+        "n_tumour": 28,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Bladder_38000_40000_3_3",
+        "ref_n": 115,
+        "ref_pos": 24,
+        "n": 92,
+        "pos": 12,
+        "n_tumour": 11,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_38000_42000_0_0",
+        "ref_n": 72,
+        "ref_pos": 15,
+        "n": 65,
+        "pos": 8,
+        "n_tumour": 15,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_38000_42000_0_1",
+        "ref_n": 73,
+        "ref_pos": 11,
+        "n": 67,
+        "pos": 6,
+        "n_tumour": 7,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_38000_42000_0_2",
+        "ref_n": 100,
+        "ref_pos": 11,
+        "n": 91,
+        "pos": 4,
+        "n_tumour": 39,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_42000_0_3",
+        "ref_n": 107,
+        "ref_pos": 14,
+        "n": 92,
+        "pos": 8,
+        "n_tumour": 13,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_38000_42000_1_1",
+        "ref_n": 118,
+        "ref_pos": 13,
+        "n": 95,
+        "pos": 13,
+        "n_tumour": 49,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Bladder_38000_42000_1_2",
+        "ref_n": 159,
+        "ref_pos": 27,
+        "n": 139,
+        "pos": 13,
+        "n_tumour": 51,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Bladder_38000_42000_1_3",
+        "ref_n": 105,
+        "ref_pos": 21,
+        "n": 86,
+        "pos": 14,
+        "n_tumour": 4,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_38000_42000_2_0",
+        "ref_n": 110,
+        "ref_pos": 34,
+        "n": 95,
+        "pos": 20,
+        "n_tumour": 27,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_42000_2_3",
+        "ref_n": 75,
+        "ref_pos": 10,
+        "n": 59,
+        "pos": 7,
+        "n_tumour": 5,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_38000_42000_3_0",
+        "ref_n": 61,
+        "ref_pos": 11,
+        "n": 56,
+        "pos": 4,
+        "n_tumour": 27,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_38000_42000_3_1",
+        "ref_n": 116,
+        "ref_pos": 26,
+        "n": 94,
+        "pos": 18,
+        "n_tumour": 33,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Bladder_38000_42000_3_3",
+        "ref_n": 50,
+        "ref_pos": 8,
+        "n": 46,
+        "pos": 6,
+        "n_tumour": 6,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_46000_0_0",
+        "ref_n": 162,
+        "ref_pos": 55,
+        "n": 139,
+        "pos": 12,
+        "n_tumour": 25,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_46000_0_1",
+        "ref_n": 149,
+        "ref_pos": 17,
+        "n": 109,
+        "pos": 10,
+        "n_tumour": 27,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_46000_0_2",
+        "ref_n": 170,
+        "ref_pos": 9,
+        "n": 125,
+        "pos": 5,
+        "n_tumour": 32,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_46000_0_3",
+        "ref_n": 131,
+        "ref_pos": 2,
+        "n": 98,
+        "pos": 3,
+        "n_tumour": 11,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_38000_46000_1_0",
+        "ref_n": 196,
+        "ref_pos": 39,
+        "n": 173,
+        "pos": 6,
+        "n_tumour": 69,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_38000_46000_1_1",
+        "ref_n": 180,
+        "ref_pos": 13,
+        "n": 151,
+        "pos": 5,
+        "n_tumour": 49,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_38000_46000_1_3",
+        "ref_n": 151,
+        "ref_pos": 6,
+        "n": 121,
+        "pos": 3,
+        "n_tumour": 10,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_38000_46000_2_0",
+        "ref_n": 200,
+        "ref_pos": 24,
+        "n": 174,
+        "pos": 7,
+        "n_tumour": 40,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_38000_46000_2_1",
+        "ref_n": 194,
+        "ref_pos": 22,
+        "n": 169,
+        "pos": 13,
+        "n_tumour": 69,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_38000_46000_2_2",
+        "ref_n": 173,
+        "ref_pos": 11,
+        "n": 153,
+        "pos": 7,
+        "n_tumour": 42,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_38000_46000_2_3",
+        "ref_n": 145,
+        "ref_pos": 12,
+        "n": 117,
+        "pos": 5,
+        "n_tumour": 5,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_38000_46000_3_1",
+        "ref_n": 62,
+        "ref_pos": 1,
+        "n": 61,
+        "pos": 1,
+        "n_tumour": 6,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_38000_46000_3_2",
+        "ref_n": 91,
+        "ref_pos": 5,
+        "n": 79,
+        "pos": 3,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_38000_46000_3_3",
+        "ref_n": 78,
+        "ref_pos": 7,
+        "n": 68,
+        "pos": 8,
+        "n_tumour": 5,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_56000_0_0",
+        "ref_n": 71,
+        "ref_pos": 7,
+        "n": 69,
+        "pos": 2,
+        "n_tumour": 8,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_56000_0_1",
+        "ref_n": 138,
+        "ref_pos": 9,
+        "n": 121,
+        "pos": 6,
+        "n_tumour": 29,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_56000_0_2",
+        "ref_n": 159,
+        "ref_pos": 7,
+        "n": 132,
+        "pos": 10,
+        "n_tumour": 29,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_48000_56000_0_3",
+        "ref_n": 130,
+        "ref_pos": 7,
+        "n": 104,
+        "pos": 5,
+        "n_tumour": 12,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_56000_1_0",
+        "ref_n": 76,
+        "ref_pos": 2,
+        "n": 72,
+        "pos": 1,
+        "n_tumour": 3,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_56000_1_1",
+        "ref_n": 140,
+        "ref_pos": 10,
+        "n": 126,
+        "pos": 9,
+        "n_tumour": 25,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_56000_1_3",
+        "ref_n": 137,
+        "ref_pos": 6,
+        "n": 120,
+        "pos": 2,
+        "n_tumour": 24,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_56000_2_0",
+        "ref_n": 81,
+        "ref_pos": 8,
+        "n": 77,
+        "pos": 1,
+        "n_tumour": 4,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_56000_2_1",
+        "ref_n": 114,
+        "ref_pos": 8,
+        "n": 99,
+        "pos": 5,
+        "n_tumour": 17,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_56000_2_2",
+        "ref_n": 121,
+        "ref_pos": 15,
+        "n": 102,
+        "pos": 11,
+        "n_tumour": 31,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_48000_56000_2_3",
+        "ref_n": 133,
+        "ref_pos": 7,
+        "n": 110,
+        "pos": 3,
+        "n_tumour": 19,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_56000_3_0",
+        "ref_n": 73,
+        "ref_pos": 3,
+        "n": 73,
+        "pos": 5,
+        "n_tumour": 3,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_56000_3_1",
+        "ref_n": 103,
+        "ref_pos": 8,
+        "n": 101,
+        "pos": 2,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_56000_3_2",
+        "ref_n": 119,
+        "ref_pos": 7,
+        "n": 110,
+        "pos": 4,
+        "n_tumour": 16,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_62000_0_0",
+        "ref_n": 127,
+        "ref_pos": 14,
+        "n": 110,
+        "pos": 5,
+        "n_tumour": 65,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_48000_62000_0_1",
+        "ref_n": 116,
+        "ref_pos": 12,
+        "n": 95,
+        "pos": 5,
+        "n_tumour": 32,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_62000_0_2",
+        "ref_n": 133,
+        "ref_pos": 12,
+        "n": 111,
+        "pos": 7,
+        "n_tumour": 23,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_62000_1_1",
+        "ref_n": 75,
+        "ref_pos": 7,
+        "n": 67,
+        "pos": 3,
+        "n_tumour": 11,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_62000_1_2",
+        "ref_n": 89,
+        "ref_pos": 14,
+        "n": 82,
+        "pos": 3,
+        "n_tumour": 18,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_62000_1_3",
+        "ref_n": 103,
+        "ref_pos": 8,
+        "n": 93,
+        "pos": 6,
+        "n_tumour": 46,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_62000_2_0",
+        "ref_n": 72,
+        "ref_pos": 14,
+        "n": 67,
+        "pos": 5,
+        "n_tumour": 26,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_62000_2_1",
+        "ref_n": 61,
+        "ref_pos": 21,
+        "n": 56,
+        "pos": 12,
+        "n_tumour": 26,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Bladder_48000_62000_2_2",
+        "ref_n": 88,
+        "ref_pos": 9,
+        "n": 82,
+        "pos": 3,
+        "n_tumour": 48,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_62000_2_3",
+        "ref_n": 97,
+        "ref_pos": 12,
+        "n": 77,
+        "pos": 8,
+        "n_tumour": 50,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_48000_62000_3_0",
+        "ref_n": 40,
+        "ref_pos": 9,
+        "n": 40,
+        "pos": 3,
+        "n_tumour": 18,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_62000_3_1",
+        "ref_n": 59,
+        "ref_pos": 15,
+        "n": 54,
+        "pos": 11,
+        "n_tumour": 34,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Bladder_48000_62000_3_3",
+        "ref_n": 76,
+        "ref_pos": 6,
+        "n": 64,
+        "pos": 8,
+        "n_tumour": 34,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Bladder_48000_68000_0_0",
+        "ref_n": 55,
+        "ref_pos": 16,
+        "n": 51,
+        "pos": 9,
+        "n_tumour": 38,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Bladder_48000_68000_0_1",
+        "ref_n": 80,
+        "ref_pos": 6,
+        "n": 80,
+        "pos": 3,
+        "n_tumour": 15,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_68000_0_2",
+        "ref_n": 58,
+        "ref_pos": 13,
+        "n": 52,
+        "pos": 7,
+        "n_tumour": 31,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_48000_68000_0_3",
+        "ref_n": 64,
+        "ref_pos": 11,
+        "n": 55,
+        "pos": 4,
+        "n_tumour": 17,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_68000_1_0",
+        "ref_n": 42,
+        "ref_pos": 7,
+        "n": 44,
+        "pos": 2,
+        "n_tumour": 25,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_68000_1_1",
+        "ref_n": 50,
+        "ref_pos": 8,
+        "n": 53,
+        "pos": 1,
+        "n_tumour": 18,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_68000_2_0",
+        "ref_n": 40,
+        "ref_pos": 14,
+        "n": 36,
+        "pos": 1,
+        "n_tumour": 27,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_68000_2_1",
+        "ref_n": 50,
+        "ref_pos": 13,
+        "n": 38,
+        "pos": 2,
+        "n_tumour": 16,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_68000_2_2",
+        "ref_n": 59,
+        "ref_pos": 13,
+        "n": 50,
+        "pos": 5,
+        "n_tumour": 19,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_68000_3_0",
+        "ref_n": 55,
+        "ref_pos": 15,
+        "n": 46,
+        "pos": 3,
+        "n_tumour": 27,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_68000_3_1",
+        "ref_n": 52,
+        "ref_pos": 15,
+        "n": 55,
+        "pos": 5,
+        "n_tumour": 37,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_48000_68000_3_3",
+        "ref_n": 61,
+        "ref_pos": 25,
+        "n": 51,
+        "pos": 4,
+        "n_tumour": 38,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_72000_0_0",
+        "ref_n": 57,
+        "ref_pos": 18,
+        "n": 52,
+        "pos": 2,
+        "n_tumour": 38,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_72000_0_2",
+        "ref_n": 46,
+        "ref_pos": 15,
+        "n": 42,
+        "pos": 4,
+        "n_tumour": 33,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_72000_0_3",
+        "ref_n": 54,
+        "ref_pos": 14,
+        "n": 57,
+        "pos": 2,
+        "n_tumour": 46,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_72000_1_1",
+        "ref_n": 50,
+        "ref_pos": 18,
+        "n": 47,
+        "pos": 4,
+        "n_tumour": 29,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_48000_72000_1_2",
+        "ref_n": 57,
+        "ref_pos": 19,
+        "n": 51,
+        "pos": 3,
+        "n_tumour": 38,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_72000_1_3",
+        "ref_n": 53,
+        "ref_pos": 13,
+        "n": 54,
+        "pos": 4,
+        "n_tumour": 36,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_48000_72000_2_0",
+        "ref_n": 51,
+        "ref_pos": 10,
+        "n": 45,
+        "pos": 1,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_72000_2_1",
+        "ref_n": 45,
+        "ref_pos": 7,
+        "n": 37,
+        "pos": 1,
+        "n_tumour": 27,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_72000_2_3",
+        "ref_n": 54,
+        "ref_pos": 15,
+        "n": 57,
+        "pos": 2,
+        "n_tumour": 40,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_72000_3_0",
+        "ref_n": 52,
+        "ref_pos": 24,
+        "n": 47,
+        "pos": 4,
+        "n_tumour": 35,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Bladder_48000_72000_3_2",
+        "ref_n": 58,
+        "ref_pos": 14,
+        "n": 51,
+        "pos": 1,
+        "n_tumour": 29,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_72000_3_3",
+        "ref_n": 57,
+        "ref_pos": 15,
+        "n": 49,
+        "pos": 4,
+        "n_tumour": 41,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_74000_0_0",
+        "ref_n": 43,
+        "ref_pos": 17,
+        "n": 40,
+        "pos": 3,
+        "n_tumour": 16,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_74000_0_1",
+        "ref_n": 41,
+        "ref_pos": 10,
+        "n": 37,
+        "pos": 2,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_74000_0_2",
+        "ref_n": 43,
+        "ref_pos": 15,
+        "n": 40,
+        "pos": 2,
+        "n_tumour": 27,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_74000_1_0",
+        "ref_n": 56,
+        "ref_pos": 19,
+        "n": 46,
+        "pos": 3,
+        "n_tumour": 14,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_74000_1_1",
+        "ref_n": 73,
+        "ref_pos": 16,
+        "n": 72,
+        "pos": 4,
+        "n_tumour": 32,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_74000_1_2",
+        "ref_n": 59,
+        "ref_pos": 24,
+        "n": 54,
+        "pos": 2,
+        "n_tumour": 45,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_74000_1_3",
+        "ref_n": 57,
+        "ref_pos": 22,
+        "n": 48,
+        "pos": 6,
+        "n_tumour": 32,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Bladder_48000_74000_2_0",
+        "ref_n": 66,
+        "ref_pos": 14,
+        "n": 57,
+        "pos": 4,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_74000_2_2",
+        "ref_n": 68,
+        "ref_pos": 11,
+        "n": 58,
+        "pos": 2,
+        "n_tumour": 33,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_74000_3_0",
+        "ref_n": 65,
+        "ref_pos": 24,
+        "n": 57,
+        "pos": 11,
+        "n_tumour": 28,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Bladder_48000_74000_3_1",
+        "ref_n": 53,
+        "ref_pos": 20,
+        "n": 50,
+        "pos": 5,
+        "n_tumour": 38,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_48000_74000_3_2",
+        "ref_n": 67,
+        "ref_pos": 15,
+        "n": 56,
+        "pos": 5,
+        "n_tumour": 44,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Bladder_48000_74000_3_3",
+        "ref_n": 76,
+        "ref_pos": 23,
+        "n": 67,
+        "pos": 4,
+        "n_tumour": 42,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_78000_0_1",
+        "ref_n": 34,
+        "ref_pos": 16,
+        "n": 32,
+        "pos": 1,
+        "n_tumour": 24,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_78000_0_2",
+        "ref_n": 48,
+        "ref_pos": 20,
+        "n": 41,
+        "pos": 0,
+        "n_tumour": 22,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_78000_0_3",
+        "ref_n": 58,
+        "ref_pos": 19,
+        "n": 44,
+        "pos": 2,
+        "n_tumour": 22,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_78000_1_0",
+        "ref_n": 41,
+        "ref_pos": 21,
+        "n": 34,
+        "pos": 1,
+        "n_tumour": 23,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_78000_1_1",
+        "ref_n": 46,
+        "ref_pos": 22,
+        "n": 48,
+        "pos": 3,
+        "n_tumour": 31,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_78000_1_3",
+        "ref_n": 54,
+        "ref_pos": 17,
+        "n": 39,
+        "pos": 2,
+        "n_tumour": 29,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Bladder_48000_78000_2_1",
+        "ref_n": 43,
+        "ref_pos": 18,
+        "n": 41,
+        "pos": 0,
+        "n_tumour": 36,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_78000_2_2",
+        "ref_n": 63,
+        "ref_pos": 26,
+        "n": 57,
+        "pos": 2,
+        "n_tumour": 53,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Bladder_48000_78000_3_0",
+        "ref_n": 51,
+        "ref_pos": 18,
+        "n": 48,
+        "pos": 0,
+        "n_tumour": 41,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_78000_3_1",
+        "ref_n": 51,
+        "ref_pos": 18,
+        "n": 49,
+        "pos": 0,
+        "n_tumour": 39,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_78000_3_2",
+        "ref_n": 52,
+        "ref_pos": 15,
+        "n": 53,
+        "pos": 0,
+        "n_tumour": 49,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Bladder_48000_78000_3_3",
+        "ref_n": 49,
+        "ref_pos": 18,
+        "n": 48,
+        "pos": 2,
+        "n_tumour": 32,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_28000_0_0",
+        "ref_n": 69,
+        "ref_pos": 12,
+        "n": 67,
+        "pos": 18,
+        "n_tumour": 33,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_26000_28000_0_1",
+        "ref_n": 66,
+        "ref_pos": 10,
+        "n": 54,
+        "pos": 6,
+        "n_tumour": 36,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_26000_28000_0_2",
+        "ref_n": 51,
+        "ref_pos": 3,
+        "n": 53,
+        "pos": 4,
+        "n_tumour": 25,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_28000_1_0",
+        "ref_n": 80,
+        "ref_pos": 5,
+        "n": 57,
+        "pos": 5,
+        "n_tumour": 4,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_28000_1_2",
+        "ref_n": 63,
+        "ref_pos": 10,
+        "n": 44,
+        "pos": 5,
+        "n_tumour": 17,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_28000_1_3",
+        "ref_n": 57,
+        "ref_pos": 5,
+        "n": 49,
+        "pos": 2,
+        "n_tumour": 18,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_28000_2_1",
+        "ref_n": 70,
+        "ref_pos": 5,
+        "n": 60,
+        "pos": 3,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_28000_2_2",
+        "ref_n": 59,
+        "ref_pos": 9,
+        "n": 66,
+        "pos": 5,
+        "n_tumour": 43,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_28000_3_0",
+        "ref_n": 65,
+        "ref_pos": 7,
+        "n": 49,
+        "pos": 4,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_28000_3_1",
+        "ref_n": 68,
+        "ref_pos": 3,
+        "n": 62,
+        "pos": 2,
+        "n_tumour": 19,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_28000_3_2",
+        "ref_n": 68,
+        "ref_pos": 5,
+        "n": 61,
+        "pos": 4,
+        "n_tumour": 18,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_30000_0_0",
+        "ref_n": 76,
+        "ref_pos": 6,
+        "n": 62,
+        "pos": 3,
+        "n_tumour": 15,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_30000_0_1",
+        "ref_n": 64,
+        "ref_pos": 8,
+        "n": 56,
+        "pos": 4,
+        "n_tumour": 26,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_30000_0_2",
+        "ref_n": 42,
+        "ref_pos": 4,
+        "n": 36,
+        "pos": 3,
+        "n_tumour": 29,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_30000_0_3",
+        "ref_n": 73,
+        "ref_pos": 5,
+        "n": 60,
+        "pos": 4,
+        "n_tumour": 12,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_30000_1_1",
+        "ref_n": 81,
+        "ref_pos": 8,
+        "n": 61,
+        "pos": 3,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_30000_1_2",
+        "ref_n": 56,
+        "ref_pos": 13,
+        "n": 45,
+        "pos": 3,
+        "n_tumour": 18,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_30000_1_3",
+        "ref_n": 62,
+        "ref_pos": 2,
+        "n": 50,
+        "pos": 2,
+        "n_tumour": 11,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_30000_2_0",
+        "ref_n": 84,
+        "ref_pos": 9,
+        "n": 65,
+        "pos": 5,
+        "n_tumour": 19,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_30000_2_1",
+        "ref_n": 83,
+        "ref_pos": 7,
+        "n": 61,
+        "pos": 2,
+        "n_tumour": 4,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_30000_2_2",
+        "ref_n": 63,
+        "ref_pos": 6,
+        "n": 51,
+        "pos": 4,
+        "n_tumour": 20,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_30000_2_3",
+        "ref_n": 91,
+        "ref_pos": 2,
+        "n": 60,
+        "pos": 1,
+        "n_tumour": 11,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_30000_3_0",
+        "ref_n": 62,
+        "ref_pos": 15,
+        "n": 56,
+        "pos": 11,
+        "n_tumour": 19,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_26000_30000_3_1",
+        "ref_n": 80,
+        "ref_pos": 2,
+        "n": 58,
+        "pos": 1,
+        "n_tumour": 10,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_30000_3_3",
+        "ref_n": 67,
+        "ref_pos": 4,
+        "n": 58,
+        "pos": 2,
+        "n_tumour": 19,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_32000_0_0",
+        "ref_n": 62,
+        "ref_pos": 6,
+        "n": 51,
+        "pos": 2,
+        "n_tumour": 1,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_32000_0_2",
+        "ref_n": 34,
+        "ref_pos": 0,
+        "n": 39,
+        "pos": 0,
+        "n_tumour": 1,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_32000_1_0",
+        "ref_n": 70,
+        "ref_pos": 8,
+        "n": 57,
+        "pos": 2,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_32000_1_2",
+        "ref_n": 64,
+        "ref_pos": 13,
+        "n": 48,
+        "pos": 0,
+        "n_tumour": 3,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_32000_1_3",
+        "ref_n": 53,
+        "ref_pos": 19,
+        "n": 50,
+        "pos": 10,
+        "n_tumour": 24,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_26000_32000_2_0",
+        "ref_n": 60,
+        "ref_pos": 9,
+        "n": 50,
+        "pos": 2,
+        "n_tumour": 4,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_32000_2_1",
+        "ref_n": 62,
+        "ref_pos": 8,
+        "n": 50,
+        "pos": 0,
+        "n_tumour": 11,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_32000_2_2",
+        "ref_n": 81,
+        "ref_pos": 7,
+        "n": 60,
+        "pos": 2,
+        "n_tumour": 29,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_32000_2_3",
+        "ref_n": 77,
+        "ref_pos": 18,
+        "n": 57,
+        "pos": 3,
+        "n_tumour": 28,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_32000_3_0",
+        "ref_n": 49,
+        "ref_pos": 8,
+        "n": 39,
+        "pos": 5,
+        "n_tumour": 17,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_32000_3_1",
+        "ref_n": 39,
+        "ref_pos": 16,
+        "n": 43,
+        "pos": 11,
+        "n_tumour": 25,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_26000_32000_3_2",
+        "ref_n": 72,
+        "ref_pos": 8,
+        "n": 55,
+        "pos": 4,
+        "n_tumour": 10,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_32000_3_3",
+        "ref_n": 68,
+        "ref_pos": 21,
+        "n": 52,
+        "pos": 7,
+        "n_tumour": 26,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_34000_0_0",
+        "ref_n": 65,
+        "ref_pos": 9,
+        "n": 55,
+        "pos": 8,
+        "n_tumour": 21,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_26000_34000_0_1",
+        "ref_n": 63,
+        "ref_pos": 15,
+        "n": 52,
+        "pos": 12,
+        "n_tumour": 28,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_26000_34000_0_2",
+        "ref_n": 77,
+        "ref_pos": 11,
+        "n": 60,
+        "pos": 10,
+        "n_tumour": 16,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_34000_0_3",
+        "ref_n": 66,
+        "ref_pos": 13,
+        "n": 52,
+        "pos": 10,
+        "n_tumour": 19,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_26000_34000_1_0",
+        "ref_n": 62,
+        "ref_pos": 2,
+        "n": 58,
+        "pos": 1,
+        "n_tumour": 11,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_34000_1_1",
+        "ref_n": 58,
+        "ref_pos": 2,
+        "n": 51,
+        "pos": 1,
+        "n_tumour": 24,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_34000_1_2",
+        "ref_n": 62,
+        "ref_pos": 9,
+        "n": 45,
+        "pos": 5,
+        "n_tumour": 27,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_34000_2_1",
+        "ref_n": 69,
+        "ref_pos": 8,
+        "n": 49,
+        "pos": 5,
+        "n_tumour": 9,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_34000_2_2",
+        "ref_n": 47,
+        "ref_pos": 4,
+        "n": 45,
+        "pos": 5,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_34000_2_3",
+        "ref_n": 59,
+        "ref_pos": 9,
+        "n": 43,
+        "pos": 4,
+        "n_tumour": 31,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_34000_3_0",
+        "ref_n": 76,
+        "ref_pos": 20,
+        "n": 59,
+        "pos": 12,
+        "n_tumour": 35,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_26000_34000_3_2",
+        "ref_n": 55,
+        "ref_pos": 13,
+        "n": 46,
+        "pos": 10,
+        "n_tumour": 23,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_34000_3_3",
+        "ref_n": 62,
+        "ref_pos": 9,
+        "n": 53,
+        "pos": 6,
+        "n_tumour": 30,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_36000_0_0",
+        "ref_n": 64,
+        "ref_pos": 19,
+        "n": 46,
+        "pos": 6,
+        "n_tumour": 24,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_36000_0_1",
+        "ref_n": 64,
+        "ref_pos": 16,
+        "n": 45,
+        "pos": 7,
+        "n_tumour": 19,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_36000_0_2",
+        "ref_n": 48,
+        "ref_pos": 10,
+        "n": 42,
+        "pos": 3,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_36000_0_3",
+        "ref_n": 44,
+        "ref_pos": 15,
+        "n": 39,
+        "pos": 9,
+        "n_tumour": 24,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_26000_36000_1_1",
+        "ref_n": 65,
+        "ref_pos": 9,
+        "n": 51,
+        "pos": 7,
+        "n_tumour": 11,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_36000_2_0",
+        "ref_n": 67,
+        "ref_pos": 5,
+        "n": 57,
+        "pos": 5,
+        "n_tumour": 5,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_36000_2_2",
+        "ref_n": 70,
+        "ref_pos": 8,
+        "n": 63,
+        "pos": 8,
+        "n_tumour": 11,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_36000_2_3",
+        "ref_n": 65,
+        "ref_pos": 14,
+        "n": 53,
+        "pos": 14,
+        "n_tumour": 22,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_26000_36000_3_1",
+        "ref_n": 77,
+        "ref_pos": 5,
+        "n": 60,
+        "pos": 4,
+        "n_tumour": 3,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_36000_3_2",
+        "ref_n": 83,
+        "ref_pos": 11,
+        "n": 64,
+        "pos": 6,
+        "n_tumour": 7,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_36000_3_3",
+        "ref_n": 59,
+        "ref_pos": 13,
+        "n": 51,
+        "pos": 11,
+        "n_tumour": 23,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_38000_0_0",
+        "ref_n": 78,
+        "ref_pos": 7,
+        "n": 63,
+        "pos": 2,
+        "n_tumour": 20,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_38000_0_1",
+        "ref_n": 67,
+        "ref_pos": 5,
+        "n": 52,
+        "pos": 3,
+        "n_tumour": 11,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_38000_0_2",
+        "ref_n": 81,
+        "ref_pos": 9,
+        "n": 75,
+        "pos": 10,
+        "n_tumour": 19,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_26000_38000_0_3",
+        "ref_n": 98,
+        "ref_pos": 12,
+        "n": 74,
+        "pos": 10,
+        "n_tumour": 11,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_38000_1_0",
+        "ref_n": 76,
+        "ref_pos": 3,
+        "n": 63,
+        "pos": 1,
+        "n_tumour": 6,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_38000_2_0",
+        "ref_n": 84,
+        "ref_pos": 3,
+        "n": 72,
+        "pos": 1,
+        "n_tumour": 6,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_38000_2_1",
+        "ref_n": 81,
+        "ref_pos": 2,
+        "n": 65,
+        "pos": 1,
+        "n_tumour": 2,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_38000_2_3",
+        "ref_n": 66,
+        "ref_pos": 6,
+        "n": 57,
+        "pos": 5,
+        "n_tumour": 10,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_38000_3_1",
+        "ref_n": 75,
+        "ref_pos": 7,
+        "n": 60,
+        "pos": 5,
+        "n_tumour": 10,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_38000_3_2",
+        "ref_n": 66,
+        "ref_pos": 5,
+        "n": 57,
+        "pos": 3,
+        "n_tumour": 31,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_38000_3_3",
+        "ref_n": 54,
+        "ref_pos": 16,
+        "n": 60,
+        "pos": 22,
+        "n_tumour": 15,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_26000_40000_0_0",
+        "ref_n": 70,
+        "ref_pos": 15,
+        "n": 66,
+        "pos": 10,
+        "n_tumour": 10,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_40000_0_1",
+        "ref_n": 84,
+        "ref_pos": 10,
+        "n": 67,
+        "pos": 3,
+        "n_tumour": 7,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_40000_0_2",
+        "ref_n": 134,
+        "ref_pos": 10,
+        "n": 109,
+        "pos": 5,
+        "n_tumour": 2,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_40000_1_0",
+        "ref_n": 84,
+        "ref_pos": 19,
+        "n": 68,
+        "pos": 10,
+        "n_tumour": 15,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_40000_1_1",
+        "ref_n": 89,
+        "ref_pos": 8,
+        "n": 77,
+        "pos": 3,
+        "n_tumour": 10,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_40000_1_2",
+        "ref_n": 76,
+        "ref_pos": 10,
+        "n": 63,
+        "pos": 4,
+        "n_tumour": 28,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_40000_2_0",
+        "ref_n": 70,
+        "ref_pos": 13,
+        "n": 48,
+        "pos": 3,
+        "n_tumour": 20,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_40000_2_2",
+        "ref_n": 68,
+        "ref_pos": 7,
+        "n": 59,
+        "pos": 3,
+        "n_tumour": 6,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_40000_2_3",
+        "ref_n": 59,
+        "ref_pos": 7,
+        "n": 50,
+        "pos": 3,
+        "n_tumour": 4,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_40000_3_0",
+        "ref_n": 66,
+        "ref_pos": 14,
+        "n": 66,
+        "pos": 7,
+        "n_tumour": 18,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_40000_3_1",
+        "ref_n": 66,
+        "ref_pos": 20,
+        "n": 59,
+        "pos": 16,
+        "n_tumour": 33,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_26000_40000_3_2",
+        "ref_n": 66,
+        "ref_pos": 6,
+        "n": 57,
+        "pos": 4,
+        "n_tumour": 28,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_40000_3_3",
+        "ref_n": 61,
+        "ref_pos": 4,
+        "n": 56,
+        "pos": 2,
+        "n_tumour": 20,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_42000_0_0",
+        "ref_n": 42,
+        "ref_pos": 4,
+        "n": 42,
+        "pos": 0,
+        "n_tumour": 16,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_42000_0_1",
+        "ref_n": 62,
+        "ref_pos": 23,
+        "n": 59,
+        "pos": 14,
+        "n_tumour": 29,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_26000_42000_0_2",
+        "ref_n": 75,
+        "ref_pos": 11,
+        "n": 60,
+        "pos": 5,
+        "n_tumour": 22,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_42000_0_3",
+        "ref_n": 60,
+        "ref_pos": 9,
+        "n": 56,
+        "pos": 2,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_42000_1_1",
+        "ref_n": 55,
+        "ref_pos": 16,
+        "n": 47,
+        "pos": 11,
+        "n_tumour": 18,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_26000_42000_1_2",
+        "ref_n": 65,
+        "ref_pos": 7,
+        "n": 59,
+        "pos": 2,
+        "n_tumour": 13,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_42000_1_3",
+        "ref_n": 60,
+        "ref_pos": 14,
+        "n": 70,
+        "pos": 2,
+        "n_tumour": 2,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_42000_2_0",
+        "ref_n": 61,
+        "ref_pos": 11,
+        "n": 53,
+        "pos": 6,
+        "n_tumour": 15,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_42000_2_1",
+        "ref_n": 60,
+        "ref_pos": 10,
+        "n": 55,
+        "pos": 5,
+        "n_tumour": 25,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_42000_2_2",
+        "ref_n": 74,
+        "ref_pos": 12,
+        "n": 56,
+        "pos": 5,
+        "n_tumour": 19,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_42000_2_3",
+        "ref_n": 59,
+        "ref_pos": 0,
+        "n": 56,
+        "pos": 0,
+        "n_tumour": 30,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_42000_3_0",
+        "ref_n": 84,
+        "ref_pos": 6,
+        "n": 83,
+        "pos": 1,
+        "n_tumour": 22,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_42000_3_1",
+        "ref_n": 86,
+        "ref_pos": 8,
+        "n": 79,
+        "pos": 1,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_42000_3_2",
+        "ref_n": 59,
+        "ref_pos": 9,
+        "n": 59,
+        "pos": 3,
+        "n_tumour": 39,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_26000_42000_3_3",
+        "ref_n": 63,
+        "ref_pos": 5,
+        "n": 58,
+        "pos": 4,
+        "n_tumour": 21,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_44000_0_0",
+        "ref_n": 74,
+        "ref_pos": 10,
+        "n": 76,
+        "pos": 1,
+        "n_tumour": 19,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_0_1",
+        "ref_n": 81,
+        "ref_pos": 10,
+        "n": 82,
+        "pos": 1,
+        "n_tumour": 27,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_44000_0_2",
+        "ref_n": 78,
+        "ref_pos": 7,
+        "n": 74,
+        "pos": 3,
+        "n_tumour": 22,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_44000_0_3",
+        "ref_n": 80,
+        "ref_pos": 15,
+        "n": 68,
+        "pos": 6,
+        "n_tumour": 30,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_26000_44000_1_0",
+        "ref_n": 66,
+        "ref_pos": 8,
+        "n": 61,
+        "pos": 1,
+        "n_tumour": 18,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_1_1",
+        "ref_n": 63,
+        "ref_pos": 10,
+        "n": 63,
+        "pos": 0,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_1_2",
+        "ref_n": 65,
+        "ref_pos": 1,
+        "n": 63,
+        "pos": 0,
+        "n_tumour": 32,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_1_3",
+        "ref_n": 68,
+        "ref_pos": 14,
+        "n": 60,
+        "pos": 6,
+        "n_tumour": 34,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_26000_44000_2_1",
+        "ref_n": 76,
+        "ref_pos": 9,
+        "n": 73,
+        "pos": 0,
+        "n_tumour": 30,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_2_3",
+        "ref_n": 63,
+        "ref_pos": 5,
+        "n": 56,
+        "pos": 1,
+        "n_tumour": 24,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_26000_44000_3_0",
+        "ref_n": 75,
+        "ref_pos": 5,
+        "n": 73,
+        "pos": 0,
+        "n_tumour": 27,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_3_1",
+        "ref_n": 58,
+        "ref_pos": 10,
+        "n": 51,
+        "pos": 0,
+        "n_tumour": 19,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_26000_44000_3_3",
+        "ref_n": 62,
+        "ref_pos": 2,
+        "n": 59,
+        "pos": 1,
+        "n_tumour": 31,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_14000_0_0",
+        "ref_n": 72,
+        "ref_pos": 10,
+        "n": 52,
+        "pos": 6,
+        "n_tumour": 13,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_14000_0_2",
+        "ref_n": 34,
+        "ref_pos": 4,
+        "n": 26,
+        "pos": 1,
+        "n_tumour": 9,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_14000_0_3",
+        "ref_n": 21,
+        "ref_pos": 3,
+        "n": 17,
+        "pos": 1,
+        "n_tumour": 8,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_14000_1_1",
+        "ref_n": 59,
+        "ref_pos": 3,
+        "n": 40,
+        "pos": 2,
+        "n_tumour": 6,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_14000_1_2",
+        "ref_n": 85,
+        "ref_pos": 6,
+        "n": 60,
+        "pos": 5,
+        "n_tumour": 10,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_14000_1_3",
+        "ref_n": 57,
+        "ref_pos": 10,
+        "n": 37,
+        "pos": 2,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_14000_2_0",
+        "ref_n": 62,
+        "ref_pos": 13,
+        "n": 47,
+        "pos": 8,
+        "n_tumour": 18,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_14000_2_1",
+        "ref_n": 88,
+        "ref_pos": 3,
+        "n": 62,
+        "pos": 1,
+        "n_tumour": 8,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_14000_2_2",
+        "ref_n": 83,
+        "ref_pos": 7,
+        "n": 58,
+        "pos": 6,
+        "n_tumour": 7,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_14000_3_1",
+        "ref_n": 103,
+        "ref_pos": 11,
+        "n": 75,
+        "pos": 9,
+        "n_tumour": 8,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_14000_3_2",
+        "ref_n": 79,
+        "ref_pos": 8,
+        "n": 54,
+        "pos": 3,
+        "n_tumour": 12,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_14000_3_3",
+        "ref_n": 48,
+        "ref_pos": 9,
+        "n": 37,
+        "pos": 7,
+        "n_tumour": 15,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_16000_0_0",
+        "ref_n": 52,
+        "ref_pos": 2,
+        "n": 39,
+        "pos": 4,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_16000_0_1",
+        "ref_n": 30,
+        "ref_pos": 2,
+        "n": 25,
+        "pos": 0,
+        "n_tumour": 17,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_16000_0_2",
+        "ref_n": 94,
+        "ref_pos": 13,
+        "n": 68,
+        "pos": 4,
+        "n_tumour": 7,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_16000_0_3",
+        "ref_n": 87,
+        "ref_pos": 9,
+        "n": 67,
+        "pos": 8,
+        "n_tumour": 7,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_16000_1_0",
+        "ref_n": 38,
+        "ref_pos": 5,
+        "n": 35,
+        "pos": 4,
+        "n_tumour": 31,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_16000_1_1",
+        "ref_n": 40,
+        "ref_pos": 3,
+        "n": 36,
+        "pos": 2,
+        "n_tumour": 22,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_16000_1_2",
+        "ref_n": 80,
+        "ref_pos": 5,
+        "n": 55,
+        "pos": 4,
+        "n_tumour": 8,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_16000_1_3",
+        "ref_n": 62,
+        "ref_pos": 10,
+        "n": 54,
+        "pos": 5,
+        "n_tumour": 12,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_16000_2_0",
+        "ref_n": 79,
+        "ref_pos": 14,
+        "n": 56,
+        "pos": 6,
+        "n_tumour": 23,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_16000_2_3",
+        "ref_n": 61,
+        "ref_pos": 9,
+        "n": 45,
+        "pos": 5,
+        "n_tumour": 18,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_16000_3_0",
+        "ref_n": 60,
+        "ref_pos": 7,
+        "n": 61,
+        "pos": 7,
+        "n_tumour": 22,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_16000_3_1",
+        "ref_n": 60,
+        "ref_pos": 7,
+        "n": 56,
+        "pos": 6,
+        "n_tumour": 25,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_16000_3_2",
+        "ref_n": 71,
+        "ref_pos": 18,
+        "n": 59,
+        "pos": 16,
+        "n_tumour": 36,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_28000_16000_3_3",
+        "ref_n": 59,
+        "ref_pos": 10,
+        "n": 52,
+        "pos": 7,
+        "n_tumour": 19,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_18000_0_0",
+        "ref_n": 82,
+        "ref_pos": 8,
+        "n": 75,
+        "pos": 8,
+        "n_tumour": 16,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_28000_18000_0_1",
+        "ref_n": 79,
+        "ref_pos": 11,
+        "n": 71,
+        "pos": 10,
+        "n_tumour": 20,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_18000_0_2",
+        "ref_n": 62,
+        "ref_pos": 15,
+        "n": 52,
+        "pos": 10,
+        "n_tumour": 23,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_28000_18000_0_3",
+        "ref_n": 69,
+        "ref_pos": 11,
+        "n": 56,
+        "pos": 7,
+        "n_tumour": 15,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_18000_1_2",
+        "ref_n": 85,
+        "ref_pos": 12,
+        "n": 70,
+        "pos": 5,
+        "n_tumour": 16,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_18000_2_0",
+        "ref_n": 46,
+        "ref_pos": 5,
+        "n": 47,
+        "pos": 1,
+        "n_tumour": 25,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_18000_2_1",
+        "ref_n": 56,
+        "ref_pos": 7,
+        "n": 48,
+        "pos": 7,
+        "n_tumour": 26,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_18000_2_2",
+        "ref_n": 78,
+        "ref_pos": 7,
+        "n": 65,
+        "pos": 6,
+        "n_tumour": 32,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_18000_2_3",
+        "ref_n": 90,
+        "ref_pos": 11,
+        "n": 74,
+        "pos": 8,
+        "n_tumour": 18,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_18000_3_0",
+        "ref_n": 50,
+        "ref_pos": 6,
+        "n": 59,
+        "pos": 2,
+        "n_tumour": 14,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_18000_3_2",
+        "ref_n": 40,
+        "ref_pos": 1,
+        "n": 46,
+        "pos": 3,
+        "n_tumour": 28,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_18000_3_3",
+        "ref_n": 73,
+        "ref_pos": 0,
+        "n": 66,
+        "pos": 6,
+        "n_tumour": 16,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_20000_0_0",
+        "ref_n": 76,
+        "ref_pos": 31,
+        "n": 70,
+        "pos": 2,
+        "n_tumour": 27,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_20000_0_1",
+        "ref_n": 48,
+        "ref_pos": 22,
+        "n": 50,
+        "pos": 3,
+        "n_tumour": 31,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_20000_0_3",
+        "ref_n": 71,
+        "ref_pos": 34,
+        "n": 56,
+        "pos": 6,
+        "n_tumour": 21,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_20000_1_0",
+        "ref_n": 43,
+        "ref_pos": 21,
+        "n": 39,
+        "pos": 4,
+        "n_tumour": 24,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_20000_1_2",
+        "ref_n": 67,
+        "ref_pos": 28,
+        "n": 51,
+        "pos": 6,
+        "n_tumour": 21,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_20000_1_3",
+        "ref_n": 57,
+        "ref_pos": 30,
+        "n": 51,
+        "pos": 13,
+        "n_tumour": 23,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_28000_20000_2_2",
+        "ref_n": 57,
+        "ref_pos": 18,
+        "n": 52,
+        "pos": 4,
+        "n_tumour": 17,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_20000_2_3",
+        "ref_n": 70,
+        "ref_pos": 29,
+        "n": 66,
+        "pos": 3,
+        "n_tumour": 21,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_20000_3_0",
+        "ref_n": 64,
+        "ref_pos": 33,
+        "n": 67,
+        "pos": 2,
+        "n_tumour": 11,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_20000_3_1",
+        "ref_n": 57,
+        "ref_pos": 24,
+        "n": 60,
+        "pos": 5,
+        "n_tumour": 29,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_20000_3_2",
+        "ref_n": 40,
+        "ref_pos": 24,
+        "n": 44,
+        "pos": 13,
+        "n_tumour": 34,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_28000_20000_3_3",
+        "ref_n": 39,
+        "ref_pos": 21,
+        "n": 39,
+        "pos": 12,
+        "n_tumour": 30,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_28000_22000_0_0",
+        "ref_n": 76,
+        "ref_pos": 10,
+        "n": 64,
+        "pos": 8,
+        "n_tumour": 34,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_22000_0_1",
+        "ref_n": 76,
+        "ref_pos": 12,
+        "n": 63,
+        "pos": 11,
+        "n_tumour": 32,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_28000_22000_0_2",
+        "ref_n": 75,
+        "ref_pos": 6,
+        "n": 74,
+        "pos": 7,
+        "n_tumour": 10,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_22000_0_3",
+        "ref_n": 46,
+        "ref_pos": 12,
+        "n": 42,
+        "pos": 6,
+        "n_tumour": 24,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_22000_1_0",
+        "ref_n": 75,
+        "ref_pos": 18,
+        "n": 69,
+        "pos": 9,
+        "n_tumour": 26,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_28000_22000_1_1",
+        "ref_n": 65,
+        "ref_pos": 17,
+        "n": 59,
+        "pos": 15,
+        "n_tumour": 36,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_28000_22000_1_2",
+        "ref_n": 72,
+        "ref_pos": 17,
+        "n": 55,
+        "pos": 10,
+        "n_tumour": 27,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_28000_22000_1_3",
+        "ref_n": 49,
+        "ref_pos": 15,
+        "n": 46,
+        "pos": 8,
+        "n_tumour": 28,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_22000_2_0",
+        "ref_n": 69,
+        "ref_pos": 16,
+        "n": 70,
+        "pos": 10,
+        "n_tumour": 28,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_22000_2_1",
+        "ref_n": 66,
+        "ref_pos": 14,
+        "n": 59,
+        "pos": 7,
+        "n_tumour": 36,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_22000_2_2",
+        "ref_n": 44,
+        "ref_pos": 5,
+        "n": 39,
+        "pos": 2,
+        "n_tumour": 27,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_22000_2_3",
+        "ref_n": 59,
+        "ref_pos": 14,
+        "n": 57,
+        "pos": 7,
+        "n_tumour": 22,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_22000_3_0",
+        "ref_n": 63,
+        "ref_pos": 18,
+        "n": 56,
+        "pos": 16,
+        "n_tumour": 27,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_28000_22000_3_1",
+        "ref_n": 48,
+        "ref_pos": 9,
+        "n": 48,
+        "pos": 9,
+        "n_tumour": 31,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_24000_0_0",
+        "ref_n": 73,
+        "ref_pos": 12,
+        "n": 72,
+        "pos": 11,
+        "n_tumour": 30,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_28000_24000_0_1",
+        "ref_n": 48,
+        "ref_pos": 21,
+        "n": 40,
+        "pos": 17,
+        "n_tumour": 26,
+        "pos_tumour": 17
+      },
+      {
+        "name": "Lung_28000_24000_0_2",
+        "ref_n": 53,
+        "ref_pos": 16,
+        "n": 45,
+        "pos": 7,
+        "n_tumour": 33,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_28000_24000_0_3",
+        "ref_n": 52,
+        "ref_pos": 9,
+        "n": 49,
+        "pos": 6,
+        "n_tumour": 30,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_24000_1_0",
+        "ref_n": 68,
+        "ref_pos": 7,
+        "n": 65,
+        "pos": 6,
+        "n_tumour": 23,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_24000_1_1",
+        "ref_n": 78,
+        "ref_pos": 7,
+        "n": 59,
+        "pos": 4,
+        "n_tumour": 13,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_24000_1_2",
+        "ref_n": 61,
+        "ref_pos": 10,
+        "n": 55,
+        "pos": 10,
+        "n_tumour": 28,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_28000_24000_1_3",
+        "ref_n": 68,
+        "ref_pos": 10,
+        "n": 59,
+        "pos": 4,
+        "n_tumour": 18,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_24000_2_0",
+        "ref_n": 38,
+        "ref_pos": 11,
+        "n": 36,
+        "pos": 9,
+        "n_tumour": 28,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_28000_24000_2_3",
+        "ref_n": 39,
+        "ref_pos": 7,
+        "n": 38,
+        "pos": 8,
+        "n_tumour": 25,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_24000_3_1",
+        "ref_n": 41,
+        "ref_pos": 2,
+        "n": 43,
+        "pos": 2,
+        "n_tumour": 22,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_24000_3_2",
+        "ref_n": 53,
+        "ref_pos": 4,
+        "n": 52,
+        "pos": 3,
+        "n_tumour": 35,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_24000_3_3",
+        "ref_n": 48,
+        "ref_pos": 7,
+        "n": 48,
+        "pos": 3,
+        "n_tumour": 15,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_26000_0_0",
+        "ref_n": 45,
+        "ref_pos": 21,
+        "n": 41,
+        "pos": 18,
+        "n_tumour": 38,
+        "pos_tumour": 17
+      },
+      {
+        "name": "Lung_28000_26000_0_1",
+        "ref_n": 53,
+        "ref_pos": 15,
+        "n": 45,
+        "pos": 13,
+        "n_tumour": 32,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_28000_26000_0_2",
+        "ref_n": 61,
+        "ref_pos": 14,
+        "n": 52,
+        "pos": 19,
+        "n_tumour": 28,
+        "pos_tumour": 15
+      },
+      {
+        "name": "Lung_28000_26000_0_3",
+        "ref_n": 80,
+        "ref_pos": 15,
+        "n": 69,
+        "pos": 13,
+        "n_tumour": 23,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_28000_26000_1_0",
+        "ref_n": 60,
+        "ref_pos": 19,
+        "n": 50,
+        "pos": 18,
+        "n_tumour": 24,
+        "pos_tumour": 16
+      },
+      {
+        "name": "Lung_28000_26000_1_1",
+        "ref_n": 84,
+        "ref_pos": 15,
+        "n": 72,
+        "pos": 15,
+        "n_tumour": 21,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_28000_26000_1_3",
+        "ref_n": 57,
+        "ref_pos": 3,
+        "n": 51,
+        "pos": 3,
+        "n_tumour": 23,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_26000_2_0",
+        "ref_n": 56,
+        "ref_pos": 22,
+        "n": 46,
+        "pos": 15,
+        "n_tumour": 27,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_28000_26000_2_1",
+        "ref_n": 74,
+        "ref_pos": 11,
+        "n": 56,
+        "pos": 11,
+        "n_tumour": 16,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_28000_26000_2_2",
+        "ref_n": 66,
+        "ref_pos": 4,
+        "n": 52,
+        "pos": 4,
+        "n_tumour": 31,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_26000_2_3",
+        "ref_n": 78,
+        "ref_pos": 9,
+        "n": 65,
+        "pos": 7,
+        "n_tumour": 30,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_26000_3_0",
+        "ref_n": 62,
+        "ref_pos": 17,
+        "n": 49,
+        "pos": 13,
+        "n_tumour": 31,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_28000_26000_3_1",
+        "ref_n": 59,
+        "ref_pos": 21,
+        "n": 46,
+        "pos": 12,
+        "n_tumour": 27,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_28000_26000_3_3",
+        "ref_n": 74,
+        "ref_pos": 6,
+        "n": 60,
+        "pos": 5,
+        "n_tumour": 32,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_28000_0_0",
+        "ref_n": 70,
+        "ref_pos": 8,
+        "n": 61,
+        "pos": 9,
+        "n_tumour": 9,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_28000_0_1",
+        "ref_n": 74,
+        "ref_pos": 9,
+        "n": 59,
+        "pos": 8,
+        "n_tumour": 21,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_28000_0_2",
+        "ref_n": 75,
+        "ref_pos": 3,
+        "n": 60,
+        "pos": 2,
+        "n_tumour": 32,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_28000_0_3",
+        "ref_n": 82,
+        "ref_pos": 12,
+        "n": 71,
+        "pos": 1,
+        "n_tumour": 36,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_28000_1_0",
+        "ref_n": 56,
+        "ref_pos": 2,
+        "n": 46,
+        "pos": 0,
+        "n_tumour": 11,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_28000_1_1",
+        "ref_n": 65,
+        "ref_pos": 4,
+        "n": 52,
+        "pos": 2,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_28000_1_2",
+        "ref_n": 74,
+        "ref_pos": 6,
+        "n": 68,
+        "pos": 7,
+        "n_tumour": 5,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_28000_1_3",
+        "ref_n": 67,
+        "ref_pos": 5,
+        "n": 53,
+        "pos": 3,
+        "n_tumour": 33,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_28000_2_0",
+        "ref_n": 92,
+        "ref_pos": 1,
+        "n": 74,
+        "pos": 0,
+        "n_tumour": 5,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_28000_2_1",
+        "ref_n": 78,
+        "ref_pos": 7,
+        "n": 58,
+        "pos": 6,
+        "n_tumour": 18,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_28000_2_2",
+        "ref_n": 67,
+        "ref_pos": 0,
+        "n": 58,
+        "pos": 0,
+        "n_tumour": 24,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_28000_2_3",
+        "ref_n": 70,
+        "ref_pos": 6,
+        "n": 60,
+        "pos": 4,
+        "n_tumour": 14,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_28000_3_0",
+        "ref_n": 45,
+        "ref_pos": 12,
+        "n": 47,
+        "pos": 13,
+        "n_tumour": 23,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_28000_28000_3_1",
+        "ref_n": 69,
+        "ref_pos": 7,
+        "n": 58,
+        "pos": 4,
+        "n_tumour": 12,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_28000_3_2",
+        "ref_n": 61,
+        "ref_pos": 4,
+        "n": 57,
+        "pos": 5,
+        "n_tumour": 29,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_28000_3_3",
+        "ref_n": 63,
+        "ref_pos": 3,
+        "n": 62,
+        "pos": 4,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_30000_0_1",
+        "ref_n": 59,
+        "ref_pos": 4,
+        "n": 46,
+        "pos": 7,
+        "n_tumour": 15,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_30000_0_2",
+        "ref_n": 49,
+        "ref_pos": 4,
+        "n": 37,
+        "pos": 2,
+        "n_tumour": 10,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_30000_0_3",
+        "ref_n": 60,
+        "ref_pos": 10,
+        "n": 50,
+        "pos": 11,
+        "n_tumour": 13,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_30000_1_1",
+        "ref_n": 77,
+        "ref_pos": 13,
+        "n": 54,
+        "pos": 14,
+        "n_tumour": 12,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_28000_30000_1_2",
+        "ref_n": 66,
+        "ref_pos": 8,
+        "n": 51,
+        "pos": 5,
+        "n_tumour": 15,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_30000_1_3",
+        "ref_n": 74,
+        "ref_pos": 10,
+        "n": 60,
+        "pos": 7,
+        "n_tumour": 16,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_30000_2_1",
+        "ref_n": 67,
+        "ref_pos": 7,
+        "n": 52,
+        "pos": 5,
+        "n_tumour": 12,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_30000_2_3",
+        "ref_n": 56,
+        "ref_pos": 9,
+        "n": 45,
+        "pos": 9,
+        "n_tumour": 28,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_28000_30000_3_0",
+        "ref_n": 60,
+        "ref_pos": 0,
+        "n": 59,
+        "pos": 0,
+        "n_tumour": 27,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_30000_3_1",
+        "ref_n": 59,
+        "ref_pos": 6,
+        "n": 48,
+        "pos": 3,
+        "n_tumour": 7,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_30000_3_2",
+        "ref_n": 75,
+        "ref_pos": 5,
+        "n": 56,
+        "pos": 2,
+        "n_tumour": 13,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_30000_3_3",
+        "ref_n": 53,
+        "ref_pos": 12,
+        "n": 35,
+        "pos": 5,
+        "n_tumour": 10,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_32000_0_0",
+        "ref_n": 46,
+        "ref_pos": 1,
+        "n": 37,
+        "pos": 1,
+        "n_tumour": 3,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_32000_0_1",
+        "ref_n": 61,
+        "ref_pos": 2,
+        "n": 50,
+        "pos": 2,
+        "n_tumour": 3,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_32000_0_2",
+        "ref_n": 63,
+        "ref_pos": 1,
+        "n": 52,
+        "pos": 1,
+        "n_tumour": 14,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_32000_0_3",
+        "ref_n": 50,
+        "ref_pos": 5,
+        "n": 42,
+        "pos": 3,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_32000_1_1",
+        "ref_n": 55,
+        "ref_pos": 6,
+        "n": 40,
+        "pos": 3,
+        "n_tumour": 12,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_32000_1_2",
+        "ref_n": 59,
+        "ref_pos": 10,
+        "n": 50,
+        "pos": 7,
+        "n_tumour": 22,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_32000_1_3",
+        "ref_n": 68,
+        "ref_pos": 11,
+        "n": 60,
+        "pos": 7,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_32000_2_1",
+        "ref_n": 57,
+        "ref_pos": 18,
+        "n": 42,
+        "pos": 12,
+        "n_tumour": 26,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_28000_32000_2_3",
+        "ref_n": 78,
+        "ref_pos": 20,
+        "n": 58,
+        "pos": 11,
+        "n_tumour": 28,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_28000_32000_3_1",
+        "ref_n": 63,
+        "ref_pos": 12,
+        "n": 52,
+        "pos": 15,
+        "n_tumour": 23,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_28000_32000_3_2",
+        "ref_n": 64,
+        "ref_pos": 17,
+        "n": 55,
+        "pos": 16,
+        "n_tumour": 35,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_28000_32000_3_3",
+        "ref_n": 76,
+        "ref_pos": 20,
+        "n": 55,
+        "pos": 14,
+        "n_tumour": 30,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_28000_34000_0_0",
+        "ref_n": 60,
+        "ref_pos": 10,
+        "n": 52,
+        "pos": 3,
+        "n_tumour": 28,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_34000_0_3",
+        "ref_n": 70,
+        "ref_pos": 9,
+        "n": 63,
+        "pos": 5,
+        "n_tumour": 30,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_34000_1_0",
+        "ref_n": 58,
+        "ref_pos": 5,
+        "n": 48,
+        "pos": 2,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_34000_1_1",
+        "ref_n": 60,
+        "ref_pos": 4,
+        "n": 58,
+        "pos": 2,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_34000_1_2",
+        "ref_n": 50,
+        "ref_pos": 1,
+        "n": 54,
+        "pos": 1,
+        "n_tumour": 25,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_34000_1_3",
+        "ref_n": 64,
+        "ref_pos": 5,
+        "n": 52,
+        "pos": 4,
+        "n_tumour": 17,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_34000_2_0",
+        "ref_n": 68,
+        "ref_pos": 3,
+        "n": 41,
+        "pos": 1,
+        "n_tumour": 12,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_34000_2_1",
+        "ref_n": 50,
+        "ref_pos": 2,
+        "n": 43,
+        "pos": 1,
+        "n_tumour": 1,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_34000_2_3",
+        "ref_n": 68,
+        "ref_pos": 17,
+        "n": 48,
+        "pos": 9,
+        "n_tumour": 16,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_34000_3_1",
+        "ref_n": 66,
+        "ref_pos": 14,
+        "n": 54,
+        "pos": 8,
+        "n_tumour": 18,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_34000_3_2",
+        "ref_n": 54,
+        "ref_pos": 14,
+        "n": 39,
+        "pos": 8,
+        "n_tumour": 19,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_36000_0_0",
+        "ref_n": 55,
+        "ref_pos": 16,
+        "n": 45,
+        "pos": 8,
+        "n_tumour": 31,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_36000_0_1",
+        "ref_n": 62,
+        "ref_pos": 11,
+        "n": 53,
+        "pos": 2,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_36000_0_2",
+        "ref_n": 69,
+        "ref_pos": 20,
+        "n": 55,
+        "pos": 10,
+        "n_tumour": 9,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_36000_0_3",
+        "ref_n": 76,
+        "ref_pos": 8,
+        "n": 62,
+        "pos": 4,
+        "n_tumour": 9,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_36000_1_0",
+        "ref_n": 86,
+        "ref_pos": 11,
+        "n": 72,
+        "pos": 7,
+        "n_tumour": 14,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_36000_1_1",
+        "ref_n": 93,
+        "ref_pos": 13,
+        "n": 66,
+        "pos": 5,
+        "n_tumour": 6,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_36000_1_2",
+        "ref_n": 71,
+        "ref_pos": 13,
+        "n": 64,
+        "pos": 7,
+        "n_tumour": 28,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_36000_1_3",
+        "ref_n": 52,
+        "ref_pos": 5,
+        "n": 49,
+        "pos": 3,
+        "n_tumour": 23,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_36000_2_0",
+        "ref_n": 65,
+        "ref_pos": 14,
+        "n": 52,
+        "pos": 8,
+        "n_tumour": 11,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_36000_2_1",
+        "ref_n": 48,
+        "ref_pos": 20,
+        "n": 39,
+        "pos": 14,
+        "n_tumour": 37,
+        "pos_tumour": 14
+      },
+      {
+        "name": "Lung_28000_36000_2_3",
+        "ref_n": 65,
+        "ref_pos": 4,
+        "n": 56,
+        "pos": 2,
+        "n_tumour": 30,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_36000_3_2",
+        "ref_n": 64,
+        "ref_pos": 22,
+        "n": 58,
+        "pos": 15,
+        "n_tumour": 26,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_28000_36000_3_3",
+        "ref_n": 69,
+        "ref_pos": 20,
+        "n": 58,
+        "pos": 10,
+        "n_tumour": 21,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_40000_0_0",
+        "ref_n": 64,
+        "ref_pos": 3,
+        "n": 50,
+        "pos": 2,
+        "n_tumour": 12,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_40000_0_1",
+        "ref_n": 42,
+        "ref_pos": 0,
+        "n": 49,
+        "pos": 0,
+        "n_tumour": 4,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_40000_0_3",
+        "ref_n": 83,
+        "ref_pos": 4,
+        "n": 63,
+        "pos": 2,
+        "n_tumour": 20,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_40000_1_0",
+        "ref_n": 72,
+        "ref_pos": 4,
+        "n": 64,
+        "pos": 2,
+        "n_tumour": 5,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_40000_1_1",
+        "ref_n": 55,
+        "ref_pos": 2,
+        "n": 51,
+        "pos": 1,
+        "n_tumour": 6,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_40000_1_2",
+        "ref_n": 68,
+        "ref_pos": 1,
+        "n": 57,
+        "pos": 1,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_40000_1_3",
+        "ref_n": 79,
+        "ref_pos": 10,
+        "n": 62,
+        "pos": 8,
+        "n_tumour": 11,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_28000_40000_2_0",
+        "ref_n": 42,
+        "ref_pos": 3,
+        "n": 49,
+        "pos": 1,
+        "n_tumour": 4,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_40000_2_2",
+        "ref_n": 47,
+        "ref_pos": 4,
+        "n": 40,
+        "pos": 4,
+        "n_tumour": 6,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_40000_2_3",
+        "ref_n": 77,
+        "ref_pos": 2,
+        "n": 64,
+        "pos": 3,
+        "n_tumour": 4,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_40000_3_2",
+        "ref_n": 50,
+        "ref_pos": 6,
+        "n": 48,
+        "pos": 5,
+        "n_tumour": 11,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_40000_3_3",
+        "ref_n": 76,
+        "ref_pos": 14,
+        "n": 54,
+        "pos": 13,
+        "n_tumour": 18,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_28000_42000_0_0",
+        "ref_n": 68,
+        "ref_pos": 17,
+        "n": 74,
+        "pos": 4,
+        "n_tumour": 33,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_42000_0_2",
+        "ref_n": 55,
+        "ref_pos": 6,
+        "n": 56,
+        "pos": 1,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_42000_1_1",
+        "ref_n": 55,
+        "ref_pos": 19,
+        "n": 63,
+        "pos": 4,
+        "n_tumour": 13,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_42000_1_2",
+        "ref_n": 43,
+        "ref_pos": 8,
+        "n": 36,
+        "pos": 1,
+        "n_tumour": 3,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_42000_1_3",
+        "ref_n": 75,
+        "ref_pos": 12,
+        "n": 61,
+        "pos": 11,
+        "n_tumour": 19,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_28000_42000_2_0",
+        "ref_n": 81,
+        "ref_pos": 5,
+        "n": 83,
+        "pos": 1,
+        "n_tumour": 22,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_42000_2_1",
+        "ref_n": 60,
+        "ref_pos": 12,
+        "n": 48,
+        "pos": 4,
+        "n_tumour": 31,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_42000_2_2",
+        "ref_n": 68,
+        "ref_pos": 14,
+        "n": 58,
+        "pos": 7,
+        "n_tumour": 20,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_42000_3_0",
+        "ref_n": 99,
+        "ref_pos": 11,
+        "n": 84,
+        "pos": 3,
+        "n_tumour": 13,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_42000_3_1",
+        "ref_n": 54,
+        "ref_pos": 16,
+        "n": 44,
+        "pos": 7,
+        "n_tumour": 23,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_42000_3_3",
+        "ref_n": 48,
+        "ref_pos": 13,
+        "n": 55,
+        "pos": 10,
+        "n_tumour": 40,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_28000_44000_0_1",
+        "ref_n": 80,
+        "ref_pos": 11,
+        "n": 73,
+        "pos": 6,
+        "n_tumour": 17,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_44000_0_2",
+        "ref_n": 51,
+        "ref_pos": 14,
+        "n": 51,
+        "pos": 6,
+        "n_tumour": 28,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_28000_44000_0_3",
+        "ref_n": 65,
+        "ref_pos": 16,
+        "n": 58,
+        "pos": 4,
+        "n_tumour": 27,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_44000_1_0",
+        "ref_n": 79,
+        "ref_pos": 10,
+        "n": 63,
+        "pos": 9,
+        "n_tumour": 19,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_28000_44000_1_1",
+        "ref_n": 65,
+        "ref_pos": 3,
+        "n": 64,
+        "pos": 2,
+        "n_tumour": 13,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_44000_1_2",
+        "ref_n": 55,
+        "ref_pos": 9,
+        "n": 51,
+        "pos": 4,
+        "n_tumour": 33,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_28000_44000_2_0",
+        "ref_n": 60,
+        "ref_pos": 10,
+        "n": 55,
+        "pos": 3,
+        "n_tumour": 38,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_44000_2_1",
+        "ref_n": 65,
+        "ref_pos": 2,
+        "n": 69,
+        "pos": 2,
+        "n_tumour": 40,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_44000_2_3",
+        "ref_n": 86,
+        "ref_pos": 5,
+        "n": 73,
+        "pos": 1,
+        "n_tumour": 35,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_28000_44000_3_0",
+        "ref_n": 64,
+        "ref_pos": 2,
+        "n": 63,
+        "pos": 2,
+        "n_tumour": 38,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_44000_3_1",
+        "ref_n": 68,
+        "ref_pos": 2,
+        "n": 70,
+        "pos": 1,
+        "n_tumour": 18,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_28000_44000_3_2",
+        "ref_n": 80,
+        "ref_pos": 4,
+        "n": 70,
+        "pos": 3,
+        "n_tumour": 19,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_28000_44000_3_3",
+        "ref_n": 80,
+        "ref_pos": 13,
+        "n": 73,
+        "pos": 6,
+        "n_tumour": 22,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_30000_40000_0_0",
+        "ref_n": 84,
+        "ref_pos": 10,
+        "n": 78,
+        "pos": 4,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_30000_40000_0_1",
+        "ref_n": 67,
+        "ref_pos": 10,
+        "n": 57,
+        "pos": 4,
+        "n_tumour": 19,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_30000_40000_1_0",
+        "ref_n": 74,
+        "ref_pos": 14,
+        "n": 70,
+        "pos": 11,
+        "n_tumour": 9,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_30000_40000_1_1",
+        "ref_n": 55,
+        "ref_pos": 11,
+        "n": 42,
+        "pos": 4,
+        "n_tumour": 19,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_30000_40000_1_2",
+        "ref_n": 52,
+        "ref_pos": 3,
+        "n": 44,
+        "pos": 2,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_30000_40000_1_3",
+        "ref_n": 66,
+        "ref_pos": 4,
+        "n": 62,
+        "pos": 1,
+        "n_tumour": 17,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_30000_40000_2_0",
+        "ref_n": 78,
+        "ref_pos": 3,
+        "n": 70,
+        "pos": 2,
+        "n_tumour": 6,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_30000_40000_2_2",
+        "ref_n": 76,
+        "ref_pos": 7,
+        "n": 70,
+        "pos": 4,
+        "n_tumour": 10,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_30000_40000_2_3",
+        "ref_n": 93,
+        "ref_pos": 7,
+        "n": 75,
+        "pos": 3,
+        "n_tumour": 29,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_30000_40000_3_0",
+        "ref_n": 63,
+        "ref_pos": 7,
+        "n": 60,
+        "pos": 6,
+        "n_tumour": 25,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_30000_40000_3_1",
+        "ref_n": 71,
+        "ref_pos": 12,
+        "n": 63,
+        "pos": 6,
+        "n_tumour": 15,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_30000_40000_3_2",
+        "ref_n": 76,
+        "ref_pos": 13,
+        "n": 73,
+        "pos": 5,
+        "n_tumour": 33,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_30000_40000_3_3",
+        "ref_n": 101,
+        "ref_pos": 2,
+        "n": 84,
+        "pos": 1,
+        "n_tumour": 7,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_32000_32000_0_0",
+        "ref_n": 63,
+        "ref_pos": 3,
+        "n": 53,
+        "pos": 4,
+        "n_tumour": 12,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_32000_32000_0_1",
+        "ref_n": 52,
+        "ref_pos": 0,
+        "n": 45,
+        "pos": 3,
+        "n_tumour": 3,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_32000_32000_0_2",
+        "ref_n": 38,
+        "ref_pos": 0,
+        "n": 38,
+        "pos": 0,
+        "n_tumour": 2,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_32000_32000_0_3",
+        "ref_n": 25,
+        "ref_pos": 0,
+        "n": 30,
+        "pos": 0,
+        "n_tumour": 3,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_32000_32000_1_0",
+        "ref_n": 57,
+        "ref_pos": 13,
+        "n": 47,
+        "pos": 8,
+        "n_tumour": 32,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_32000_1_1",
+        "ref_n": 52,
+        "ref_pos": 20,
+        "n": 44,
+        "pos": 20,
+        "n_tumour": 30,
+        "pos_tumour": 19
+      },
+      {
+        "name": "Lung_32000_32000_1_2",
+        "ref_n": 73,
+        "ref_pos": 11,
+        "n": 58,
+        "pos": 6,
+        "n_tumour": 22,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_32000_1_3",
+        "ref_n": 62,
+        "ref_pos": 1,
+        "n": 50,
+        "pos": 2,
+        "n_tumour": 4,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_32000_32000_2_0",
+        "ref_n": 58,
+        "ref_pos": 4,
+        "n": 45,
+        "pos": 4,
+        "n_tumour": 9,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_32000_32000_2_1",
+        "ref_n": 81,
+        "ref_pos": 2,
+        "n": 69,
+        "pos": 2,
+        "n_tumour": 6,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_32000_32000_2_2",
+        "ref_n": 62,
+        "ref_pos": 10,
+        "n": 55,
+        "pos": 6,
+        "n_tumour": 24,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_32000_32000_2_3",
+        "ref_n": 51,
+        "ref_pos": 17,
+        "n": 46,
+        "pos": 15,
+        "n_tumour": 27,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_32000_32000_3_1",
+        "ref_n": 51,
+        "ref_pos": 4,
+        "n": 42,
+        "pos": 5,
+        "n_tumour": 26,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_32000_32000_3_2",
+        "ref_n": 70,
+        "ref_pos": 5,
+        "n": 57,
+        "pos": 2,
+        "n_tumour": 15,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_32000_34000_0_1",
+        "ref_n": 75,
+        "ref_pos": 11,
+        "n": 58,
+        "pos": 7,
+        "n_tumour": 6,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_32000_34000_0_2",
+        "ref_n": 71,
+        "ref_pos": 5,
+        "n": 63,
+        "pos": 3,
+        "n_tumour": 28,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_32000_34000_0_3",
+        "ref_n": 82,
+        "ref_pos": 11,
+        "n": 80,
+        "pos": 5,
+        "n_tumour": 64,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_32000_34000_1_0",
+        "ref_n": 72,
+        "ref_pos": 15,
+        "n": 61,
+        "pos": 10,
+        "n_tumour": 21,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_34000_1_2",
+        "ref_n": 80,
+        "ref_pos": 6,
+        "n": 70,
+        "pos": 2,
+        "n_tumour": 44,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_32000_34000_2_1",
+        "ref_n": 72,
+        "ref_pos": 12,
+        "n": 65,
+        "pos": 11,
+        "n_tumour": 39,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_32000_34000_2_2",
+        "ref_n": 53,
+        "ref_pos": 7,
+        "n": 48,
+        "pos": 6,
+        "n_tumour": 31,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_32000_34000_3_0",
+        "ref_n": 89,
+        "ref_pos": 15,
+        "n": 75,
+        "pos": 7,
+        "n_tumour": 20,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_32000_34000_3_1",
+        "ref_n": 77,
+        "ref_pos": 28,
+        "n": 59,
+        "pos": 18,
+        "n_tumour": 17,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_32000_34000_3_2",
+        "ref_n": 83,
+        "ref_pos": 20,
+        "n": 70,
+        "pos": 12,
+        "n_tumour": 9,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_32000_34000_3_3",
+        "ref_n": 69,
+        "ref_pos": 27,
+        "n": 60,
+        "pos": 13,
+        "n_tumour": 36,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_32000_36000_0_0",
+        "ref_n": 76,
+        "ref_pos": 14,
+        "n": 64,
+        "pos": 11,
+        "n_tumour": 19,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_36000_0_1",
+        "ref_n": 83,
+        "ref_pos": 28,
+        "n": 71,
+        "pos": 18,
+        "n_tumour": 28,
+        "pos_tumour": 14
+      },
+      {
+        "name": "Lung_32000_36000_0_2",
+        "ref_n": 65,
+        "ref_pos": 25,
+        "n": 64,
+        "pos": 23,
+        "n_tumour": 35,
+        "pos_tumour": 14
+      },
+      {
+        "name": "Lung_32000_36000_0_3",
+        "ref_n": 61,
+        "ref_pos": 10,
+        "n": 56,
+        "pos": 9,
+        "n_tumour": 27,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_32000_36000_1_0",
+        "ref_n": 57,
+        "ref_pos": 7,
+        "n": 52,
+        "pos": 3,
+        "n_tumour": 28,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_32000_36000_1_1",
+        "ref_n": 66,
+        "ref_pos": 10,
+        "n": 52,
+        "pos": 5,
+        "n_tumour": 27,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_32000_36000_1_3",
+        "ref_n": 69,
+        "ref_pos": 15,
+        "n": 58,
+        "pos": 11,
+        "n_tumour": 23,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_36000_2_0",
+        "ref_n": 77,
+        "ref_pos": 5,
+        "n": 65,
+        "pos": 3,
+        "n_tumour": 19,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_32000_36000_2_2",
+        "ref_n": 76,
+        "ref_pos": 23,
+        "n": 69,
+        "pos": 17,
+        "n_tumour": 18,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_36000_2_3",
+        "ref_n": 93,
+        "ref_pos": 18,
+        "n": 76,
+        "pos": 16,
+        "n_tumour": 17,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_32000_36000_3_0",
+        "ref_n": 82,
+        "ref_pos": 11,
+        "n": 76,
+        "pos": 9,
+        "n_tumour": 15,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_32000_36000_3_1",
+        "ref_n": 69,
+        "ref_pos": 15,
+        "n": 62,
+        "pos": 13,
+        "n_tumour": 31,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_32000_40000_0_0",
+        "ref_n": 56,
+        "ref_pos": 12,
+        "n": 48,
+        "pos": 9,
+        "n_tumour": 9,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_32000_40000_0_1",
+        "ref_n": 96,
+        "ref_pos": 13,
+        "n": 89,
+        "pos": 8,
+        "n_tumour": 19,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_32000_40000_0_2",
+        "ref_n": 86,
+        "ref_pos": 9,
+        "n": 73,
+        "pos": 4,
+        "n_tumour": 19,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_32000_40000_0_3",
+        "ref_n": 48,
+        "ref_pos": 21,
+        "n": 47,
+        "pos": 14,
+        "n_tumour": 30,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_32000_40000_1_0",
+        "ref_n": 43,
+        "ref_pos": 15,
+        "n": 37,
+        "pos": 6,
+        "n_tumour": 27,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_32000_40000_1_1",
+        "ref_n": 84,
+        "ref_pos": 16,
+        "n": 76,
+        "pos": 15,
+        "n_tumour": 23,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_32000_40000_1_2",
+        "ref_n": 70,
+        "ref_pos": 13,
+        "n": 66,
+        "pos": 15,
+        "n_tumour": 29,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_32000_40000_1_3",
+        "ref_n": 66,
+        "ref_pos": 15,
+        "n": 56,
+        "pos": 15,
+        "n_tumour": 22,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_32000_40000_2_0",
+        "ref_n": 72,
+        "ref_pos": 16,
+        "n": 70,
+        "pos": 14,
+        "n_tumour": 21,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_32000_40000_2_1",
+        "ref_n": 65,
+        "ref_pos": 14,
+        "n": 53,
+        "pos": 10,
+        "n_tumour": 22,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_40000_2_2",
+        "ref_n": 93,
+        "ref_pos": 6,
+        "n": 84,
+        "pos": 4,
+        "n_tumour": 20,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_32000_40000_3_0",
+        "ref_n": 50,
+        "ref_pos": 12,
+        "n": 57,
+        "pos": 9,
+        "n_tumour": 31,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_32000_40000_3_1",
+        "ref_n": 68,
+        "ref_pos": 13,
+        "n": 53,
+        "pos": 7,
+        "n_tumour": 27,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_32000_40000_3_2",
+        "ref_n": 109,
+        "ref_pos": 5,
+        "n": 94,
+        "pos": 3,
+        "n_tumour": 6,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_32000_40000_3_3",
+        "ref_n": 48,
+        "ref_pos": 6,
+        "n": 48,
+        "pos": 3,
+        "n_tumour": 36,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_34000_26000_0_0",
+        "ref_n": 62,
+        "ref_pos": 20,
+        "n": 51,
+        "pos": 16,
+        "n_tumour": 31,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_34000_26000_0_1",
+        "ref_n": 81,
+        "ref_pos": 21,
+        "n": 65,
+        "pos": 9,
+        "n_tumour": 29,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_34000_26000_0_2",
+        "ref_n": 80,
+        "ref_pos": 17,
+        "n": 64,
+        "pos": 7,
+        "n_tumour": 23,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_34000_26000_0_3",
+        "ref_n": 112,
+        "ref_pos": 5,
+        "n": 86,
+        "pos": 2,
+        "n_tumour": 16,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_34000_26000_1_0",
+        "ref_n": 62,
+        "ref_pos": 34,
+        "n": 43,
+        "pos": 13,
+        "n_tumour": 32,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_34000_26000_1_1",
+        "ref_n": 55,
+        "ref_pos": 14,
+        "n": 49,
+        "pos": 9,
+        "n_tumour": 27,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_34000_26000_1_2",
+        "ref_n": 74,
+        "ref_pos": 14,
+        "n": 69,
+        "pos": 10,
+        "n_tumour": 39,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_34000_26000_1_3",
+        "ref_n": 51,
+        "ref_pos": 22,
+        "n": 43,
+        "pos": 9,
+        "n_tumour": 36,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_34000_26000_2_0",
+        "ref_n": 64,
+        "ref_pos": 7,
+        "n": 73,
+        "pos": 5,
+        "n_tumour": 42,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_34000_26000_2_1",
+        "ref_n": 56,
+        "ref_pos": 6,
+        "n": 55,
+        "pos": 5,
+        "n_tumour": 34,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_34000_26000_2_2",
+        "ref_n": 62,
+        "ref_pos": 17,
+        "n": 60,
+        "pos": 8,
+        "n_tumour": 42,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_34000_26000_2_3",
+        "ref_n": 52,
+        "ref_pos": 23,
+        "n": 48,
+        "pos": 19,
+        "n_tumour": 45,
+        "pos_tumour": 18
+      },
+      {
+        "name": "Lung_34000_26000_3_0",
+        "ref_n": 60,
+        "ref_pos": 23,
+        "n": 55,
+        "pos": 14,
+        "n_tumour": 46,
+        "pos_tumour": 14
+      },
+      {
+        "name": "Lung_34000_26000_3_1",
+        "ref_n": 46,
+        "ref_pos": 7,
+        "n": 45,
+        "pos": 5,
+        "n_tumour": 33,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_34000_26000_3_2",
+        "ref_n": 53,
+        "ref_pos": 10,
+        "n": 57,
+        "pos": 4,
+        "n_tumour": 49,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_34000_32000_0_0",
+        "ref_n": 55,
+        "ref_pos": 15,
+        "n": 51,
+        "pos": 10,
+        "n_tumour": 29,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_34000_32000_0_2",
+        "ref_n": 59,
+        "ref_pos": 10,
+        "n": 57,
+        "pos": 10,
+        "n_tumour": 27,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_34000_32000_0_3",
+        "ref_n": 58,
+        "ref_pos": 13,
+        "n": 56,
+        "pos": 8,
+        "n_tumour": 33,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_34000_32000_1_0",
+        "ref_n": 57,
+        "ref_pos": 8,
+        "n": 48,
+        "pos": 9,
+        "n_tumour": 26,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_34000_32000_1_1",
+        "ref_n": 44,
+        "ref_pos": 23,
+        "n": 40,
+        "pos": 19,
+        "n_tumour": 34,
+        "pos_tumour": 15
+      },
+      {
+        "name": "Lung_34000_32000_1_3",
+        "ref_n": 77,
+        "ref_pos": 10,
+        "n": 67,
+        "pos": 9,
+        "n_tumour": 22,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_34000_32000_2_0",
+        "ref_n": 59,
+        "ref_pos": 11,
+        "n": 47,
+        "pos": 6,
+        "n_tumour": 29,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_34000_32000_2_1",
+        "ref_n": 58,
+        "ref_pos": 16,
+        "n": 55,
+        "pos": 11,
+        "n_tumour": 32,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_34000_32000_2_2",
+        "ref_n": 63,
+        "ref_pos": 13,
+        "n": 59,
+        "pos": 10,
+        "n_tumour": 14,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_34000_32000_2_3",
+        "ref_n": 57,
+        "ref_pos": 4,
+        "n": 54,
+        "pos": 12,
+        "n_tumour": 12,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_34000_32000_3_0",
+        "ref_n": 46,
+        "ref_pos": 10,
+        "n": 49,
+        "pos": 11,
+        "n_tumour": 34,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_34000_32000_3_1",
+        "ref_n": 72,
+        "ref_pos": 10,
+        "n": 72,
+        "pos": 13,
+        "n_tumour": 23,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_34000_32000_3_2",
+        "ref_n": 45,
+        "ref_pos": 9,
+        "n": 40,
+        "pos": 11,
+        "n_tumour": 22,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_34000_32000_3_3",
+        "ref_n": 49,
+        "ref_pos": 10,
+        "n": 41,
+        "pos": 8,
+        "n_tumour": 22,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_34000_34000_0_0",
+        "ref_n": 71,
+        "ref_pos": 4,
+        "n": 70,
+        "pos": 1,
+        "n_tumour": 28,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_34000_34000_0_3",
+        "ref_n": 48,
+        "ref_pos": 24,
+        "n": 43,
+        "pos": 23,
+        "n_tumour": 31,
+        "pos_tumour": 16
+      },
+      {
+        "name": "Lung_34000_34000_1_0",
+        "ref_n": 67,
+        "ref_pos": 4,
+        "n": 63,
+        "pos": 1,
+        "n_tumour": 41,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_34000_34000_1_1",
+        "ref_n": 57,
+        "ref_pos": 7,
+        "n": 51,
+        "pos": 7,
+        "n_tumour": 18,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_34000_34000_1_2",
+        "ref_n": 87,
+        "ref_pos": 12,
+        "n": 71,
+        "pos": 9,
+        "n_tumour": 27,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_34000_34000_2_1",
+        "ref_n": 63,
+        "ref_pos": 9,
+        "n": 66,
+        "pos": 4,
+        "n_tumour": 42,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_34000_34000_2_2",
+        "ref_n": 55,
+        "ref_pos": 12,
+        "n": 52,
+        "pos": 8,
+        "n_tumour": 34,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_34000_34000_3_0",
+        "ref_n": 45,
+        "ref_pos": 6,
+        "n": 39,
+        "pos": 5,
+        "n_tumour": 25,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_34000_34000_3_1",
+        "ref_n": 79,
+        "ref_pos": 7,
+        "n": 62,
+        "pos": 3,
+        "n_tumour": 31,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_34000_34000_3_2",
+        "ref_n": 72,
+        "ref_pos": 7,
+        "n": 63,
+        "pos": 2,
+        "n_tumour": 14,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_34000_34000_3_3",
+        "ref_n": 77,
+        "ref_pos": 10,
+        "n": 74,
+        "pos": 8,
+        "n_tumour": 26,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_34000_40000_0_0",
+        "ref_n": 56,
+        "ref_pos": 11,
+        "n": 50,
+        "pos": 10,
+        "n_tumour": 25,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_34000_40000_0_1",
+        "ref_n": 56,
+        "ref_pos": 11,
+        "n": 44,
+        "pos": 9,
+        "n_tumour": 19,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_34000_40000_1_1",
+        "ref_n": 42,
+        "ref_pos": 5,
+        "n": 41,
+        "pos": 3,
+        "n_tumour": 35,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_34000_40000_1_3",
+        "ref_n": 60,
+        "ref_pos": 17,
+        "n": 53,
+        "pos": 12,
+        "n_tumour": 41,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_34000_40000_2_0",
+        "ref_n": 82,
+        "ref_pos": 14,
+        "n": 74,
+        "pos": 6,
+        "n_tumour": 19,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_34000_40000_2_1",
+        "ref_n": 49,
+        "ref_pos": 10,
+        "n": 41,
+        "pos": 8,
+        "n_tumour": 31,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_34000_40000_2_2",
+        "ref_n": 36,
+        "ref_pos": 13,
+        "n": 41,
+        "pos": 12,
+        "n_tumour": 35,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_34000_40000_2_3",
+        "ref_n": 58,
+        "ref_pos": 6,
+        "n": 52,
+        "pos": 5,
+        "n_tumour": 27,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_34000_40000_3_1",
+        "ref_n": 70,
+        "ref_pos": 6,
+        "n": 67,
+        "pos": 5,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_34000_40000_3_2",
+        "ref_n": 71,
+        "ref_pos": 21,
+        "n": 64,
+        "pos": 17,
+        "n_tumour": 27,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_34000_40000_3_3",
+        "ref_n": 60,
+        "ref_pos": 12,
+        "n": 58,
+        "pos": 15,
+        "n_tumour": 14,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_36000_32000_0_1",
+        "ref_n": 53,
+        "ref_pos": 13,
+        "n": 51,
+        "pos": 16,
+        "n_tumour": 21,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_36000_32000_0_3",
+        "ref_n": 71,
+        "ref_pos": 13,
+        "n": 72,
+        "pos": 11,
+        "n_tumour": 57,
+        "pos_tumour": 11
+      },
+      {
+        "name": "Lung_36000_32000_1_0",
+        "ref_n": 62,
+        "ref_pos": 10,
+        "n": 61,
+        "pos": 14,
+        "n_tumour": 22,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_36000_32000_1_2",
+        "ref_n": 49,
+        "ref_pos": 9,
+        "n": 46,
+        "pos": 6,
+        "n_tumour": 28,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_36000_32000_2_0",
+        "ref_n": 87,
+        "ref_pos": 5,
+        "n": 71,
+        "pos": 5,
+        "n_tumour": 21,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_36000_32000_2_1",
+        "ref_n": 82,
+        "ref_pos": 10,
+        "n": 73,
+        "pos": 6,
+        "n_tumour": 18,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_32000_2_3",
+        "ref_n": 57,
+        "ref_pos": 11,
+        "n": 55,
+        "pos": 11,
+        "n_tumour": 42,
+        "pos_tumour": 8
+      },
+      {
+        "name": "Lung_36000_32000_3_0",
+        "ref_n": 72,
+        "ref_pos": 13,
+        "n": 64,
+        "pos": 13,
+        "n_tumour": 32,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_36000_32000_3_1",
+        "ref_n": 86,
+        "ref_pos": 4,
+        "n": 69,
+        "pos": 5,
+        "n_tumour": 19,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_36000_32000_3_2",
+        "ref_n": 81,
+        "ref_pos": 20,
+        "n": 65,
+        "pos": 15,
+        "n_tumour": 37,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_36000_32000_3_3",
+        "ref_n": 72,
+        "ref_pos": 24,
+        "n": 63,
+        "pos": 14,
+        "n_tumour": 36,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_36000_34000_0_0",
+        "ref_n": 41,
+        "ref_pos": 20,
+        "n": 41,
+        "pos": 13,
+        "n_tumour": 30,
+        "pos_tumour": 12
+      },
+      {
+        "name": "Lung_36000_34000_0_2",
+        "ref_n": 76,
+        "ref_pos": 11,
+        "n": 75,
+        "pos": 9,
+        "n_tumour": 31,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_36000_34000_0_3",
+        "ref_n": 71,
+        "ref_pos": 16,
+        "n": 79,
+        "pos": 13,
+        "n_tumour": 17,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_36000_34000_1_0",
+        "ref_n": 59,
+        "ref_pos": 25,
+        "n": 52,
+        "pos": 18,
+        "n_tumour": 30,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_36000_34000_1_1",
+        "ref_n": 79,
+        "ref_pos": 14,
+        "n": 73,
+        "pos": 12,
+        "n_tumour": 26,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_36000_34000_1_3",
+        "ref_n": 66,
+        "ref_pos": 31,
+        "n": 67,
+        "pos": 29,
+        "n_tumour": 41,
+        "pos_tumour": 22
+      },
+      {
+        "name": "Lung_36000_34000_2_0",
+        "ref_n": 109,
+        "ref_pos": 17,
+        "n": 90,
+        "pos": 9,
+        "n_tumour": 24,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_36000_34000_2_1",
+        "ref_n": 87,
+        "ref_pos": 10,
+        "n": 71,
+        "pos": 0,
+        "n_tumour": 9,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_36000_34000_2_2",
+        "ref_n": 78,
+        "ref_pos": 21,
+        "n": 70,
+        "pos": 10,
+        "n_tumour": 38,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_36000_34000_2_3",
+        "ref_n": 68,
+        "ref_pos": 18,
+        "n": 66,
+        "pos": 11,
+        "n_tumour": 34,
+        "pos_tumour": 9
+      },
+      {
+        "name": "Lung_36000_34000_3_0",
+        "ref_n": 71,
+        "ref_pos": 11,
+        "n": 66,
+        "pos": 5,
+        "n_tumour": 21,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_36000_34000_3_1",
+        "ref_n": 72,
+        "ref_pos": 12,
+        "n": 68,
+        "pos": 6,
+        "n_tumour": 18,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_34000_3_3",
+        "ref_n": 118,
+        "ref_pos": 11,
+        "n": 98,
+        "pos": 8,
+        "n_tumour": 3,
+        "pos_tumour": 2
+      },
+      {
+        "name": "Lung_36000_38000_0_0",
+        "ref_n": 47,
+        "ref_pos": 12,
+        "n": 39,
+        "pos": 8,
+        "n_tumour": 29,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_36000_38000_0_2",
+        "ref_n": 38,
+        "ref_pos": 3,
+        "n": 41,
+        "pos": 2,
+        "n_tumour": 22,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_36000_38000_0_3",
+        "ref_n": 46,
+        "ref_pos": 1,
+        "n": 46,
+        "pos": 0,
+        "n_tumour": 33,
+        "pos_tumour": 0
+      },
+      {
+        "name": "Lung_36000_38000_1_1",
+        "ref_n": 44,
+        "ref_pos": 9,
+        "n": 35,
+        "pos": 6,
+        "n_tumour": 28,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_36000_38000_1_2",
+        "ref_n": 42,
+        "ref_pos": 11,
+        "n": 36,
+        "pos": 6,
+        "n_tumour": 30,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_38000_1_3",
+        "ref_n": 45,
+        "ref_pos": 4,
+        "n": 49,
+        "pos": 4,
+        "n_tumour": 35,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_38000_2_0",
+        "ref_n": 74,
+        "ref_pos": 10,
+        "n": 67,
+        "pos": 4,
+        "n_tumour": 16,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_36000_38000_2_1",
+        "ref_n": 54,
+        "ref_pos": 11,
+        "n": 50,
+        "pos": 5,
+        "n_tumour": 24,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_36000_38000_2_2",
+        "ref_n": 67,
+        "ref_pos": 11,
+        "n": 66,
+        "pos": 12,
+        "n_tumour": 34,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_36000_38000_2_3",
+        "ref_n": 72,
+        "ref_pos": 10,
+        "n": 74,
+        "pos": 8,
+        "n_tumour": 23,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_36000_38000_3_0",
+        "ref_n": 67,
+        "ref_pos": 11,
+        "n": 58,
+        "pos": 7,
+        "n_tumour": 29,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_38000_3_1",
+        "ref_n": 45,
+        "ref_pos": 6,
+        "n": 41,
+        "pos": 4,
+        "n_tumour": 7,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_36000_38000_3_2",
+        "ref_n": 59,
+        "ref_pos": 9,
+        "n": 54,
+        "pos": 3,
+        "n_tumour": 18,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_36000_38000_3_3",
+        "ref_n": 49,
+        "ref_pos": 24,
+        "n": 53,
+        "pos": 20,
+        "n_tumour": 44,
+        "pos_tumour": 17
+      },
+      {
+        "name": "Lung_36000_42000_0_0",
+        "ref_n": 61,
+        "ref_pos": 8,
+        "n": 56,
+        "pos": 7,
+        "n_tumour": 33,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_36000_42000_0_1",
+        "ref_n": 55,
+        "ref_pos": 15,
+        "n": 55,
+        "pos": 9,
+        "n_tumour": 25,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_42000_0_2",
+        "ref_n": 47,
+        "ref_pos": 11,
+        "n": 53,
+        "pos": 3,
+        "n_tumour": 33,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_36000_42000_0_3",
+        "ref_n": 42,
+        "ref_pos": 10,
+        "n": 46,
+        "pos": 5,
+        "n_tumour": 41,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_36000_42000_1_0",
+        "ref_n": 50,
+        "ref_pos": 7,
+        "n": 45,
+        "pos": 2,
+        "n_tumour": 27,
+        "pos_tumour": 1
+      },
+      {
+        "name": "Lung_36000_42000_1_1",
+        "ref_n": 47,
+        "ref_pos": 11,
+        "n": 47,
+        "pos": 15,
+        "n_tumour": 30,
+        "pos_tumour": 10
+      },
+      {
+        "name": "Lung_36000_42000_1_2",
+        "ref_n": 51,
+        "ref_pos": 15,
+        "n": 52,
+        "pos": 9,
+        "n_tumour": 38,
+        "pos_tumour": 3
+      },
+      {
+        "name": "Lung_36000_42000_2_0",
+        "ref_n": 77,
+        "ref_pos": 17,
+        "n": 79,
+        "pos": 9,
+        "n_tumour": 36,
+        "pos_tumour": 4
+      },
+      {
+        "name": "Lung_36000_42000_2_1",
+        "ref_n": 78,
+        "ref_pos": 22,
+        "n": 71,
+        "pos": 16,
+        "n_tumour": 40,
+        "pos_tumour": 13
+      },
+      {
+        "name": "Lung_36000_42000_2_2",
+        "ref_n": 95,
+        "ref_pos": 16,
+        "n": 86,
+        "pos": 14,
+        "n_tumour": 14,
+        "pos_tumour": 7
+      },
+      {
+        "name": "Lung_36000_42000_2_3",
+        "ref_n": 108,
+        "ref_pos": 15,
+        "n": 94,
+        "pos": 8,
+        "n_tumour": 26,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_36000_42000_3_0",
+        "ref_n": 75,
+        "ref_pos": 14,
+        "n": 69,
+        "pos": 10,
+        "n_tumour": 32,
+        "pos_tumour": 6
+      },
+      {
+        "name": "Lung_36000_42000_3_1",
+        "ref_n": 80,
+        "ref_pos": 14,
+        "n": 85,
+        "pos": 9,
+        "n_tumour": 28,
+        "pos_tumour": 5
+      },
+      {
+        "name": "Lung_36000_42000_3_3",
+        "ref_n": 108,
+        "ref_pos": 22,
+        "n": 82,
+        "pos": 16,
+        "n_tumour": 15,
+        "pos_tumour": 7
+      }
+    ]
+  }
+}

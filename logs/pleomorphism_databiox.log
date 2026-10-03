@@ -1,0 +1,16 @@
+Databiox: 115 patients with 40x tumour nuclei; grade 1/2/3 = [33, 39, 43]
+current model on Databiox: {"n": 115, "kappa_vs_grade": 0.034024455077086624, "spearman_vs_grade": 0.2247399483927596, "confusion": [[0, 4, 29], [0, 3, 36], [0, 2, 41]]}
+   major_p90              rho vs grade +0.22  median by grade [13.99, 14.64, 15.18]
+   area_median            rho vs grade +0.24  median by grade [52.45, 59.81, 61.3]
+   area_cv                rho vs grade -0.16  median by grade [0.64, 0.57, 0.58]
+   area_iqr_rel           rho vs grade +0.31  median by grade [0.63, 0.62, 0.72]
+   area_rel_lymph         rho vs grade +0.24  median by grade [1.95, 2.24, 2.21]
+   h_std_mean             rho vs grade +0.23  median by grade [0.11, 0.12, 0.12]
+   glcm_contrast_mean     rho vs grade +0.22  median by grade [1.96, 2.11, 2.26]
+   solidity_mean          rho vs grade +0.08  median by grade [0.96, 0.96, 0.96]
+   dark_frac_mean         rho vs grade +0.20  median by grade [0.05, 0.06, 0.06]
+linear_length                Databiox kappa +0.053 (rho +0.14) | MITOS kappa -0.003 (rho -0.24)
+linear_size_aniso            Databiox kappa +0.081 (rho +0.09) | MITOS kappa -0.013 (rho -0.07)
+linear_size_aniso_chromatin  Databiox kappa -0.008 (rho +0.11) | MITOS kappa -0.129 (rho -0.21)
+lightgbm_all                 Databiox kappa +0.330 (rho +0.44) | MITOS kappa +0.024 (rho +0.01)
+chosen: lightgbm_all

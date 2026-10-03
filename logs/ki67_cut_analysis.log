@@ -1,0 +1,17 @@
+estimated H [0.733 0.623 0.274] DAB [0.335 0.511 0.791]
+ruifrok median DAB OD positive 0.603 negative 0.049
+  cut 0.20: sens 0.829 spec 0.962  fields within 5 pts 0.63  MAE 5.2
+  cut 0.25: sens 0.792 spec 0.974  fields within 5 pts 0.67  MAE 4.6
+  cut 0.30: sens 0.749 spec 0.983  fields within 5 pts 0.64  MAE 4.8
+  cut 0.35: sens 0.715 spec 0.986  fields within 5 pts 0.67  MAE 5.0
+  cut 0.40: sens 0.668 spec 0.989  fields within 5 pts 0.63  MAE 5.6
+  cut 0.45: sens 0.626 spec 0.991  fields within 5 pts 0.60  MAE 6.3
+  cut 0.52: sens 0.555 spec 0.994  fields within 5 pts 0.51  MAE 7.5
+estimated median DAB OD positive 0.634 negative 0.077
+  cut 0.20: sens 0.853 spec 0.951  fields within 5 pts 0.54  MAE 5.8
+  cut 0.25: sens 0.812 spec 0.967  fields within 5 pts 0.67  MAE 4.7
+  cut 0.30: sens 0.782 spec 0.978  fields within 5 pts 0.66  MAE 4.6
+  cut 0.35: sens 0.732 spec 0.983  fields within 5 pts 0.64  MAE 4.8
+  cut 0.40: sens 0.697 spec 0.987  fields within 5 pts 0.65  MAE 5.2
+  cut 0.45: sens 0.651 spec 0.990  fields within 5 pts 0.62  MAE 5.9
+  cut 0.52: sens 0.579 spec 0.993  fields within 5 pts 0.53  MAE 7.1

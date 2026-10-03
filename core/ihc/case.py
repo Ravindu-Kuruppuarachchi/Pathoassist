@@ -44,8 +44,8 @@ class AddResult:
 class CaseSession:
     def __init__(self, case_dir: str | Path, case_id: str, stain: str, min_cells: int = 500,
                  max_overlap: float = 0.5):
-        if stain not in ("ER", "PR"):
-            raise ValueError("stain must be 'ER' or 'PR'")
+        if stain not in ("ER", "PR", "Ki67", "HER2"):
+            raise ValueError("stain must be 'ER', 'PR', 'Ki67' or 'HER2'")
         self.dir = Path(case_dir)
         (self.dir / "fields").mkdir(parents=True, exist_ok=True)
         self.case_id, self.stain, self.min_cells = case_id, stain, min_cells

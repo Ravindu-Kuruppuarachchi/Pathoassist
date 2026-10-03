@@ -1,0 +1,64 @@
+{
+ "features": [
+  "area",
+  "perimeter",
+  "solidity",
+  "eccentricity",
+  "extent",
+  "eq_diam",
+  "major",
+  "minor",
+  "touches_border",
+  "inside_od_mean",
+  "inside_od_std",
+  "r0_6_h",
+  "r0_6_e",
+  "r0_6_nuc",
+  "r0_6_white",
+  "r0_6_h_std",
+  "r6_15_h",
+  "r6_15_e",
+  "r6_15_nuc",
+  "r6_15_white",
+  "r6_15_h_std",
+  "r15_25_h",
+  "r15_25_e",
+  "r15_25_nuc",
+  "r15_25_white",
+  "r15_25_h_std",
+  "ring_h_contrast",
+  "white_neighbours_40um",
+  "big_white_near"
+ ],
+ "threshold": 0.5,
+ "working_um_per_px": 1.0,
+ "source": "BreCaHAD (17 cases), case-grouped CV",
+ "cv": {
+  "n_points": {
+   "lumen": 493,
+   "non_lumen": 610
+  },
+  "unmatched": {
+   "lumen": 6,
+   "non_lumen": 36
+  },
+  "auc": 0.8728262347158526,
+  "auc_sd": 0.005542932415283304,
+  "accuracy_matched": 0.7879359095193214,
+  "lumen_recall_all_points": 0.6896551724137931,
+  "non_lumen_specificity": 0.8641114982578397,
+  "lumen_precision": 0.8133971291866029
+ },
+ "top_features": [
+  "major",
+  "r6_15_nuc",
+  "r0_6_white",
+  "r6_15_e",
+  "eccentricity",
+  "r0_6_e",
+  "r6_15_h_std",
+  "r6_15_h",
+  "r0_6_h_std",
+  "touches_border"
+ ]
+}

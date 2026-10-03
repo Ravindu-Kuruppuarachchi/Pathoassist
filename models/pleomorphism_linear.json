@@ -1,0 +1,34 @@
+{
+ "type": "linear_ordinal",
+ "features": [
+  "major_p90"
+ ],
+ "mean": [
+  11.695119897340838
+ ],
+ "scale": [
+  1.2077719113745582
+ ],
+ "coef": [
+  [
+   -0.9408085508084896
+  ],
+  [
+   0.21223834170592595
+  ],
+  [
+   0.7285702091025638
+  ]
+ ],
+ "intercept": [
+  -0.3651191630206051,
+  0.24294083923182758,
+  0.12217832378877921
+ ],
+ "cuts": [
+  1.5397754070547773,
+  2.482880114183622
+ ],
+ "validated": false,
+ "note": "MITOS-ATYPIA-14, 11 slides; LOSO weighted kappa ~0.17 vs pathologist-pathologist 0.67 - NOT validated; refit on Databiox + local labels"
+}

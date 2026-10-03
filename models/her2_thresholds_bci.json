@@ -1,0 +1,7 @@
+{
+  "stain_od": 0.04,
+  "strong_min": 0.16,
+  "complete_min": 0.3,
+  "faint_max": 0.08,
+  "source": "fitted on BCI-train field labels"
+}

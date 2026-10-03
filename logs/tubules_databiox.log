@@ -1,0 +1,126 @@
+/home/ravindu/rashmika/pathoasisst/core/tubules/lumen.py:126: FutureWarning: `RegionProperties.major_axis_length` is deprecated starting in version 0.26 and will be removed in version 2.0. Use `RegionProperties.axis_major_length` instead. 
+  p.major_axis_length * UM, p.minor_axis_length * UM, float(y0 == 0 or x0 == 0 or y1 == H or x1 == W),
+/home/ravindu/rashmika/pathoasisst/core/tubules/lumen.py:126: FutureWarning: `RegionProperties.minor_axis_length` is deprecated starting in version 0.26 and will be removed in version 2.0. Use `RegionProperties.axis_minor_length` instead. 
+  p.major_axis_length * UM, p.minor_axis_length * UM, float(y0 == 0 or x0 == 0 or y1 == H or x1 == W),
+patient 10260 grade 1: tubule  22.5% -> score 2 (1.8 mm² tumour, 249 lumens, 1 fields)
+patient 10349 grade 3: tubule  15.2% -> score 2 (2.6 mm² tumour, 175 lumens, 1 fields)
+patient 10377 grade 3: tubule  31.0% -> score 2 (1.9 mm² tumour, 491 lumens, 1 fields)
+patient 10397 grade 3: tubule  28.3% -> score 2 (1.9 mm² tumour, 241 lumens, 1 fields)
+patient 10422 grade 3: tubule  23.0% -> score 2 (2.5 mm² tumour, 251 lumens, 1 fields)
+patient 10521 grade 3: tubule  26.9% -> score 2 (2.1 mm² tumour, 339 lumens, 1 fields)
+patient 10532 grade 2: tubule  11.1% -> score 2 (2.4 mm² tumour, 140 lumens, 1 fields)
+patient 10543 grade 2: tubule   2.1% -> score 3 (2.1 mm² tumour, 33 lumens, 1 fields)
+patient 10668 grade 1: tubule   9.4% -> score 3 (2.4 mm² tumour, 93 lumens, 1 fields)
+patient 10783 grade 1: tubule  46.6% -> score 2 (2.4 mm² tumour, 757 lumens, 1 fields)
+patient 10812 grade 3: tubule  29.5% -> score 2 (2.4 mm² tumour, 382 lumens, 1 fields)
+patient 10836 grade 1: tubule   5.7% -> score 3 (1.7 mm² tumour, 51 lumens, 1 fields)
+patient 10874 grade 1: tubule  29.2% -> score 2 (1.9 mm² tumour, 422 lumens, 1 fields)
+patient 10876 grade 3: tubule  12.4% -> score 2 (1.9 mm² tumour, 152 lumens, 1 fields)
+patient 10894 grade 3: tubule  22.9% -> score 2 (2.0 mm² tumour, 309 lumens, 1 fields)
+patient 10898 grade 3: tubule   0.5% -> score 3 (2.2 mm² tumour, 5 lumens, 1 fields)
+patient 10956 grade 1: tubule   0.0% -> score 3 (1.8 mm² tumour, 0 lumens, 1 fields)
+patient 10959 grade 1: tubule  22.1% -> score 2 (2.3 mm² tumour, 262 lumens, 1 fields)
+patient 11012 grade 1: tubule   0.0% -> score 3 (1.7 mm² tumour, 0 lumens, 1 fields)
+patient 1110392 grade 3: tubule  10.9% -> score 2 (2.4 mm² tumour, 133 lumens, 1 fields)
+patient 11247 grade 3: tubule  19.8% -> score 2 (2.1 mm² tumour, 250 lumens, 1 fields)
+patient 11300 grade 2: tubule   7.5% -> score 3 (2.2 mm² tumour, 101 lumens, 1 fields)
+patient 1154 grade 1: tubule  24.7% -> score 2 (1.4 mm² tumour, 147 lumens, 1 fields)
+patient 11750 grade 3: tubule  18.0% -> score 2 (2.3 mm² tumour, 226 lumens, 1 fields)
+patient 2467 grade 2: tubule   7.4% -> score 3 (2.5 mm² tumour, 92 lumens, 1 fields)
+patient 2508 grade 2: tubule  10.0% -> score 3 (2.1 mm² tumour, 111 lumens, 1 fields)
+patient 2528 grade 2: tubule  10.5% -> score 2 (1.8 mm² tumour, 112 lumens, 1 fields)
+patient 2590 grade 2: tubule  19.3% -> score 2 (2.4 mm² tumour, 215 lumens, 1 fields)
+patient 2603 grade 2: tubule   4.2% -> score 3 (2.2 mm² tumour, 50 lumens, 1 fields)
+patient 2632 grade 2: tubule  15.4% -> score 2 (2.3 mm² tumour, 112 lumens, 1 fields)
+patient 2655 grade 1: tubule  23.3% -> score 2 (1.8 mm² tumour, 353 lumens, 1 fields)
+patient 2697 grade 2: tubule  24.9% -> score 2 (2.4 mm² tumour, 146 lumens, 1 fields)
+patient 3053 grade 2: tubule  33.8% -> score 2 (2.2 mm² tumour, 514 lumens, 1 fields)
+patient 3124 grade 1: tubule   2.7% -> score 3 (4.4 mm² tumour, 54 lumens, 2 fields)
+patient 3346 grade 2: tubule   0.1% -> score 3 (2.3 mm² tumour, 1 lumens, 1 fields)
+patient 3370 grade 2: tubule  32.7% -> score 2 (2.3 mm² tumour, 483 lumens, 1 fields)
+patient 3373 grade 3: tubule  33.3% -> score 2 (2.4 mm² tumour, 382 lumens, 1 fields)
+patient 3498 grade 2: tubule  15.8% -> score 2 (2.5 mm² tumour, 220 lumens, 1 fields)
+patient 3657 grade 1: tubule   8.5% -> score 3 (3.7 mm² tumour, 121 lumens, 2 fields)
+patient 3685 grade 2: tubule  23.4% -> score 2 (2.2 mm² tumour, 268 lumens, 1 fields)
+patient 3801 grade 2: tubule  26.7% -> score 2 (2.7 mm² tumour, 374 lumens, 1 fields)
+patient 5361 grade 1: tubule   7.7% -> score 3 (2.2 mm² tumour, 66 lumens, 1 fields)
+patient 5387 grade 1: tubule  29.1% -> score 2 (2.2 mm² tumour, 426 lumens, 1 fields)
+patient 6178 grade 1: tubule  12.0% -> score 2 (1.8 mm² tumour, 151 lumens, 1 fields)
+patient 6279 grade 2: tubule  25.3% -> score 2 (2.3 mm² tumour, 314 lumens, 1 fields)
+patient 6332 grade 1: tubule  16.6% -> score 2 (1.8 mm² tumour, 178 lumens, 1 fields)
+patient 6358 grade 2: tubule  43.7% -> score 2 (2.3 mm² tumour, 685 lumens, 1 fields)
+patient 6391 grade 2: tubule  46.4% -> score 2 (2.3 mm² tumour, 735 lumens, 1 fields)
+patient 6437 grade 1: tubule  26.9% -> score 2 (2.3 mm² tumour, 375 lumens, 1 fields)
+patient 6526 grade 3: tubule  26.6% -> score 2 (2.0 mm² tumour, 315 lumens, 1 fields)
+patient 6682 grade 2: tubule   5.1% -> score 3 (2.6 mm² tumour, 53 lumens, 1 fields)
+patient 6963 grade 1: tubule  19.2% -> score 2 (1.8 mm² tumour, 246 lumens, 1 fields)
+patient 7433 grade 2: tubule   6.3% -> score 3 (1.9 mm² tumour, 57 lumens, 1 fields)
+patient 7563 grade 1: tubule   0.4% -> score 3 (1.6 mm² tumour, 5 lumens, 1 fields)
+patient 7567 grade 2: tubule   8.6% -> score 3 (2.2 mm² tumour, 99 lumens, 1 fields)
+patient 7752 grade 3: tubule   0.0% -> score 3 (2.2 mm² tumour, 0 lumens, 1 fields)
+patient 7891 grade 3: tubule   0.9% -> score 3 (2.6 mm² tumour, 8 lumens, 1 fields)
+patient 7961 grade 3: tubule  16.5% -> score 2 (2.3 mm² tumour, 274 lumens, 1 fields)
+patient 7967 grade 1: tubule  23.9% -> score 2 (2.0 mm² tumour, 265 lumens, 1 fields)
+patient 8079 grade 2: tubule  26.7% -> score 2 (2.4 mm² tumour, 310 lumens, 1 fields)
+patient 8153 grade 3: tubule  29.0% -> score 2 (1.9 mm² tumour, 382 lumens, 1 fields)
+patient 8259 grade 3: tubule  16.3% -> score 2 (2.4 mm² tumour, 225 lumens, 1 fields)
+patient 8262 grade 2: tubule  13.9% -> score 2 (2.4 mm² tumour, 167 lumens, 1 fields)
+patient 8420 grade 2: tubule  33.4% -> score 2 (2.4 mm² tumour, 463 lumens, 1 fields)
+patient 8540 grade 3: tubule  34.2% -> score 2 (2.1 mm² tumour, 392 lumens, 1 fields)
+patient 8584 grade 1: tubule  15.6% -> score 2 (2.3 mm² tumour, 202 lumens, 1 fields)
+patient 8585 grade 2: tubule  28.5% -> score 2 (2.3 mm² tumour, 399 lumens, 1 fields)
+patient 8938 grade 1: tubule  11.9% -> score 2 (1.7 mm² tumour, 94 lumens, 1 fields)
+patient 8945 grade 3: tubule  38.7% -> score 2 (2.4 mm² tumour, 647 lumens, 1 fields)
+patient 8986 grade 2: tubule  22.5% -> score 2 (1.7 mm² tumour, 185 lumens, 1 fields)
+patient 8998 grade 1: tubule  35.2% -> score 2 (2.0 mm² tumour, 376 lumens, 1 fields)
+patient 9031 grade 1: tubule  22.7% -> score 2 (1.9 mm² tumour, 233 lumens, 1 fields)
+patient 9057 grade 1: tubule  52.3% -> score 2 (2.1 mm² tumour, 894 lumens, 1 fields)
+patient 9096 grade 3: tubule  45.9% -> score 2 (2.2 mm² tumour, 626 lumens, 1 fields)
+patient 9098 grade 2: tubule  32.9% -> score 2 (2.2 mm² tumour, 459 lumens, 1 fields)
+patient 9103 grade 1: tubule   2.0% -> score 3 (2.3 mm² tumour, 27 lumens, 1 fields)
+patient 9106 grade 1: tubule  11.2% -> score 2 (2.3 mm² tumour, 122 lumens, 1 fields)
+patient 9141 grade 3: tubule  51.3% -> score 2 (2.4 mm² tumour, 1080 lumens, 1 fields)
+patient 9287 grade 2: tubule   7.4% -> score 3 (4.1 mm² tumour, 127 lumens, 2 fields)
+patient 9324 grade 3: tubule  36.5% -> score 2 (2.2 mm² tumour, 585 lumens, 1 fields)
+patient 9325 grade 3: tubule  20.0% -> score 2 (2.2 mm² tumour, 199 lumens, 1 fields)
+patient 9329 grade 3: tubule  16.2% -> score 2 (2.5 mm² tumour, 214 lumens, 1 fields)
+patient 9454 grade 3: tubule   1.7% -> score 3 (2.3 mm² tumour, 19 lumens, 1 fields)
+patient 9458 grade 3: tubule  16.4% -> score 2 (2.5 mm² tumour, 262 lumens, 1 fields)
+patient 9468 grade 2: tubule  33.0% -> score 2 (2.1 mm² tumour, 415 lumens, 1 fields)
+patient 9500 grade 2: tubule   1.8% -> score 3 (2.3 mm² tumour, 29 lumens, 1 fields)
+patient 9504 grade 3: tubule   8.6% -> score 3 (2.2 mm² tumour, 109 lumens, 1 fields)
+patient 9603 grade 3: tubule   6.4% -> score 3 (2.2 mm² tumour, 80 lumens, 1 fields)
+patient 9610 grade 1: tubule  23.1% -> score 2 (1.9 mm² tumour, 266 lumens, 1 fields)
+patient 9612 grade 3: tubule  17.1% -> score 2 (2.3 mm² tumour, 228 lumens, 1 fields)
+patient 9691 grade 3: tubule  28.7% -> score 2 (2.0 mm² tumour, 345 lumens, 1 fields)
+patient 9912 grade 3: tubule  12.7% -> score 2 (2.3 mm² tumour, 127 lumens, 1 fields)
+patient 9914 grade 2: tubule  33.3% -> score 2 (2.3 mm² tumour, 429 lumens, 1 fields)
+patient 9964 grade 1: tubule  16.6% -> score 2 (1.7 mm² tumour, 179 lumens, 1 fields)
+{
+ "n_patients": 94,
+ "spearman_tubule_pct_vs_grade": 0.1121331335212378,
+ "spearman_tubule_score_vs_grade": -0.1223097572931469,
+ "median_pct_by_grade": {
+  "1": 16.6,
+  "2": 17.55,
+  "3": 19.8
+ },
+ "score_distribution_by_grade": {
+  "1": [
+   0,
+   20,
+   9
+  ],
+  "2": [
+   0,
+   21,
+   11
+  ],
+  "3": [
+   0,
+   27,
+   6
+  ]
+ },
+ "kappa_tubule_score_vs_grade": -0.09573412698412698
+}

@@ -1,0 +1,105 @@
+{
+  "n": 594,
+  "class_counts": [
+    46,
+    444,
+    104
+  ],
+  "loso_weighted_kappa": 0.0035621090999462535,
+  "loso_accuracy": 0.6363636363636364,
+  "confusion": [
+    [
+      0,
+      44,
+      2
+    ],
+    [
+      17,
+      363,
+      64
+    ],
+    [
+      7,
+      82,
+      15
+    ]
+  ],
+  "by_scanner": {
+    "aperio": -0.037355396467586566,
+    "hamamatsu": 0.05508421709295075
+  },
+  "slide_level": {
+    "n": 11,
+    "accuracy": 0.7272727272727273,
+    "truth": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2
+    ],
+    "pred": [
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "pathologist_vs_pathologist": {
+    "n": 288,
+    "weighted_kappa": 0.6694772344013491,
+    "exact": 0.8298611111111112
+  },
+  "two_stage": {
+    "n": 576,
+    "loso_weighted_kappa": 0.05941845764854614,
+    "loso_accuracy": 0.6822916666666666,
+    "confusion": [
+      [
+        5,
+        40,
+        1
+      ],
+      [
+        3,
+        382,
+        45
+      ],
+      [
+        0,
+        94,
+        6
+      ]
+    ],
+    "spearman_vs_rater_mean": 0.024901574229948868,
+    "slide_level_spearman": 0.018181818181818184
+  },
+  "direct_spearman_vs_rater_mean": -0.04869605708279528,
+  "top_features": [
+    "h_std_std",
+    "major_std",
+    "h_std_mean",
+    "glcm_contrast_std",
+    "area_rel_lymph",
+    "n_tumour",
+    "area_cv",
+    "area_max_rel",
+    "h_mean_mean",
+    "minor_std",
+    "h_mean_std",
+    "area_std"
+  ]
+}

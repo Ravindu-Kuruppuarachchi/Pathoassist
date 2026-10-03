@@ -1,0 +1,44 @@
+{
+  "hand-crafted (LightGBM)": {
+    "databiox_kappa": 0.33594683315744095,
+    "databiox_kappa_sd": 0.051541333513491897,
+    "databiox_rho": 0.37993766077665947,
+    "mitos_loso": {
+      "kappa": 0.046984126984126906,
+      "spearman": -0.003169971838499462,
+      "accuracy": 0.6109022556390977
+    },
+    "transfer": {
+      "mitos_to_databiox_rho": -0.10033452763929628,
+      "databiox_to_mitos_rho": 0.3575897543777583
+    }
+  },
+  "Phikon embeddings (PCA32 + logistic)": {
+    "databiox_kappa": 0.518963921839008,
+    "databiox_kappa_sd": 0.045888780426539356,
+    "databiox_rho": 0.5918403586465815,
+    "mitos_loso": {
+      "kappa": 0.015666726010325815,
+      "spearman": 0.10211011700204352,
+      "accuracy": 0.5601503759398496
+    },
+    "transfer": {
+      "mitos_to_databiox_rho": 0.13041895049661933,
+      "databiox_to_mitos_rho": 0.13038589862325348
+    }
+  },
+  "embeddings + key measurements": {
+    "databiox_kappa": 0.49211729970056,
+    "databiox_kappa_sd": 0.04842020275253354,
+    "databiox_rho": 0.5887740455725259,
+    "mitos_loso": {
+      "kappa": 0.10987529491068415,
+      "spearman": 0.14375368414535816,
+      "accuracy": 0.38533834586466165
+    },
+    "transfer": {
+      "mitos_to_databiox_rho": 0.15907757132278963,
+      "databiox_to_mitos_rho": 0.3068075806789857
+    }
+  }
+}

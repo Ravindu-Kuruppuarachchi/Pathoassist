@@ -1,0 +1,24 @@
+# Model weights (too large for GitHub; distribute separately)
+models/*.bin
+models/*.onnx
+models/*.pt
+models/*.pth
+models/*.h5
+models/*.npz
+models/*.xml
+*.ckpt
+*.safetensors
+
+# Training runs (checkpoints, TensorBoard event files)
+training/runs/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Editors / OS
+.DS_Store

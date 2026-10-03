@@ -1,0 +1,27 @@
+{
+  "score": 3,
+  "probs": [
+    0.0,
+    0.086,
+    0.914
+  ],
+  "expected": 2.91,
+  "n_fields": 3,
+  "n_tumour": 3398,
+  "field_scores": [
+    3,
+    3,
+    3
+  ],
+  "warnings": [
+    "Score model NOT validated against local pathologists (public data only): use the measurements, not the score, until it is refitted on local cases."
+  ],
+  "measurements": {
+    "area_median": 61.304,
+    "major_p90": 15.567,
+    "area_cv": 0.597,
+    "area_max_rel": 2.551,
+    "area_rel_lymph": 2.556,
+    "area_rel_ref": 1.613
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "classes": [
+    "invasive",
+    "in_situ",
+    "benign",
+    "normal_other",
+    "background"
+  ],
+  "um_per_px": 0.93,
+  "patch": 224,
+  "photo_rule_fractions": [
+    0.4,
+    0.4,
+    0.4
+  ],
+  "source": "BACH WSIs A01-A08 + photos; distilled from Phikon-v2 linear head"
+}

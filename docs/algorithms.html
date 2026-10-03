@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PathoAssist Algorithms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky feature index on the left (wide screens), one reading column with an interactive
+   figure per algorithm; palette taken from the stains themselves: haematoxylin, eosin, DAB. */
+:root {
+  --bg: #f6f5f9; --panel: #ffffff; --ink: #1d1a2b; --muted: #645f78; --line: #dcd8e6;
+  --haem: #4b3fa0; --eosin: #c8467e; --dab: #8a5a2b; --ok: #2f7d4f; --warn: #a8620b; --bad: #b3263f;
+  --tint: #ecebf4; --glass: #fbfafd;
+  --display: "Spectral", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14121c; --panel: #1c1928; --ink: #ece9f5; --muted: #a49eba; --line: #312c45;
+    --haem: #a197ff; --eosin: #ff86b5; --dab: #d8a066; --ok: #5fc58b; --warn: #f0a54a; --bad: #ff7088;
+    --tint: #23203a; --glass: #191726; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14121c; --panel: #1c1928; --ink: #ece9f5; --muted: #a49eba; --line: #312c45;
+  --haem: #a197ff; --eosin: #ff86b5; --dab: #d8a066; --ok: #5fc58b; --warn: #f0a54a; --bad: #ff7088;
+  --tint: #23203a; --glass: #191726; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body); padding: 0 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; padding-block: 32px 80px; }
+@media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } nav.index { position: static; } }
+header.top { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+h1 { font: 700 clamp(2rem, 4.5vw, 3.1rem)/1.05 var(--display); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h1 em { font-style: italic; font-weight: 500; color: var(--haem); }
+.lede { max-width: 62ch; color: var(--muted); margin: 10px 0 0; }
+.theme-btn { font: 500 13px var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.theme-btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--haem); outline-offset: 2px; }
+nav.index { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 20px); align-self: start; font-size: 14px; }
+nav.index ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+nav.index a { display: grid; grid-template-columns: 34px 1fr; gap: 6px; padding: 6px 8px; border-radius: 6px; color: var(--ink); text-decoration: none; }
+nav.index a:hover { background: var(--tint); }
+nav.index .num { font: 500 12px var(--mono); color: var(--muted); padding-top: 2px; }
+nav.index .label-h { font: 600 11px var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px 8px; }
+main { min-width: 0; display: grid; gap: 64px; }
+section.feat { display: grid; gap: 18px; scroll-margin-top: 24px; }
+.eyebrow { font: 500 12px var(--mono); letter-spacing: 0.06em; color: var(--eosin); text-transform: uppercase; }
+h2 { font: 700 clamp(1.5rem, 3vw, 2rem)/1.15 var(--display); margin: 2px 0 0; text-wrap: balance; }
+h3 { font: 600 15px var(--body); margin: 0; }
+p { margin: 0; max-width: 68ch; }
+.muted { color: var(--muted); }
+.fig { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 14px; min-width: 0; }
+.fig-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 700px) { .fig-grid { grid-template-columns: minmax(0, 1fr); } }
+canvas { width: 100%; height: auto; display: block; border-radius: 6px; background: var(--glass); touch-action: none; }
+.controls { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.ctl { display: grid; gap: 4px; font-size: 14px; }
+.ctl label { display: flex; justify-content: space-between; gap: 8px; }
+.ctl output, .val { font: 500 13px var(--mono); color: var(--haem); font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; accent-color: var(--haem); }
+input[type=number] { width: 100%; font: 14px var(--mono); padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--glass); color: var(--ink); }
+button.act { font: 500 13px var(--body); padding: 7px 12px; border-radius: 6px; border: 1px solid var(--haem); background: var(--haem); color: var(--panel); cursor: pointer; }
+button.ghost { font: 500 13px var(--body); padding: 7px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.readout { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.kv { background: var(--tint); border-radius: 6px; padding: 8px 10px; min-width: 0; }
+.kv .k { font: 600 11px var(--body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.kv .v { font: 500 18px var(--mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.pill { display: inline-block; font: 600 12px var(--body); padding: 2px 10px; border-radius: 999px; border: 1px solid currentColor; }
+.pill.ok { color: var(--ok); } .pill.warn { color: var(--warn); } .pill.bad { color: var(--bad); } .pill.info { color: var(--haem); }
+ol.steps { margin: 0; padding-left: 22px; display: grid; gap: 6px; max-width: 70ch; }
+ol.steps li::marker { font: 500 13px var(--mono); color: var(--eosin); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+.fact { border-top: 2px solid var(--haem); padding-top: 6px; min-width: 0; }
+.fact b { display: block; font: 500 20px var(--mono); font-variant-numeric: tabular-nums; }
+.fact span { font-size: 13px; color: var(--muted); }
+.note { font-size: 13px; color: var(--muted); }
+.tag-ill { font: 600 11px var(--body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--warn); }
+.warns { display: grid; gap: 4px; font-size: 13px; }
+.warns div::before { content: "! "; color: var(--warn); font-weight: 700; }
+table.tbl { border-collapse: collapse; font-size: 14px; width: 100%; }
+table.tbl th, table.tbl td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+table.tbl th { font: 600 12px var(--body); letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.tbl-wrap { overflow-x: auto; }
+.chain { display: grid; gap: 6px; font: 12px var(--mono); }
+.chain .blk { border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; background: var(--glass); overflow-wrap: anywhere; }
+.chain .blk.broken { border-color: var(--bad); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { font: 500 13px var(--mono); border: 0; background: var(--panel); color: var(--ink); padding: 6px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--haem); color: var(--panel); }
+.pipeline { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; }
+.pipeline span.st { background: var(--tint); border-radius: 6px; padding: 4px 9px; }
+.pipeline span.ar { color: var(--muted); }
+footer { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 16px; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>How PathoAssist <em>sees</em> a slide</h1>
+      <p class="lede">The algorithms behind the microscope assistant, one figure each: drag, slide and click to see what every model computes. Figures marked <span class="tag-ill">illustration</span> use made-up data to show the mechanism; numbers in the result tiles are real measurements on public data.</p>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button">Switch theme</button>
+  </header>
+
+  <nav class="index" aria-label="Features">
+    <p class="label-h">Features</p>
+    <ol>
+      <li><a href="#f1"><span class="num">F1</span>Nuclei detection</a></li>
+      <li><a href="#stain"><span class="num">—</span>Stain separation</a></li>
+      <li><a href="#f2"><span class="num">F2</span>ER / PR scoring</a></li>
+      <li><a href="#f3"><span class="num">F3</span>Ki-67 index</a></li>
+      <li><a href="#f4"><span class="num">F4</span>HER2 scoring</a></li>
+      <li><a href="#f5"><span class="num">F5</span>Region, magnification</a></li>
+      <li><a href="#mosaic"><span class="num">F5</span>Mosaic &amp; de-duplication</a></li>
+      <li><a href="#f6"><span class="num">F6</span>Mitosis counting</a></li>
+      <li><a href="#f7"><span class="num">F7</span>Nuclear pleomorphism</a></li>
+      <li><a href="#f8"><span class="num">F8</span>Tubule formation</a></li>
+      <li><a href="#f9"><span class="num">F9</span>Grade &amp; audit</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ===================================================== F1 -->
+    <section class="feat" id="f1">
+      <div><div class="eyebrow">Feature 1 · shared by everything</div><h2>Finding every nucleus: StarDist</h2></div>
+      <p>StarDist describes each nucleus as a <b>star-convex polygon</b>: from a centre pixel it predicts the distance to the boundary along fixed directions (rays). Every pixel near a centre proposes its own polygon with a confidence, so each nucleus gets many overlapping proposals; <b>non-maximum suppression (NMS)</b> keeps the most confident one and drops proposals that overlap it too much. Touching nuclei stay separate because each has its own centre.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvStar" width="640" height="400" aria-label="Nuclei with candidate polygons"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <div class="ctl"><label for="rays">Rays per polygon <output id="raysO"></output></label><input id="rays" type="range" min="4" max="64" step="4" value="32"></div>
+            <div class="ctl"><label for="pth">Centre probability threshold <output id="pthO"></output></label><input id="pth" type="range" min="0.1" max="0.9" step="0.05" value="0.5"></div>
+            <div class="ctl"><label for="nms">NMS overlap (IoU) threshold <output id="nmsO"></output></label><input id="nms" type="range" min="0.05" max="0.9" step="0.05" value="0.3"></div>
+            <div class="readout"><div class="kv"><div class="k">Proposals</div><div class="v" id="starProp">–</div></div><div class="kv"><div class="k">Nuclei kept</div><div class="v" id="starKept">–</div></div></div>
+            <p class="note">Few rays draw a crude outline; too low an IoU threshold also deletes the second of two touching nuclei; too high keeps duplicates. PathoAssist uses 32 rays and IoU 0.3 with a probability threshold tuned on validation data (≈0.49).</p>
+          </div>
+        </div>
+      </div>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvTile" width="640" height="360" aria-label="Tiling with overlap"></canvas>
+          <div class="controls">
+            <h3>Tiling large frames</h3>
+            <div class="ctl"><label for="margin">Tile margin (px) <output id="marginO"></output></label><input id="margin" type="range" min="0" max="96" step="16" value="64"></div>
+            <p class="note">A camera frame is cut into 512 px tiles that overlap by a margin. Each tile is analysed with its margin as context, but only its <b>central part</b> is kept, so a nucleus lying on a seam is found exactly once and always with full context. With no margin, nuclei on the seams are cut in half.</p>
+          </div>
+        </div>
+      </div>
+      <ol class="steps">
+        <li>Resize the frame to the model scale, 0.25 µm/px, using the microscope calibration.</li>
+        <li>For every pixel the network predicts a centre probability and 32 ray distances (INT8 OpenVINO on CPU).</li>
+        <li>Stitch the tile centres; turn confident pixels into polygons; polygon NMS removes duplicates.</li>
+        <li>Rasterise the polygons into a label map: one ID per nucleus, used by every scoring feature.</li>
+      </ol>
+      <div class="facts">
+        <div class="fact"><b>0.841</b><span>detection F1, held-out breast H&amp;E (pretrained 0.749)</span></div>
+        <div class="fact"><b>0.861</b><span>detection F1 on real IHC fields (pretrained 0.671)</span></div>
+        <div class="fact"><b>0.75–1.0 s</b><span>per 1920×1080 frame, INT8, 40–4 CPU threads</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== STAIN -->
+    <section class="feat" id="stain">
+      <div><div class="eyebrow">Shared · used by F2, F3, F4, F7, F8</div><h2>Unmixing the stains: colour deconvolution</h2></div>
+      <p>Each stain absorbs a characteristic mix of red, green and blue light. By the <b>Beer–Lambert law</b>, optical density <span class="val">OD = −log₁₀(I / I₀)</span> adds up linearly, so a pixel's OD is (amount of haematoxylin × its colour vector) + (amount of DAB × its vector). Inverting that 3 × 3 matrix turns any pixel colour back into stain amounts. Mix stains below and watch the colour the camera would record.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvStain" width="640" height="300" aria-label="Stain mixing"></canvas>
+          <div class="controls">
+            <div class="ctl"><label for="hAmt">Haematoxylin (OD) <output id="hAmtO"></output></label><input id="hAmt" type="range" min="0" max="1.2" step="0.02" value="0.45"></div>
+            <div class="ctl"><label for="dAmt">DAB (OD) <output id="dAmtO"></output></label><input id="dAmt" type="range" min="0" max="1.2" step="0.02" value="0.30"></div>
+            <div class="readout"><div class="kv"><div class="k">Camera RGB</div><div class="v" id="rgbO">–</div></div><div class="kv"><div class="k">ER/PR bin</div><div class="v" id="binO">–</div></div></div>
+            <p class="note">The recovered DAB OD, averaged over a nucleus, is what F2 bins as negative / weak / moderate / strong. Cut-offs shown are the default placeholders (0.15 / 0.35 / 0.60); in the clinic they are fitted to ~200 nuclei labelled by a pathologist. Each lab can also fit its own stain vectors (Macenko method).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F2 -->
+    <section class="feat" id="f2">
+      <div><div class="eyebrow">Feature 2 · ER / PR</div><h2>From counted nuclei to Allred, H-score and status</h2></div>
+      <p>Only <b>tumour nuclei</b> are counted. Each gets an intensity bin from its DAB optical density; totals accumulate across every field the pathologist rests on (a frame overlapping an earlier one by more than half is skipped). Type the counts to see the scoring rules exactly as the assistant applies them.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <div class="controls">
+            <div class="readout">
+              <div class="ctl"><label for="cNeg">Negative</label><input id="cNeg" type="number" min="0" value="400"></div>
+              <div class="ctl"><label for="cWeak">Weak</label><input id="cWeak" type="number" min="0" value="150"></div>
+              <div class="ctl"><label for="cMod">Moderate</label><input id="cMod" type="number" min="0" value="200"></div>
+              <div class="ctl"><label for="cStr">Strong</label><input id="cStr" type="number" min="0" value="250"></div>
+            </div>
+            <canvas id="cvErpr" width="640" height="90" aria-label="Intensity composition"></canvas>
+          </div>
+          <div class="controls">
+            <div class="readout">
+              <div class="kv"><div class="k">% positive</div><div class="v" id="erPct">–</div></div>
+              <div class="kv"><div class="k">H-score</div><div class="v" id="erH">–</div></div>
+              <div class="kv"><div class="k">Allred</div><div class="v" id="erAllred">–</div></div>
+              <div class="kv"><div class="k">Status</div><div class="v" id="erStatus">–</div></div>
+            </div>
+            <div class="warns" id="erWarn"></div>
+          </div>
+        </div>
+      </div>
+      <ol class="steps">
+        <li>% positive = (weak + moderate + strong) ÷ all tumour nuclei.</li>
+        <li>H-score = 1 × %weak + 2 × %moderate + 3 × %strong (0–300).</li>
+        <li>Allred = proportion score (0: none, 1: &lt;1%, 2: 1–10%, 3: 11–33%, 4: 34–66%, 5: &gt;66%) + intensity score (mean intensity of positive cells, 1–3).</li>
+        <li>Status: Negative &lt; 1%, Low positive 1–10%, Positive &gt; 10%. Warnings below 500 cells and near the 1% and 10% cut-offs.</li>
+      </ol>
+      <div class="facts">
+        <div class="fact"><b>98.8%</b><span>correct positive/negative calls per nucleus (real IHC)</span></div>
+        <div class="fact"><b>ICC 0.90</b><span>% positive per field vs reference (6 independent fields)</span></div>
+        <div class="fact"><b>1.3–1.6 s</b><span>per 1080p IHC frame on CPU</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F3 -->
+    <section class="feat" id="f3">
+      <div><div class="eyebrow">Feature 3 · Ki-67</div><h2>Global versus hotspot</h2></div>
+      <p>Ki-67 uses the same pipeline with one positive/negative cut-off. <b>Global</b> pools every counted field; <b>hotspot</b> takes the fields with the highest index, highest first, until about 500 tumour cells are reached. Bars are fields (height = Ki-67 index, width ∝ cells counted).</p>
+      <div class="fig">
+        <canvas id="cvKi" width="640" height="260" aria-label="Ki-67 fields"></canvas>
+        <div class="row" style="align-items:center">
+          <div class="seg" role="group" aria-label="Averaging"><button id="kiG" aria-pressed="true" type="button">Global</button><button id="kiH" aria-pressed="false" type="button">Hotspot</button></div>
+          <button class="ghost" id="kiShuffle" type="button">New example case</button>
+          <span class="tag-ill">illustration</span>
+        </div>
+        <div class="readout"><div class="kv"><div class="k">Ki-67 index</div><div class="v" id="kiIdx">–</div></div><div class="kv"><div class="k">Cells used</div><div class="v" id="kiN">–</div></div><div class="kv"><div class="k">IKWG range</div><div class="v" id="kiBand">–</div></div></div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>5 of 6</b><span>breast fields within ±5 points of the reference</span></div>
+        <div class="fact"><b>52% → 67%</b><span>fields within ±5 pts on another lab's slides, before → after lab-specific cut-off</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F4 -->
+    <section class="feat" id="f4">
+      <div><div class="eyebrow">Feature 4 · HER2</div><h2>Reading the membrane, then applying ASCO/CAP</h2></div>
+      <p>Each nucleus is grown into a cell (watershed on DAB, at most 8 µm). The ring around the nucleus is split into <b>16 sectors</b>; in each, the membrane is the DAB peak above the field's background. <b>Completeness</b> is the share of stained sectors, <b>intensity</b> their mean OD.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvCell" width="400" height="400" aria-label="Cell membrane sectors"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <div class="ctl"><label for="hComp">Stained sectors <output id="hCompO"></output></label><input id="hComp" type="range" min="0" max="16" step="1" value="10"></div>
+            <div class="ctl"><label for="hInt">Membrane intensity, OD above background <output id="hIntO"></output></label><input id="hInt" type="range" min="0.02" max="0.6" step="0.01" value="0.12"></div>
+            <div class="readout"><div class="kv"><div class="k">Completeness</div><div class="v" id="hCompPct">–</div></div><div class="kv"><div class="k">Cell category</div><div class="v" id="hCat" style="font-size:15px">–</div></div></div>
+            <p class="note">Thresholds shown are those fitted on the BCI training set (stained ≥ 0.04 OD, complete ≥ 30% of sectors, faint below 0.08, strong ≥ 0.16 OD). They must be re-calibrated by a pathologist at 40×.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fig">
+        <div class="fig-grid">
+          <div class="controls">
+            <h3>Rule engine: share of tumour cells per category</h3>
+            <div class="ctl"><label for="pFaint">Faint / incomplete <output id="pFaintO"></output></label><input id="pFaint" type="range" min="0" max="100" step="0.5" value="18"></div>
+            <div class="ctl"><label for="pComp">Weak–moderate complete <output id="pCompO"></output></label><input id="pComp" type="range" min="0" max="100" step="0.5" value="6"></div>
+            <div class="ctl"><label for="pStrong">Strong complete <output id="pStrongO"></output></label><input id="pStrong" type="range" min="0" max="100" step="0.5" value="2"></div>
+            <p class="note">The three shares can add up to at most 100%; the rest of the cells are unstained.</p>
+          </div>
+          <div class="controls">
+            <div class="readout"><div class="kv"><div class="k">HER2 IHC</div><div class="v" id="her2Score">–</div></div><div class="kv"><div class="k">Category</div><div class="v" id="her2Cat" style="font-size:14px">–</div></div></div>
+            <div class="warns" id="her2Flags"></div>
+          </div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>κ 0.72</b><span>rule engine vs pathologist-refined labels (693 images)</span></div>
+        <div class="fact"><b>91%</b><span>of 3+ cases recognised</span></div>
+        <div class="fact"><b>κ 0.80</b><span>EfficientNet-B0 cross-check; disagreement → "review carefully"</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F5 -->
+    <section class="feat" id="f5">
+      <div><div class="eyebrow">Feature 5 · tumour region &amp; magnification</div><h2>A fast student taught by a large teacher</h2></div>
+      <p>The <b>teacher</b> (Phikon-v2, a 300-million-parameter pathology foundation model) is accurate but too slow for live use. A small <b>student</b> (EfficientNet-B0) learns to copy the teacher's <i>soft</i> probabilities on many unlabelled patches. The temperature <span class="val">T</span> softens the teacher's output so the student also learns which wrong classes are "almost right".</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvDistil" width="640" height="300" aria-label="Teacher soft labels"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <div class="ctl"><label for="temp">Temperature T <output id="tempO"></output></label><input id="temp" type="range" min="0.5" max="6" step="0.1" value="2"></div>
+            <p class="note">At T = 1 the patch looks like a confident "invasive"; at T = 2 (used in training) the student also sees that it resembles in-situ carcinoma far more than fat or glass. Training data mixes BACH slide patches with BACH <b>microscope photos</b>: a slide-only model got just 33% of photos right.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvMag" width="640" height="260" aria-label="Magnification estimate"></canvas>
+          <div class="controls">
+            <h3>Auto-magnification</h3>
+            <div class="ctl"><label for="magT">True scale, µm per pixel <output id="magTO"></output></label><input id="magT" type="range" min="0" max="1" step="0.01" value="0.5"></div>
+            <div class="readout"><div class="kv"><div class="k">Estimated</div><div class="v" id="magE">–</div></div><div class="kv"><div class="k">Objective</div><div class="v" id="magObj">–</div></div></div>
+            <p class="note">A tiny CNN reads texture scale (how big nuclei and fibres are in pixels) from several crops and predicts µm/px; the median is snapped to the nearest calibrated objective. Typical error is ×1.19 (median) — enough for 4×, 10× and 40×; 20× is still confused (41% correct).</p>
+          </div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>97.5%</b><span>held-out microscope photos classified correctly</span></div>
+        <div class="fact"><b>0.3–0.4 s</b><span>tumour map per 1080p 10× frame (CPU)</span></div>
+        <div class="fact"><b>85%</b><span>correct objective overall (4× 99%, 10× 87%, 40× 87%)</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== MOSAIC -->
+    <section class="feat" id="mosaic">
+      <div><div class="eyebrow">Feature 5 · mosaic, and de-duplication for every feature</div><h2>Stitching the sweep into a slide map</h2></div>
+      <p>Drag the camera window over the slide and press <b>Capture</b>. Each frame is located by <b>phase correlation</b> against the previous one, refined against the map built so far, and pasted in. A frame that overlaps no part of the map starts a new <b>island</b>; when a later frame overlaps two islands, they are <b>merged</b>. For scoring features, a frame overlapping an earlier one by more than 50% is a duplicate and is not counted twice.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvSlide" width="640" height="400" aria-label="Slide with camera window"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <div class="row"><button class="act" id="capBtn" type="button">Capture frame</button><button class="ghost" id="capReset" type="button">Reset</button></div>
+            <div class="readout"><div class="kv"><div class="k">Last frame</div><div class="v" id="capStatus" style="font-size:14px">–</div></div><div class="kv"><div class="k">Overlap</div><div class="v" id="capOv">–</div></div><div class="kv"><div class="k">Islands</div><div class="v" id="capIsl">0</div></div></div>
+            <canvas id="cvMini" width="320" height="200" aria-label="Mini-map"></canvas>
+            <p class="note">Mini-map: covered areas per island. Real result: a 49-frame sweep with camera blur, noise and vignetting stayed within 6 µm of the true positions; a 272-frame sweep across glass split into 8 islands and merged back into one map.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F6 -->
+    <section class="feat" id="f6">
+      <div><div class="eyebrow">Feature 6 · mitosis</div><h2>Heatmap peaks, a second look, and a score per field area</h2></div>
+      <p>The detector outputs a <b>heatmap</b> of "mitosis-ness"; local peaks above a threshold are candidates. A verifier network takes a second look at a 96 px crop around each candidate to reject look-alikes (apoptotic cells, dense lymphocytes).</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvMit" width="640" height="320" aria-label="Mitosis heatmap"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <div class="ctl"><label for="mThr">Detection threshold <output id="mThrO"></output></label><input id="mThr" type="range" min="0.05" max="0.95" step="0.05" value="0.3"></div>
+            <label class="ctl" style="display:flex;gap:8px;align-items:center"><input id="mVer" type="checkbox" checked> Verifier on</label>
+            <div class="readout"><div class="kv"><div class="k">True found</div><div class="v" id="mTP">–</div></div><div class="kv"><div class="k">False alarms</div><div class="v" id="mFP">–</div></div></div>
+            <p class="note">Green rings: true mitoses. Dashed: look-alikes. A low threshold finds more mitoses but more false alarms; the verifier removes look-alikes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvHpf" width="640" height="240" aria-label="Mitotic score thresholds"></canvas>
+          <div class="controls">
+            <h3>10 HPF → mitotic score</h3>
+            <div class="ctl"><label for="fDiam">Field diameter (mm) <output id="fDiamO"></output></label><input id="fDiam" type="range" min="0.30" max="0.69" step="0.01" value="0.50"></div>
+            <div class="ctl"><label for="mCount">Mitoses in 10 HPF <output id="mCountO"></output></label><input id="mCount" type="range" min="0" max="40" step="1" value="12"></div>
+            <div class="readout"><div class="kv"><div class="k">Mitotic score</div><div class="v" id="mScore">–</div></div><div class="kv"><div class="k">10 HPF area</div><div class="v" id="mArea">–</div></div></div>
+            <div class="warns" id="mWarn"></div>
+          </div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>0.72</b><span>detection F1 on 33 held-out MIDOG++ breast slides</span></div>
+        <div class="fact"><b>91%</b><span>slides given the same mitotic score as the experts (κ 0.93)</span></div>
+        <div class="fact"><b>0.5–0.95 s</b><span>per 1080p 40× frame on CPU</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F7 -->
+    <section class="feat" id="f7">
+      <div><div class="eyebrow">Feature 7 · nuclear pleomorphism</div><h2>Embeddings of tumour tiles, read by a simple model</h2></div>
+      <p>Each 40× field is cut into 112 µm tiles; Phikon-v2 turns every tile into 1 024 numbers that describe its look. A case is the average of its tiles. Sixteen principal components and a logistic regression map that average to P(score 1, 2, 3). The plot shows cases in the first two components, with the model's decision regions behind; drag the white case marker.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvPleo" width="560" height="420" aria-label="Embedding space"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <canvas id="cvPleoBars" width="320" height="150" aria-label="Score probabilities"></canvas>
+            <div class="readout"><div class="kv"><div class="k">Score</div><div class="v" id="pleoScore">–</div></div><div class="kv"><div class="k">Expected</div><div class="v" id="pleoExp">–</div></div></div>
+            <p class="note">Alongside the score the assistant shows measurements a pathologist can check: nuclear size (tracks pathologists' "nuclear size" with ρ 0.70 — they agree with each other at 0.55), anisonucleosis, and size relative to lymphocytes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>κ 0.56</b><span>vs Databiox grade, patients held out (hand-made features 0.34)</span></div>
+        <div class="fact"><b>1.4 s</b><span>Phikon-v2 INT8 per 1080p field (+ ~1 s nuclei)</span></div>
+        <div class="fact"><b>not validated</b><span>labels are overall grade, a proxy; local scores needed (target κ ≥ 0.6)</span></div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F8 -->
+    <section class="feat" id="f8">
+      <div><div class="eyebrow">Feature 8 · tubule formation</div><h2>Is this space a gland lumen?</h2></div>
+      <p>Every pale space is a candidate. A real tubule lumen is <b>lined by tumour epithelium</b>: a dense ring of nuclei. Stromal clefts, vessels and fat are not. The classifier measures stain in three rings (0–6, 6–15, 15–25 µm) and the share of the inner ring that is epithelium. Tubule % = epithelium lining accepted lumina ÷ all tumour epithelium.</p>
+      <div class="fig">
+        <div class="fig-grid">
+          <canvas id="cvTub" width="640" height="380" aria-label="Lumen candidates"></canvas>
+          <div class="controls">
+            <span class="tag-ill">illustration</span>
+            <div class="ctl"><label for="enc">Required epithelial enclosure <output id="encO"></output></label><input id="enc" type="range" min="0" max="1" step="0.05" value="0.6"></div>
+            <div class="ctl"><label for="tubPct">Tubule % of tumour <output id="tubPctO"></output></label><input id="tubPct" type="range" min="0" max="100" step="1" value="40"></div>
+            <div class="readout"><div class="kv"><div class="k">Lumens accepted</div><div class="v" id="tubAcc">–</div></div><div class="kv"><div class="k">Tubule score</div><div class="v" id="tubScore">–</div></div></div>
+            <p class="note">Score: &gt; 75% → 1, 10–75% → 2, &lt; 10% → 3. The lumen classifier reaches AUC 0.87 on held-out BreCaHAD cases, but the full tubule score is <b>not yet reliable</b> on camera images and needs locally annotated fields.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== F9 -->
+    <section class="feat" id="f9">
+      <div><div class="eyebrow">Feature 9 · Nottingham grade &amp; report</div><h2>Three components, one grade, a log nobody can quietly edit</h2></div>
+      <div class="pipeline"><span class="st">Tubules · 10×</span><span class="ar">→</span><span class="st">Pleomorphism · 40×</span><span class="ar">→</span><span class="st">Mitoses · 10 HPF</span><span class="ar">→</span><span class="st">Review &amp; edit</span><span class="ar">→</span><span class="st">Sign</span></div>
+      <div class="fig">
+        <div class="fig-grid">
+          <div class="controls">
+            <div class="ctl"><span>Tubule formation</span><div class="seg" data-comp="t"><button type="button">1</button><button type="button">2</button><button type="button" aria-pressed="true">3</button></div></div>
+            <div class="ctl"><span>Nuclear pleomorphism</span><div class="seg" data-comp="p"><button type="button">1</button><button type="button" aria-pressed="true">2</button><button type="button">3</button></div></div>
+            <div class="ctl"><span>Mitotic count</span><div class="seg" data-comp="m"><button type="button">1</button><button type="button" aria-pressed="true">2</button><button type="button">3</button></div></div>
+            <div class="readout"><div class="kv"><div class="k">Total</div><div class="v" id="ngTotal">–</div></div><div class="kv"><div class="k">Grade</div><div class="v" id="ngGrade">–</div></div></div>
+            <p class="note">Total 3–5 → grade 1, 6–7 → grade 2, 8–9 → grade 3. Each change is written to the audit log on the right.</p>
+          </div>
+          <div class="controls">
+            <h3>Audit log (SHA-256 hash chain)</h3>
+            <div class="chain" id="chain"></div>
+            <div class="row"><button class="ghost" id="tamper" type="button">Secretly edit entry 2</button><button class="ghost" id="chainReset" type="button">Restore</button></div>
+            <div id="chainStatus"></div>
+            <p class="note">Each entry stores the hash of the one before it. Changing any past entry changes its hash, so the next entry no longer points to it and verification fails. The report prints the final hash as a fingerprint.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>PathoAssist · algorithm explainer. Results quoted are on public datasets (PanNuke, BC-DeepLIIF, DeepLIIF, BCI, BACH, MIDOG++, MITOS-ATYPIA-14, Databiox, BreCaHAD); none of the plan's local "done when" targets has been measured yet. See docs/FEATURES.md for details.</footer>
+</div>
+
+<script>
+(() => {
+"use strict";
+// ---------------------------------------------------------------- theme + canvas helpers
+const root = document.documentElement;
+const css = (name) => getComputedStyle(root).getPropertyValue(name).trim();
+const redrawers = [];
+function onRedraw(fn) { redrawers.push(fn); fn(); }
+function redrawAll() { redrawers.forEach(f => f()); }
+document.getElementById("themeBtn").addEventListener("click", () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("pa-theme", root.dataset.theme); } catch (e) {}
+  redrawAll();
+});
+try { const t = localStorage.getItem("pa-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redrawAll);
+
+function setup(id) {
+  const c = document.getElementById(id);
+  const W = c.width, H = c.height, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  c.width = W * dpr; c.height = H * dpr; c.style.aspectRatio = `${W} / ${H}`;
+  const g = c.getContext("2d"); g.scale(dpr, dpr);
+  return { c, g, W, H, pt(ev) { const r = c.getBoundingClientRect(); return [(ev.clientX - r.left) * W / r.width, (ev.clientY - r.top) * H / r.height]; } };
+}
+function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
+const $ = (id) => document.getElementById(id);
+function bindRange(id, fmt, cb) { const el = $(id), o = $(id + "O"); const f = () => { if (o) o.textContent = fmt(+el.value); cb(); }; el.addEventListener("input", f); return el; }
+function alpha(hex, a) {
+  const h = hex.replace("#", ""); const n = parseInt(h.length === 3 ? h.split("").map(x => x + x).join("") : h, 16);
+  return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
+}
+
+// ---------------------------------------------------------------- F1: StarDist rays + NMS
+(() => {
+  const S = setup("cvStar");
+  const nuclei = [ // centre, radii a,b, rotation, irregularity
+    { x: 170, y: 190, a: 62, b: 44, r: 0.4, w: [0.06, 0.04] },
+    { x: 268, y: 214, a: 52, b: 40, r: -0.5, w: [0.05, 0.07] },   // touching the first
+    { x: 470, y: 150, a: 46, b: 46, r: 0, w: [0.08, 0.03] },
+    { x: 455, y: 300, a: 70, b: 38, r: 1.1, w: [0.04, 0.06] },
+  ];
+  function radius(n, th) { // boundary distance of nucleus n from its centre at angle th
+    const t = th - n.r; const ca = Math.cos(t) / n.a, sa = Math.sin(t) / n.b;
+    return (1 / Math.sqrt(ca * ca + sa * sa)) * (1 + n.w[0] * Math.sin(3 * th) + n.w[1] * Math.cos(5 * th));
+  }
+  const R = rng(7);
+  const proposals = [];
+  nuclei.forEach((n, k) => { for (let i = 0; i < 7; i++) { const d = R() * 22, ang = R() * 6.283;
+    proposals.push({ k, x: n.x + d * Math.cos(ang), y: n.y + d * Math.sin(ang), p: Math.max(0.05, 0.97 - d / 26 - R() * 0.15) }); } });
+  // two weak spurious proposals in background
+  proposals.push({ k: -1, x: 360, y: 90, p: 0.22 }, { k: -1, x: 600, y: 360, p: 0.31 });
+  function polygon(pr, nr) {
+    const pts = [];
+    for (let i = 0; i < nr; i++) { const th = i / nr * 2 * Math.PI;
+      let d;
+      if (pr.k < 0) d = 22 + 6 * Math.sin(th * 3);
+      else { const n = nuclei[pr.k]; // distance from proposal point to boundary along th (march)
+        d = 0; for (let s = 1; s < 140; s += 1) { const px = pr.x + s * Math.cos(th), py = pr.y + s * Math.sin(th);
+          const dx = px - n.x, dy = py - n.y, ang = Math.atan2(dy, dx); if (Math.hypot(dx, dy) > radius(n, ang)) { d = s; break; } } }
+      pts.push([pr.x + d * Math.cos(th), pr.y + d * Math.sin(th)]); }
+    return pts;
+  }
+  const off = document.createElement("canvas"); off.width = S.W / 2; off.height = S.H / 2; const og = off.getContext("2d");
+  function mask(poly) { og.clearRect(0, 0, off.width, off.height); og.beginPath(); poly.forEach(([x, y], i) => i ? og.lineTo(x / 2, y / 2) : og.moveTo(x / 2, y / 2)); og.closePath(); og.fill();
+    const d = og.getImageData(0, 0, off.width, off.height).data; const m = new Uint8Array(off.width * off.height); for (let i = 0; i < m.length; i++) m[i] = d[i * 4 + 3] > 0; return m; }
+  function iou(a, b) { let i = 0, u = 0; for (let k = 0; k < a.length; k++) { if (a[k] && b[k]) i++; if (a[k] || b[k]) u++; } return u ? i / u : 0; }
+  function draw() {
+    const g = S.g, nr = +$("rays").value, pth = +$("pth").value, nms = +$("nms").value;
+    g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    // tissue: nuclei (haematoxylin)
+    nuclei.forEach(n => { g.beginPath(); for (let i = 0; i <= 90; i++) { const th = i / 90 * 2 * Math.PI, r = radius(n, th); const x = n.x + r * Math.cos(th), y = n.y + r * Math.sin(th); i ? g.lineTo(x, y) : g.moveTo(x, y); }
+      g.fillStyle = alpha(css("--haem"), 0.28); g.fill(); });
+    const cand = proposals.filter(p => p.p >= pth).sort((a, b) => b.p - a.p).map(p => ({ ...p, poly: polygon(p, nr) }));
+    cand.forEach(p => p.m = mask(p.poly));
+    const kept = [];
+    cand.forEach(p => { if (kept.every(k => iou(k.m, p.m) <= nms)) kept.push(p); });
+    cand.forEach(p => { if (kept.includes(p)) return; g.beginPath(); p.poly.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath();
+      g.setLineDash([4, 4]); g.strokeStyle = alpha(css("--muted"), 0.7); g.lineWidth = 1; g.stroke(); g.setLineDash([]); });
+    kept.forEach(p => { g.strokeStyle = alpha(css("--eosin"), 0.55); g.lineWidth = 1;
+      p.poly.forEach(([x, y]) => { g.beginPath(); g.moveTo(p.x, p.y); g.lineTo(x, y); g.stroke(); });
+      g.beginPath(); p.poly.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.closePath(); g.strokeStyle = css("--eosin"); g.lineWidth = 2.2; g.stroke();
+      g.fillStyle = css("--eosin"); g.beginPath(); g.arc(p.x, p.y, 3.5, 0, 6.283); g.fill(); });
+    g.fillStyle = css("--muted"); g.font = "12px " + css("--mono");
+    g.fillText("solid = kept polygon with its rays · dashed = suppressed proposal", 12, S.H - 12);
+    $("starProp").textContent = cand.length; $("starKept").textContent = kept.length;
+  }
+  ["rays", "pth", "nms"].forEach(id => bindRange(id, v => id === "rays" ? v : v.toFixed(2), draw));
+  ["rays", "pth", "nms"].forEach(id => $(id).dispatchEvent(new Event("input")));
+  onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F1: tiling
+(() => {
+  const S = setup("cvTile");
+  const R = rng(3); const nuc = Array.from({ length: 70 }, () => [12 + R() * 616, 12 + R() * 336, 6 + R() * 5]);
+  function draw() {
+    const g = S.g, m = +$("margin").value * 0.6, T = 200; // drawing scale: tile 512 px -> 200 drawing px
+    g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    nuc.forEach(([x, y, r]) => { g.beginPath(); g.arc(x, y, r, 0, 6.283); g.fillStyle = alpha(css("--haem"), 0.35); g.fill(); });
+    const step = T - 2 * m;
+    for (let ty = -m; ty < S.H; ty += step) for (let tx = -m; tx < S.W; tx += step) {
+      g.strokeStyle = alpha(css("--muted"), 0.6); g.setLineDash([5, 4]); g.strokeRect(tx, ty, T, T); g.setLineDash([]);
+      g.fillStyle = alpha(css("--eosin"), 0.07); g.fillRect(tx + m, ty + m, step, step);
+      g.strokeStyle = css("--eosin"); g.lineWidth = 1.5; g.strokeRect(tx + m, ty + m, step, step); g.lineWidth = 1; }
+    if (m === 0) { // nuclei cut by seams
+      nuc.forEach(([x, y, r]) => { const cut = [...Array(4).keys()].some(k => Math.abs(((x) % step)) < r || Math.abs(((y) % step)) < r);
+        if (cut) { g.strokeStyle = css("--bad"); g.lineWidth = 2; g.beginPath(); g.arc(x, y, r + 3, 0, 6.283); g.stroke(); g.lineWidth = 1; } });
+    }
+    g.fillStyle = css("--muted"); g.font = "12px " + css("--mono");
+    g.fillText(m ? "dashed = tile seen by the network · pink = central part kept" : "no margin: nuclei on seams (red) are cut in half", 10, S.H - 10);
+  }
+  bindRange("margin", v => v, draw); $("margin").dispatchEvent(new Event("input"));
+  onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- Stain mixing
+(() => {
+  const S = setup("cvStain");
+  const H = [0.65, 0.70, 0.29], D = [0.27, 0.57, 0.78];
+  const nrm = v => { const n = Math.hypot(...v); return v.map(x => x / n); };
+  const h = nrm(H), d = nrm(D);
+  function draw() {
+    const g = S.g, a = +$("hAmt").value, b = +$("dAmt").value;
+    const od = [0, 1, 2].map(i => a * h[i] + b * d[i]);
+    const rgb = od.map(o => Math.round(255 * Math.pow(10, -o)));
+    g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    // swatch as a nucleus
+    g.fillStyle = `rgb(${rgb.join(",")})`; g.beginPath(); g.ellipse(130, 150, 92, 74, 0.3, 0, 6.283); g.fill();
+    g.strokeStyle = alpha(css("--muted"), 0.4); g.stroke();
+    // OD bars per channel, stacked by stain
+    const x0 = 290, bw = 70, base = 250, sc = 140;
+    ["R", "G", "B"].forEach((ch, i) => { const x = x0 + i * (bw + 26);
+      const hh = a * h[i] * sc, dd = b * d[i] * sc;
+      g.fillStyle = css("--haem"); g.fillRect(x, base - hh, bw, hh);
+      g.fillStyle = css("--dab"); g.fillRect(x, base - hh - dd, bw, dd);
+      g.fillStyle = css("--ink"); g.font = "13px " + css("--mono"); g.fillText(`${ch}  OD ${od[i].toFixed(2)}`, x, base + 18); });
+    g.fillStyle = css("--muted"); g.font = "12px " + css("--body");
+    g.fillText("optical density per camera channel:", x0, 28);
+    g.fillStyle = css("--haem"); g.fillRect(x0, 38, 12, 12); g.fillStyle = css("--ink"); g.fillText("haematoxylin share", x0 + 18, 49);
+    g.fillStyle = css("--dab"); g.fillRect(x0 + 160, 38, 12, 12); g.fillStyle = css("--ink"); g.fillText("DAB share", x0 + 178, 49);
+    $("rgbO").textContent = rgb.join(", ");
+    const bin = b < 0.15 ? ["negative", "info"] : b < 0.35 ? ["weak", "warn"] : b < 0.60 ? ["moderate", "warn"] : ["strong", "bad"];
+    $("binO").innerHTML = `<span class="pill ${bin[1]}">${bin[0]}</span>`;
+  }
+  bindRange("hAmt", v => v.toFixed(2), draw); bindRange("dAmt", v => v.toFixed(2), draw);
+  $("hAmt").dispatchEvent(new Event("input")); $("dAmt").dispatchEvent(new Event("input"));
+  onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F2: ER/PR calculator (mirrors core/ihc/scoring.py)
+(() => {
+  const S = setup("cvErpr");
+  function allredPS(p) { if (p <= 0) return 0; if (p < 1) return 1; if (p <= 10) return 2; if (p <= 33) return 3; if (p <= 66) return 4; return 5; }
+  function draw() {
+    const c = ["cNeg", "cWeak", "cMod", "cStr"].map(id => Math.max(0, Math.floor(+$(id).value || 0)));
+    const n = c.reduce((a, b) => a + b, 0), pos = c[1] + c[2] + c[3];
+    const pct = n ? 100 * pos / n : 0;
+    const pb = c.map(x => n ? 100 * x / n : 0);
+    const H = pb[1] + 2 * pb[2] + 3 * pb[3];
+    const IS = pos ? Math.floor((c[1] + 2 * c[2] + 3 * c[3]) / pos + 0.5) : 0, PS = allredPS(pct);
+    const status = !n ? ["Insufficient", "info"] : pct < 1 ? ["Negative", "info"] : pct <= 10 ? ["Low positive", "warn"] : ["Positive", "ok"];
+    $("erPct").textContent = pct.toFixed(1) + "%"; $("erH").textContent = H.toFixed(0);
+    $("erAllred").textContent = PS ? `${PS + IS} (${PS}+${IS})` : "0";
+    $("erStatus").innerHTML = `<span class="pill ${status[1]}">${status[0]}</span>`;
+    const w = [];
+    if (n < 500) w.push(`Only ${n} tumour nuclei counted (< 500); score more fields.`);
+    if (n && pct >= 0.5 && pct <= 1.5) w.push("Close to the 1% cut-off; review carefully.");
+    if (n && pct >= 8 && pct <= 12) w.push("Close to the 10% cut-off; review carefully.");
+    $("erWarn").innerHTML = w.map(x => `<div>${x}</div>`).join("");
+    const g = S.g; g.clearRect(0, 0, S.W, S.H);
+    const cols = [css("--haem"), "#e3c84a", "#e08a2a", css("--bad")]; let x = 0;
+    pb.forEach((p, i) => { const wdt = p / 100 * S.W; g.fillStyle = i ? cols[i] : alpha(css("--haem"), 0.55); g.fillRect(x, 20, wdt, 40); x += wdt; });
+    g.fillStyle = css("--muted"); g.font = "12px " + css("--body"); g.fillText("negative · weak · moderate · strong (share of tumour nuclei)", 0, 82);
+  }
+  ["cNeg", "cWeak", "cMod", "cStr"].forEach(id => $(id).addEventListener("input", draw));
+  onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F3: Ki-67 global vs hotspot
+(() => {
+  const S = setup("cvKi"); let mode = "global", seed = 11, fields = [];
+  function make() { const R = rng(seed); fields = Array.from({ length: 8 }, () => { const n = Math.round(120 + R() * 260); const idx = R() < 0.25 ? 0.25 + R() * 0.35 : 0.03 + R() * 0.2; return { n, pos: Math.round(n * idx) }; }); }
+  function band(p) { return p <= 5 ? "Low (≤5%)" : p >= 30 ? "High (≥30%)" : "Intermediate"; }
+  function draw() {
+    const g = S.g; g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    const order = fields.map((f, i) => i).sort((a, b) => fields[b].pos / fields[b].n - fields[a].pos / fields[a].n);
+    const used = new Set(); let cnt = 0;
+    if (mode === "hotspot") for (const i of order) { used.add(i); cnt += fields[i].n; if (cnt >= 500) break; } else fields.forEach((f, i) => used.add(i));
+    const tot = fields.reduce((a, f) => a + f.n, 0); let x = 30; const base = 220, sc = 300;
+    g.strokeStyle = alpha(css("--muted"), 0.3); [10, 30, 50].forEach(v => { const y = base - v / 100 * sc; g.beginPath(); g.moveTo(24, y); g.lineTo(S.W - 8, y); g.stroke();
+      g.fillStyle = css("--muted"); g.font = "11px " + css("--mono"); g.fillText(v + "%", 0, y + 4); });
+    fields.forEach((f, i) => { const w = f.n / tot * (S.W - 60); const p = f.pos / f.n * 100;
+      g.fillStyle = used.has(i) ? css("--dab") : alpha(css("--muted"), 0.35); g.fillRect(x, base - p / 100 * sc, w - 4, p / 100 * sc);
+      g.fillStyle = css("--muted"); g.font = "11px " + css("--mono"); g.fillText(`${f.n}`, x, base + 14); x += w; });
+    g.fillStyle = css("--muted"); g.font = "11px " + css("--body"); g.fillText("cells per field", 30, base + 30);
+    const U = [...used], n = U.reduce((a, i) => a + fields[i].n, 0), pos = U.reduce((a, i) => a + fields[i].pos, 0), idx = 100 * pos / n;
+    $("kiIdx").textContent = idx.toFixed(1) + "%"; $("kiN").textContent = `${n} (${U.length} fields)`; $("kiBand").textContent = band(idx);
+  }
+  $("kiG").onclick = () => { mode = "global"; $("kiG").setAttribute("aria-pressed", "true"); $("kiH").setAttribute("aria-pressed", "false"); draw(); };
+  $("kiH").onclick = () => { mode = "hotspot"; $("kiH").setAttribute("aria-pressed", "true"); $("kiG").setAttribute("aria-pressed", "false"); draw(); };
+  $("kiShuffle").onclick = () => { seed++; make(); draw(); };
+  make(); onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F4: HER2 cell + rule engine (mirrors core/her2/scoring.py)
+(() => {
+  const S = setup("cvCell");
+  const TH = { stain: 0.04, strong: 0.16, complete: 0.3, faint: 0.08 };
+  function cat(stained, inten) {
+    const comp = stained / 16; if (!stained) return [0, "none"];
+    if (comp >= TH.complete && inten >= TH.strong) return [3, "strong complete"];
+    if (comp >= TH.complete && inten >= TH.faint) return [2, "weak–moderate complete"];
+    return [1, "faint / incomplete"];
+  }
+  function draw() {
+    const g = S.g, k = +$("hComp").value, it = +$("hInt").value; g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    const cx = 200, cy = 200;
+    g.fillStyle = alpha(css("--haem"), 0.12); g.beginPath(); g.arc(cx, cy, 150, 0, 6.283); g.fill();
+    const order = [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15].slice(0, k), on = new Set(order);
+    for (let s = 0; s < 16; s++) { const a0 = s / 16 * 6.283 - Math.PI / 2, a1 = (s + 1) / 16 * 6.283 - Math.PI / 2;
+      g.beginPath(); g.arc(cx, cy, 150, a0 + 0.02, a1 - 0.02); g.lineWidth = 14 + it * 30;
+      g.strokeStyle = on.has(s) ? alpha(css("--dab"), Math.min(1, 0.25 + it * 1.6)) : alpha(css("--muted"), 0.25); g.stroke(); }
+    g.lineWidth = 1; g.strokeStyle = alpha(css("--muted"), 0.35);
+    for (let s = 0; s < 16; s++) { const a = s / 16 * 6.283 - Math.PI / 2; g.beginPath(); g.moveTo(cx + 62 * Math.cos(a), cy + 62 * Math.sin(a)); g.lineTo(cx + 168 * Math.cos(a), cy + 168 * Math.sin(a)); g.stroke(); }
+    g.fillStyle = alpha(css("--haem"), 0.75); g.beginPath(); g.ellipse(cx, cy, 58, 46, 0.4, 0, 6.283); g.fill();
+    g.fillStyle = css("--panel"); g.font = "12px " + css("--body"); g.textAlign = "center"; g.fillText("nucleus", cx, cy + 4); g.textAlign = "start";
+    const [ci, cn] = cat(k, it); const cols = ["info", "warn", "warn", "bad"];
+    $("hCompPct").textContent = Math.round(k / 16 * 100) + "%"; $("hCat").innerHTML = `<span class="pill ${cols[ci]}">${cn}</span>`;
+  }
+  bindRange("hComp", v => v + "/16", draw); bindRange("hInt", v => v.toFixed(2), draw);
+  $("hComp").dispatchEvent(new Event("input")); $("hInt").dispatchEvent(new Event("input"));
+  onRedraw(draw);
+
+  function rules() {
+    let f = +$("pFaint").value, c = +$("pComp").value, s = +$("pStrong").value;
+    const over = f + c + s - 100; if (over > 0) { // keep the sum at 100 by trimming the last moved slider's partners
+      f = Math.max(0, f - over); $("pFaint").value = f; }
+    ["pFaint", "pComp", "pStrong"].forEach(id => $(id + "O").textContent = (+$(id).value).toFixed(1) + "%");
+    const any = f + c + s, complete = c + s; let score, sub = "";
+    if (s > 10) score = "3+"; else if (complete > 10) score = "2+"; else if (any > 10) score = "1+"; else if (any > 0) { score = "0"; sub = "ultralow"; } else { score = "0"; sub = "null"; }
+    const catg = { "1+": "HER2-low", "2+": "HER2-low if ISH negative", "3+": "HER2-positive", "0": sub === "ultralow" ? "HER2-ultralow" : "HER2-null" }[score];
+    $("her2Score").innerHTML = `<span class="pill ${score === "3+" ? "bad" : score === "2+" ? "warn" : "info"}">${score}${sub ? " " + sub : ""}</span>`;
+    $("her2Cat").textContent = catg;
+    const fl = [];
+    if (score === "2+") fl.push("IHC 2+ (equivocal): reflex in situ hybridisation required.");
+    if (s > 0 && s <= 10) fl.push(`Strong complete staining in ${s.toFixed(1)}% of cells: heterogeneous, review.`);
+    [["0 / 1+", any], ["1+ / 2+", complete], ["2+ / 3+", s]].forEach(([n, v]) => { if (Math.abs(v - 10) <= 3) fl.push(`Near the ${n} boundary (${v.toFixed(1)}% vs 10%).`); });
+    $("her2Flags").innerHTML = fl.map(x => `<div>${x}</div>`).join("");
+  }
+  ["pFaint", "pComp", "pStrong"].forEach(id => $(id).addEventListener("input", rules)); rules();
+})();
+
+// ---------------------------------------------------------------- F5: distillation temperature
+(() => {
+  const S = setup("cvDistil");
+  const names = ["invasive", "in situ", "benign", "other tissue", "background"], logits = [4.2, 2.6, 0.9, 0.2, -1.8];
+  function draw() {
+    const g = S.g, T = +$("temp").value; g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    const soft = t => { const e = logits.map(l => Math.exp(l / t)); const z = e.reduce((a, b) => a + b, 0); return e.map(x => x / z); };
+    const p1 = soft(1), pT = soft(T); const bw = 44, base = 250, sc = 200;
+    names.forEach((n, i) => { const x = 40 + i * 118;
+      g.fillStyle = alpha(css("--muted"), 0.4); g.fillRect(x, base - p1[i] * sc, bw, p1[i] * sc);
+      g.fillStyle = css("--eosin"); g.fillRect(x + bw + 4, base - pT[i] * sc, bw, pT[i] * sc);
+      g.fillStyle = css("--ink"); g.font = "12px " + css("--body"); g.fillText(n, x, base + 18);
+      g.fillStyle = css("--muted"); g.font = "11px " + css("--mono"); g.fillText(pT[i].toFixed(2), x + bw + 4, base - pT[i] * sc - 6); });
+    g.fillStyle = alpha(css("--muted"), 0.4); g.fillRect(40, 16, 12, 12); g.fillStyle = css("--ink"); g.font = "12px " + css("--body"); g.fillText("teacher at T = 1", 58, 27);
+    g.fillStyle = css("--eosin"); g.fillRect(200, 16, 12, 12); g.fillStyle = css("--ink"); g.fillText("soft target the student learns (T = " + T.toFixed(1) + ")", 218, 27);
+  }
+  bindRange("temp", v => v.toFixed(1), draw); $("temp").dispatchEvent(new Event("input")); onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F5: magnification estimate
+(() => {
+  const S = setup("cvMag");
+  const obj = [["40×", 0.25], ["20×", 0.5], ["10×", 1.0], ["4×", 2.5]];
+  function draw() {
+    const g = S.g, t = +$("magT").value, um = Math.pow(2, Math.log2(0.2) + t * (Math.log2(4) - Math.log2(0.2)));
+    $("magTO").textContent = um.toFixed(2);
+    const err = Math.pow(1.19, Math.sin(t * 23) ); const est = um * err;
+    const pick = obj.reduce((a, b) => Math.abs(Math.log2(b[1]) - Math.log2(est)) < Math.abs(Math.log2(a[1]) - Math.log2(est)) ? b : a);
+    $("magE").textContent = est.toFixed(2) + " µm/px"; $("magObj").textContent = pick[0];
+    g.clearRect(0, 0, S.W, S.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, S.W, S.H);
+    // texture: nuclei 7 µm wide -> radius in px
+    const r = Math.max(0.8, 3.5 / um * 1.2), R = rng(5);
+    g.save(); g.beginPath(); g.rect(10, 10, 300, 200); g.clip(); g.fillStyle = alpha(css("--eosin"), 0.12); g.fillRect(10, 10, 300, 200);
+    const n = Math.min(900, Math.round(220 / (r * r) * 30));
+    for (let i = 0; i < n; i++) { g.beginPath(); g.arc(10 + R() * 300, 10 + R() * 200, r * (0.8 + R() * 0.5), 0, 6.283); g.fillStyle = alpha(css("--haem"), 0.55); g.fill(); }
+    g.restore(); g.fillStyle = css("--muted"); g.font = "11px " + css("--body"); g.fillText("camera crop at this scale", 10, 228);
+    // log axis
+    const ax = v => 340 + (Math.log2(v) - Math.log2(0.2)) / (Math.log2(4) - Math.log2(0.2)) * 280;
+    g.strokeStyle = alpha(css("--muted"), 0.6); g.beginPath(); g.moveTo(340, 120); g.lineTo(620, 120); g.stroke();
+    obj.forEach(([nm, v]) => { g.fillStyle = css("--ink"); g.fillRect(ax(v) - 1, 112, 2, 16); g.font = "12px " + css("--mono"); g.fillText(nm, ax(v) - 10, 146); g.fillStyle = css("--muted"); g.fillText(v, ax(v) - 10, 162); });
+    g.fillStyle = css("--haem"); g.beginPath(); g.arc(ax(um), 120, 6, 0, 6.283); g.fill();
+    g.strokeStyle = css("--eosin"); g.lineWidth = 2; g.beginPath(); g.arc(ax(est), 120, 9, 0, 6.283); g.stroke(); g.lineWidth = 1;
+    g.fillStyle = css("--muted"); g.font = "11px " + css("--body"); g.fillText("● true   ○ estimate (log µm/px)", 340, 92);
+  }
+  bindRange("magT", () => "", draw); draw(); onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- Mosaic + de-dup
+(() => {
+  const S = setup("cvSlide"), M = setup("cvMini");
+  const tex = document.createElement("canvas"); tex.width = 640; tex.height = 400;
+  function paintSlide() { const t = tex.getContext("2d"), R = rng(21); t.fillStyle = css("--glass"); t.fillRect(0, 0, 640, 400);
+    // tissue blob with a glass gap
+    t.fillStyle = alpha(css("--eosin"), 0.22); t.beginPath(); t.ellipse(240, 200, 210, 150, 0.2, 0, 6.283); t.fill(); t.beginPath(); t.ellipse(520, 210, 100, 130, -0.2, 0, 6.283); t.fill();
+    for (let i = 0; i < 1600; i++) { const x = R() * 640, y = R() * 400; const inA = ((x - 240) / 210) ** 2 + ((y - 200) / 150) ** 2 < 1, inB = ((x - 520) / 100) ** 2 + ((y - 210) / 130) ** 2 < 1;
+      if (inA || inB) { t.beginPath(); t.arc(x, y, 1.5 + R() * 2, 0, 6.283); t.fillStyle = alpha(css("--haem"), 0.55); t.fill(); } } }
+  const FW = 120, FH = 90; let cam = { x: 120, y: 120 }, frames = [], drag = null, islands = 0, nextIsl = 0;
+  const ov = (a, b) => Math.max(0, Math.min(a.x + FW, b.x + FW) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y + FH, b.y + FH) - Math.max(a.y, b.y)) / (FW * FH);
+  const tissueAt = (f) => { const t = tex.getContext("2d").getImageData(f.x, f.y, FW, FH).data; let n = 0; for (let i = 0; i < t.length; i += 16) if (t[i + 3] && (Math.abs(t[i] - t[i + 1]) > 6)) n++; return n / (t.length / 16); };
+  function capture() {
+    const f = { x: Math.round(cam.x), y: Math.round(cam.y) };
+    if (tissueAt(f) < 0.05) { setStatus("no tissue – skipped", "info", 0); return; }
+    const best = frames.reduce((a, g) => Math.max(a, ov(f, g)), 0);
+    const touching = [...new Set(frames.filter(g => ov(f, g) > 0.12).map(g => g.isl))];
+    let status, cls;
+    if (best > 0.5) { status = "duplicate (>50%) – not counted again"; cls = "warn"; }
+    else if (!frames.length) { status = "first frame"; cls = "ok"; }
+    else if (touching.length) { status = touching.length > 1 ? `tracked – merged ${touching.length} islands` : "tracked / placed"; cls = "ok"; }
+    else { status = "no overlap – new island"; cls = "info"; }
+    f.isl = touching.length ? Math.min(...touching) : nextIsl++;
+    if (touching.length > 1) frames.forEach(g => { if (touching.includes(g.isl)) g.isl = f.isl; });
+    frames.push(f); setStatus(status, cls, best); draw();
+  }
+  function setStatus(s, cls, best) { $("capStatus").innerHTML = `<span class="pill ${cls}">${s}</span>`; $("capOv").textContent = Math.round(best * 100) + "%";
+    $("capIsl").textContent = new Set(frames.map(f => f.isl)).size; }
+  function draw() {
+    paintSlide(); const g = S.g; g.clearRect(0, 0, S.W, S.H); g.drawImage(tex, 0, 0);
+    frames.forEach(f => { g.fillStyle = alpha(css("--haem"), 0.12); g.fillRect(f.x, f.y, FW, FH); g.strokeStyle = alpha(css("--haem"), 0.6); g.strokeRect(f.x, f.y, FW, FH); });
+    const best = frames.reduce((a, f) => Math.max(a, ov(cam, f)), 0);
+    g.lineWidth = 3; g.strokeStyle = best > 0.5 ? css("--warn") : css("--eosin"); g.strokeRect(cam.x, cam.y, FW, FH); g.lineWidth = 1;
+    g.fillStyle = css("--ink"); g.font = "12px " + css("--mono"); g.fillText(`camera · overlap ${Math.round(best * 100)}%`, cam.x, cam.y - 6);
+    const m = M.g; m.clearRect(0, 0, M.W, M.H); m.fillStyle = css("--tint"); m.fillRect(0, 0, M.W, M.H);
+    const isl = [...new Set(frames.map(f => f.isl))], hues = [css("--haem"), css("--eosin"), css("--dab"), css("--ok")];
+    frames.forEach(f => { m.fillStyle = alpha(hues[isl.indexOf(f.isl) % 4], 0.55); m.fillRect(f.x / 2, f.y / 2, FW / 2, FH / 2); });
+    m.strokeStyle = css("--ok"); m.lineWidth = 2; m.strokeRect(cam.x / 2, cam.y / 2, FW / 2, FH / 2); m.lineWidth = 1;
+    m.fillStyle = css("--muted"); m.font = "11px " + css("--body"); m.fillText("mini-map (colour = island)", 6, M.H - 6);
+  }
+  S.c.addEventListener("pointerdown", e => { const [x, y] = S.pt(e); drag = [x - cam.x, y - cam.y]; S.c.setPointerCapture(e.pointerId); });
+  S.c.addEventListener("pointermove", e => { if (!drag) return; const [x, y] = S.pt(e); cam.x = Math.max(0, Math.min(S.W - FW, x - drag[0])); cam.y = Math.max(0, Math.min(S.H - FH, y - drag[1])); draw(); });
+  S.c.addEventListener("pointerup", () => drag = null);
+  $("capBtn").onclick = capture; $("capReset").onclick = () => { frames = []; nextIsl = 0; $("capStatus").textContent = "–"; $("capOv").textContent = "–"; $("capIsl").textContent = "0"; draw(); };
+  onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F6: mitosis heatmap + HPF score
+(() => {
+  const S = setup("cvMit");
+  const R = rng(9);
+  const peaks = [ // x,y,height,true?,verifierScore
+    [90, 90, 0.92, 1, 0.97], [230, 210, 0.71, 1, 0.9], [380, 120, 0.55, 1, 0.84], [520, 240, 0.38, 1, 0.81], [600, 80, 0.24, 1, 0.75],
+    [150, 250, 0.66, 0, 0.3], [330, 260, 0.44, 0, 0.55], [470, 70, 0.33, 0, 0.2], [60, 200, 0.18, 0, 0.15] ];
+  const img = S.g.createImageData(S.W, S.H);
+  function draw() {
+    const g = S.g, th = +$("mThr").value, ver = $("mVer").checked;
+    const hc = css("--eosin").replace("#", ""), hr = parseInt(hc.slice(0, 2), 16), hg = parseInt(hc.slice(2, 4), 16), hb = parseInt(hc.slice(4, 6), 16);
+    const bgc = css("--glass").replace("#", ""), br = parseInt(bgc.slice(0, 2), 16), bgg = parseInt(bgc.slice(2, 4), 16), bb = parseInt(bgc.slice(4, 6), 16);
+    const dpr = S.c.width / S.W, w = S.c.width, h = S.c.height, im = g.createImageData(w, h);
+    for (let y = 0; y < h; y += 2) for (let x = 0; x < w; x += 2) { let v = 0; const X = x / dpr, Y = y / dpr;
+      for (const [px, py, ph] of peaks) v = Math.max(v, ph * Math.exp(-((X - px) ** 2 + (Y - py) ** 2) / 500));
+      for (let dy = 0; dy < 2; dy++) for (let dx = 0; dx < 2; dx++) { const i = ((y + dy) * w + (x + dx)) * 4; if (i >= im.data.length) continue;
+        im.data[i] = br + (hr - br) * v; im.data[i + 1] = bgg + (hg - bgg) * v; im.data[i + 2] = bb + (hb - bb) * v; im.data[i + 3] = 255; } }
+    g.putImageData(im, 0, 0);
+    let tp = 0, fp = 0;
+    peaks.forEach(([x, y, ph, t, vs]) => { const det = ph >= th && (!ver || vs >= 0.7);
+      g.setLineDash(t ? [] : [4, 3]); g.strokeStyle = t ? css("--ok") : css("--muted"); g.lineWidth = 2; g.beginPath(); g.arc(x, y, 26, 0, 6.283); g.stroke(); g.setLineDash([]);
+      if (det) { g.strokeStyle = css("--haem"); g.lineWidth = 3; g.strokeRect(x - 16, y - 16, 32, 32); t ? tp++ : fp++; }
+      g.lineWidth = 1; g.fillStyle = css("--ink"); g.font = "11px " + css("--mono"); g.fillText(ph.toFixed(2), x + 28, y - 18); });
+    g.fillStyle = css("--ink"); g.font = "12px " + css("--body"); g.fillText("square = detection · number = heatmap peak", 10, S.H - 10);
+    $("mTP").textContent = `${tp} / 5`; $("mFP").textContent = fp;
+  }
+  bindRange("mThr", v => v.toFixed(2), draw); $("mVer").addEventListener("change", draw); $("mThr").dispatchEvent(new Event("input")); onRedraw(draw);
+
+  const H = setup("cvHpf");
+  const table = [[0.40,4,10],[0.41,4,10],[0.42,5,11],[0.43,5,11],[0.44,5,12],[0.45,5,12],[0.46,6,13],[0.47,6,13],[0.48,6,14],[0.49,6,14],[0.50,7,15],[0.51,7,15],[0.52,7,16],[0.53,8,17],[0.54,8,17],[0.55,8,18],[0.56,8,18],[0.57,9,19],[0.58,9,20],[0.59,9,20],[0.60,10,21],[0.61,10,22],[0.62,11,23],[0.63,11,23],[0.64,11,24],[0.65,12,25],[0.66,12,25],[0.67,12,26],[0.68,13,27],[0.69,13,28]];
+  function thresholds(d) { let i = 0; table.forEach((r, k) => { if (Math.abs(r[0] - d) < Math.abs(table[i][0] - d)) i = k; });
+    let [dd, s1, s3] = table[i]; const out = d < 0.395 || d > 0.695; if (out) { const f = (d / dd) ** 2; s1 *= f; s3 *= f; } return [s1, s3, out]; }
+  function drawH() {
+    const g = H.g, d = +$("fDiam").value, n = +$("mCount").value; const [s1, s3, out] = thresholds(d);
+    $("fDiamO").textContent = d.toFixed(2); $("mCountO").textContent = n;
+    const sc = n <= s1 ? 1 : n >= s3 ? 3 : 2; $("mScore").innerHTML = `<span class="pill ${sc === 3 ? "bad" : sc === 2 ? "warn" : "ok"}">${sc}</span>`;
+    $("mArea").textContent = (10 * Math.PI * (d / 2) ** 2).toFixed(2) + " mm²";
+    $("mWarn").innerHTML = (out ? [`<div>Field diameter ${d.toFixed(2)} mm is outside the table (0.40–0.69 mm); thresholds scaled by field area.</div>`] : []).concat(["<div>Score table must be checked by a pathologist before clinical use.</div>"]).join("");
+    g.clearRect(0, 0, H.W, H.H); g.fillStyle = css("--glass"); g.fillRect(0, 0, H.W, H.H);
+    const X = v => 40 + v / 40 * (H.W - 60);
+    [[0, s1, css("--ok")], [s1, s3, css("--warn")], [s3, 40, css("--bad")]].forEach(([a, b, c], k) => { g.fillStyle = alpha(c, 0.22); g.fillRect(X(a), 70, X(Math.min(b, 40)) - X(a), 60);
+      g.fillStyle = css("--ink"); g.font = "13px " + css("--body"); g.fillText("score " + (k + 1), X(a) + 6, 104); });
+    g.strokeStyle = alpha(css("--muted"), 0.6); g.beginPath(); g.moveTo(X(0), 140); g.lineTo(X(40), 140); g.stroke();
+    [0, 10, 20, 30, 40].forEach(v => { g.fillStyle = css("--muted"); g.font = "11px " + css("--mono"); g.fillText(v, X(v) - 4, 158); });
+    g.fillStyle = css("--haem"); g.beginPath(); g.moveTo(X(n), 62); g.lineTo(X(n) - 7, 48); g.lineTo(X(n) + 7, 48); g.fill();
+    g.fillStyle = css("--muted"); g.font = "12px " + css("--body"); g.fillText(`mitoses per 10 HPF · cut-offs ≤ ${s1.toFixed(1)} and ≥ ${s3.toFixed(1)}`, 40, 196);
+  }
+  ["fDiam", "mCount"].forEach(id => $(id).addEventListener("input", drawH)); onRedraw(drawH);
+})();
+
+// ---------------------------------------------------------------- F7: embedding space
+(() => {
+  const S = setup("cvPleo"), B = setup("cvPleoBars");
+  const R = rng(4), pts = [];
+  const centers = [[-1.3, -0.6], [0.1, 0.35], [1.25, -0.05]];
+  centers.forEach((c, k) => { for (let i = 0; i < 38; i++) { const u = R(), v = R(); const r = Math.sqrt(-2 * Math.log(u + 1e-9)) * 0.62; pts.push([c[0] + r * Math.cos(6.283 * v), c[1] + r * Math.sin(6.283 * v) * 0.8, k]); } });
+  const Wt = [[-2.4, -0.4], [0.1, 1.4], [2.3, -0.6]], bt = [-0.5, 0.6, -0.3];
+  const prob = (x, y) => { const l = Wt.map((w, k) => w[0] * x + w[1] * y + bt[k]); const m = Math.max(...l); const e = l.map(v => Math.exp(v - m)); const z = e.reduce((a, b) => a + b, 0); return e.map(v => v / z); };
+  let q = [0.5, 0.2], drag = false;
+  const toPx = (x, y) => [S.W / 2 + x * 120, S.H / 2 - y * 120], fromPx = (px, py) => [(px - S.W / 2) / 120, -(py - S.H / 2) / 120];
+  function draw() {
+    const g = S.g, cols = [css("--ok"), css("--warn"), css("--bad")];
+    for (let py = 0; py < S.H; py += 8) for (let px = 0; px < S.W; px += 8) { const [x, y] = fromPx(px + 4, py + 4); const p = prob(x, y); const k = p.indexOf(Math.max(...p));
+      g.fillStyle = alpha(cols[k], 0.10 + 0.12 * Math.max(...p)); g.fillRect(px, py, 8, 8); }
+    pts.forEach(([x, y, k]) => { const [px, py] = toPx(x, y); g.beginPath(); g.arc(px, py, 4, 0, 6.283); g.fillStyle = cols[k]; g.fill(); });
+    const [qx, qy] = toPx(...q); g.beginPath(); g.arc(qx, qy, 10, 0, 6.283); g.fillStyle = css("--panel"); g.fill(); g.lineWidth = 3; g.strokeStyle = css("--ink"); g.stroke(); g.lineWidth = 1;
+    g.fillStyle = css("--ink"); g.font = "12px " + css("--body"); g.fillText("principal component 1 →", S.W - 170, S.H - 10);
+    g.save(); g.translate(14, 150); g.rotate(-Math.PI / 2); g.fillText("principal component 2 →", 0, 0); g.restore();
+    [["grade/score 1", 0], ["2", 1], ["3", 2]].forEach(([t, k], i) => { g.fillStyle = cols[k]; g.beginPath(); g.arc(30 + i * 110, 18, 5, 0, 6.283); g.fill(); g.fillStyle = css("--ink"); g.fillText(t, 40 + i * 110, 22); });
+    const p = prob(...q), bg = B.g; bg.clearRect(0, 0, B.W, B.H);
+    p.forEach((v, k) => { const y = 14 + k * 44; bg.fillStyle = alpha(css("--muted"), 0.2); bg.fillRect(70, y, B.W - 120, 26); bg.fillStyle = cols[k]; bg.fillRect(70, y, (B.W - 120) * v, 26);
+      bg.fillStyle = css("--ink"); bg.font = "13px " + css("--mono"); bg.fillText(`P(${k + 1})`, 10, y + 18); bg.fillText(v.toFixed(2), B.W - 44, y + 18); });
+    $("pleoScore").textContent = p.indexOf(Math.max(...p)) + 1; $("pleoExp").textContent = (p[0] + 2 * p[1] + 3 * p[2]).toFixed(2);
+  }
+  S.c.addEventListener("pointerdown", e => { drag = true; S.c.setPointerCapture(e.pointerId); q = fromPx(...S.pt(e)); draw(); });
+  S.c.addEventListener("pointermove", e => { if (drag) { q = fromPx(...S.pt(e)); draw(); } });
+  S.c.addEventListener("pointerup", () => drag = false);
+  onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F8: lumen candidates
+(() => {
+  const S = setup("cvTub");
+  const cands = [ // x, y, r, enclosure (share of ring that is epithelium), kind
+    [140, 150, 26, 0.95, "gland lumen"], [300, 230, 18, 0.82, "gland lumen"], [470, 120, 22, 0.66, "gland lumen"],
+    [520, 290, 30, 0.12, "fat"], [250, 90, 12, 0.35, "stromal cleft"], [400, 320, 10, 0.48, "retraction gap"] ];
+  function draw() {
+    const g = S.g, thr = +$("enc").value; g.clearRect(0, 0, S.W, S.H); g.fillStyle = alpha(css("--eosin"), 0.14); g.fillRect(0, 0, S.W, S.H);
+    const R = rng(13); let acc = 0;
+    cands.forEach(([x, y, r, e, kind]) => {
+      // rings (0-6, 6-15, 15-25 µm drawn as bands)
+      [[r + 22, 0.05], [r + 13, 0.07], [r + 5, 0.09]].forEach(([rr, a]) => { g.beginPath(); g.arc(x, y, rr, 0, 6.283); g.fillStyle = alpha(css("--haem"), a); g.fill(); });
+      // epithelial nuclei around the lumen covering share e of the circle
+      const n = 18; for (let i = 0; i < n; i++) { if (i / n >= e) continue; const a = i / n * 6.283; g.beginPath();
+        g.ellipse(x + (r + 9) * Math.cos(a), y + (r + 9) * Math.sin(a), 5, 3.5, a, 0, 6.283); g.fillStyle = alpha(css("--haem"), 0.8); g.fill(); }
+      g.beginPath(); g.arc(x, y, r, 0, 6.283); g.fillStyle = css("--glass"); g.fill();
+      const ok = e >= thr; if (ok) acc++;
+      g.lineWidth = 2.5; g.strokeStyle = ok ? css("--ok") : css("--bad"); g.setLineDash(ok ? [] : [5, 4]); g.beginPath(); g.arc(x, y, r + 26, 0, 6.283); g.stroke(); g.setLineDash([]); g.lineWidth = 1;
+      g.fillStyle = css("--ink"); g.font = "12px " + css("--body"); g.fillText(`${kind}`, x - r - 10, y + r + 44); g.font = "11px " + css("--mono"); g.fillStyle = css("--muted"); g.fillText(`enclosed ${Math.round(e * 100)}%`, x - r - 10, y + r + 58);
+    });
+    $("tubAcc").textContent = `${acc} of ${cands.length}`;
+  }
+  function score() { const p = +$("tubPct").value; const s = p > 75 ? 1 : p >= 10 ? 2 : 3; $("tubScore").innerHTML = `<span class="pill ${s === 1 ? "ok" : s === 2 ? "warn" : "bad"}">${s}</span>`; }
+  bindRange("enc", v => Math.round(v * 100) + "%", draw); bindRange("tubPct", v => v + "%", score);
+  $("enc").dispatchEvent(new Event("input")); $("tubPct").dispatchEvent(new Event("input")); onRedraw(draw);
+})();
+
+// ---------------------------------------------------------------- F9: grade + hash-chained audit log
+(() => {
+  // compact SHA-256 (public-domain style implementation)
+  function sha256(ascii) {
+    const rr = (v, a) => (v >>> a) | (v << (32 - a)); const K = [], H = []; let p = 2, n = 0;
+    const isPrime = c => { for (let i = 2; i * i <= c; i++) if (c % i === 0) return false; return true; };
+    while (n < 64) { if (isPrime(p)) { if (n < 8) H[n] = (Math.pow(p, 1 / 2) * 2 ** 32) | 0; K[n++] = (Math.pow(p, 1 / 3) * 2 ** 32) | 0; } p++; }
+    const bytes = new TextEncoder().encode(ascii); const l = bytes.length; const words = [];
+    const total = ((l + 9 + 63) >> 6) << 4; for (let i = 0; i < total; i++) words[i] = 0;
+    for (let i = 0; i < l; i++) words[i >> 2] |= bytes[i] << ((3 - (i & 3)) * 8);
+    words[l >> 2] |= 0x80 << ((3 - (l & 3)) * 8); words[total - 1] = l * 8;
+    let h = H.slice();
+    for (let j = 0; j < total; j += 16) { const w = words.slice(j, j + 16); const o = h.slice();
+      for (let i = 0; i < 64; i++) { if (i >= 16) { const w15 = w[i - 15], w2 = w[i - 2];
+          w[i] = (w[i - 16] + (rr(w15, 7) ^ rr(w15, 18) ^ (w15 >>> 3)) + w[i - 7] + (rr(w2, 17) ^ rr(w2, 19) ^ (w2 >>> 10))) | 0; }
+        const [a, b, c, d, e, f, g, hh] = h;
+        const t1 = (hh + (rr(e, 6) ^ rr(e, 11) ^ rr(e, 25)) + ((e & f) ^ (~e & g)) + K[i] + w[i]) | 0;
+        const t2 = ((rr(a, 2) ^ rr(a, 13) ^ rr(a, 22)) + ((a & b) ^ (a & c) ^ (b & c))) | 0;
+        h = [(t1 + t2) | 0, a, b, c, (d + t1) | 0, e, f, g]; }
+      h = h.map((v, i) => (v + o[i]) | 0); }
+    return h.map(v => (v >>> 0).toString(16).padStart(8, "0")).join("");
+  }
+  const comp = { t: 3, p: 2, m: 2 }; let log = [], tampered = false;
+  function append(event) { const prev = log.length ? log[log.length - 1].hash : "0".repeat(64); const e = { event, prev }; e.hash = sha256(e.event + "|" + e.prev); log.push(e); }
+  function verify() { let prev = "0".repeat(64); for (let i = 0; i < log.length; i++) { const e = log[i];
+      if (e.prev !== prev) return [false, i]; if (sha256(e.event + "|" + e.prev) !== e.hash) return [false, i]; prev = e.hash; } return [true, -1]; }
+  function render() {
+    const total = comp.t + comp.p + comp.m, grade = total <= 5 ? 1 : total <= 7 ? 2 : 3;
+    $("ngTotal").textContent = total; $("ngGrade").innerHTML = `<span class="pill ${grade === 1 ? "ok" : grade === 2 ? "warn" : "bad"}">Grade ${grade}</span>`;
+    const [ok, at] = verify();
+    $("chain").innerHTML = log.slice(-6).map((e, k) => { const idx = log.length - Math.min(6, log.length) + k;
+      return `<div class="blk ${!ok && idx >= at ? "broken" : ""}">#${idx + 1} ${e.event}<br>prev ${e.prev.slice(0, 12)}… → hash ${e.hash.slice(0, 12)}…</div>`; }).join("");
+    $("chainStatus").innerHTML = ok ? `<span class="pill ok">chain verified · fingerprint ${log[log.length - 1].hash.slice(0, 16)}</span>`
+      : `<span class="pill bad">tampering detected at entry ${at + 1}</span>`;
+  }
+  function reset() { log = []; tampered = false; append("case opened: B-001, core biopsy"); append("tubules auto = 3 (6% of tumour)"); append("pleomorphism auto = 2"); append("mitoses auto = 2 (9 in 10 HPF)"); }
+  document.querySelectorAll(".seg[data-comp]").forEach(seg => { seg.querySelectorAll("button").forEach((b, i) => b.addEventListener("click", () => {
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true");
+    const k = seg.dataset.comp, name = { t: "tubules", p: "pleomorphism", m: "mitoses" }[k]; const old = comp[k]; comp[k] = i + 1;
+    if (old !== comp[k]) append(`pathologist edit: ${name} ${old} → ${comp[k]}`); render(); })); });
+  $("tamper").onclick = () => { if (log.length > 1) { log[1].event = log[1].event.replace(/= \d/, "= 1"); tampered = true; render(); } };
+  $("chainReset").onclick = () => { reset(); render(); };
+  reset(); render();
+})();
+})();
+</script>
+</body>
+</html>

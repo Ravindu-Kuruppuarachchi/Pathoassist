@@ -1,0 +1,97 @@
+{
+  "case_id": "DEMO-KI67",
+  "stain": "Ki67",
+  "n_fields": 6,
+  "celltype_filter": false,
+  "global_": {
+    "mode": "global",
+    "index_pct": 24.64,
+    "n_positive": 206,
+    "n_counted": 836,
+    "fields_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "band": "Intermediate (6-29%)",
+    "warnings": [
+      "Cell-type filter off: all detected nuclei were counted, not only tumour nuclei."
+    ]
+  },
+  "hotspot": {
+    "mode": "hotspot",
+    "index_pct": 36.06,
+    "n_positive": 181,
+    "n_counted": 502,
+    "fields_used": [
+      4,
+      3,
+      5,
+      1
+    ],
+    "band": "High (>=30%)",
+    "warnings": [
+      "Hotspot pooled over 4 fields to reach 500 nuclei; make sure they are adjacent fields from the same hotspot.",
+      "Cell-type filter off: all detected nuclei were counted, not only tumour nuclei."
+    ]
+  },
+  "fields": [
+    {
+      "index": 0,
+      "frame": "fields/000.jpg",
+      "negative": 156,
+      "positive": 10,
+      "index_pct": 6.02,
+      "weight": null,
+      "n_corrected": 0
+    },
+    {
+      "index": 1,
+      "frame": "fields/001.jpg",
+      "negative": 138,
+      "positive": 28,
+      "index_pct": 16.87,
+      "weight": null,
+      "n_corrected": 0
+    },
+    {
+      "index": 2,
+      "frame": "fields/002.jpg",
+      "negative": 153,
+      "positive": 15,
+      "index_pct": 8.93,
+      "weight": null,
+      "n_corrected": 0
+    },
+    {
+      "index": 3,
+      "frame": "fields/003.jpg",
+      "negative": 32,
+      "positive": 22,
+      "index_pct": 40.74,
+      "weight": null,
+      "n_corrected": 0
+    },
+    {
+      "index": 4,
+      "frame": "fields/004.jpg",
+      "negative": 29,
+      "positive": 72,
+      "index_pct": 71.29,
+      "weight": null,
+      "n_corrected": 0
+    },
+    {
+      "index": 5,
+      "frame": "fields/005.jpg",
+      "negative": 122,
+      "positive": 59,
+      "index_pct": 32.6,
+      "weight": null,
+      "n_corrected": 0
+    }
+  ]
+}

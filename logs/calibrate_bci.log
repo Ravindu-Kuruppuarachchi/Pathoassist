@@ -1,0 +1,24 @@
+
+== all_cells: median 636 counted cells per image
+   default thresholds : test kappa 0.258, accuracy 0.256
+   fitted on train    : {'stain_od': 0.04, 'strong_min': 0.2, 'complete_min': 0.5, 'faint_max': 0.04, 'source': 'fitted on BCI-train field labels'}
+   test (n=977)  : weighted kappa 0.450, accuracy 0.478, within one category 0.927
+   0 vs 1+            : accuracy 0.795, kappa 0.213 (n=273)
+   ISH triage (2+/3+ vs 0/1+) agreement 0.689; 3+ recognised 0.473
+   confusion (rows = label 0,1+,2+,3+; cols = predicted):
+      [14, 12, 11, 1]
+      [32, 73, 130, 0]
+      [40, 103, 258, 45]
+      [3, 16, 117, 122]
+
+== cluster: median 63 counted cells per image
+   default thresholds : test kappa 0.069, accuracy 0.176
+   fitted on train    : {'stain_od': 0.06, 'strong_min': 0.2, 'complete_min': 0.5, 'faint_max': 0.12, 'source': 'fitted on BCI-train field labels'}
+   test (n=977)  : weighted kappa 0.085, accuracy 0.282, within one category 0.742
+   0 vs 1+            : accuracy 0.692, kappa 0.081 (n=273)
+   ISH triage (2+/3+ vs 0/1+) agreement 0.447; 3+ recognised 0.155
+   confusion (rows = label 0,1+,2+,3+; cols = predicted):
+      [14, 17, 7, 0]
+      [60, 146, 28, 1]
+      [70, 260, 76, 40]
+      [85, 89, 44, 40]

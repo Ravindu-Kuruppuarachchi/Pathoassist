@@ -1,0 +1,16 @@
+{
+  "n_points": {
+    "lumen": 493,
+    "non_lumen": 610
+  },
+  "unmatched": {
+    "lumen": 6,
+    "non_lumen": 36
+  },
+  "auc": 0.8728262347158526,
+  "auc_sd": 0.005542932415283304,
+  "accuracy_matched": 0.7879359095193214,
+  "lumen_recall_all_points": 0.6896551724137931,
+  "non_lumen_specificity": 0.8641114982578397,
+  "lumen_precision": 0.8133971291866029
+}

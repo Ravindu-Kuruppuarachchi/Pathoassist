@@ -1,0 +1,11 @@
+594 scored x20 frames (11 slides x 2 scanners); score 1/2/3 = [46, 444, 104]
+Traceback (most recent call last):
+  File "/home/ravindu/rashmika/pathoasisst/training/pleomorphism/train_pleomorphism.py", line 144, in <module>
+    main()
+  File "/home/ravindu/rashmika/pathoasisst/training/pleomorphism/train_pleomorphism.py", line 123, in main
+    hum = human_agreement(units)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ravindu/rashmika/pathoasisst/training/pleomorphism/train_pleomorphism.py", line 84, in human_agreement
+    return dict(n=len(a), weighted_kappa=float(weighted_kappa(a[:, 0], a[:, 1], n=3)), exact=float((a[:, 0] == a[:, 1]).mean()))
+                                                              ~^^^^^^
+IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed

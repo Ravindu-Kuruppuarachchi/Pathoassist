@@ -1,0 +1,876 @@
+{
+  "n_patients": 94,
+  "spearman_tubule_pct_vs_grade": 0.1121331335212378,
+  "spearman_tubule_score_vs_grade": -0.1223097572931469,
+  "median_pct_by_grade": {
+    "1": 16.6,
+    "2": 17.55,
+    "3": 19.8
+  },
+  "score_distribution_by_grade": {
+    "1": [
+      0,
+      20,
+      9
+    ],
+    "2": [
+      0,
+      21,
+      11
+    ],
+    "3": [
+      0,
+      27,
+      6
+    ]
+  },
+  "kappa_tubule_score_vs_grade": -0.09573412698412698,
+  "patients": [
+    {
+      "patient": "10260",
+      "grade": 1,
+      "tubule_pct": 22.5,
+      "tubule_score": 2,
+      "tumour_mm2": 1.776,
+      "lumens": 249,
+      "fields": 1
+    },
+    {
+      "patient": "10349",
+      "grade": 3,
+      "tubule_pct": 15.2,
+      "tubule_score": 2,
+      "tumour_mm2": 2.582,
+      "lumens": 175,
+      "fields": 1
+    },
+    {
+      "patient": "10377",
+      "grade": 3,
+      "tubule_pct": 31.0,
+      "tubule_score": 2,
+      "tumour_mm2": 1.941,
+      "lumens": 491,
+      "fields": 1
+    },
+    {
+      "patient": "10397",
+      "grade": 3,
+      "tubule_pct": 28.3,
+      "tubule_score": 2,
+      "tumour_mm2": 1.885,
+      "lumens": 241,
+      "fields": 1
+    },
+    {
+      "patient": "10422",
+      "grade": 3,
+      "tubule_pct": 23.0,
+      "tubule_score": 2,
+      "tumour_mm2": 2.496,
+      "lumens": 251,
+      "fields": 1
+    },
+    {
+      "patient": "10521",
+      "grade": 3,
+      "tubule_pct": 26.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.133,
+      "lumens": 339,
+      "fields": 1
+    },
+    {
+      "patient": "10532",
+      "grade": 2,
+      "tubule_pct": 11.1,
+      "tubule_score": 2,
+      "tumour_mm2": 2.362,
+      "lumens": 140,
+      "fields": 1
+    },
+    {
+      "patient": "10543",
+      "grade": 2,
+      "tubule_pct": 2.1,
+      "tubule_score": 3,
+      "tumour_mm2": 2.123,
+      "lumens": 33,
+      "fields": 1
+    },
+    {
+      "patient": "10668",
+      "grade": 1,
+      "tubule_pct": 9.4,
+      "tubule_score": 3,
+      "tumour_mm2": 2.39,
+      "lumens": 93,
+      "fields": 1
+    },
+    {
+      "patient": "10783",
+      "grade": 1,
+      "tubule_pct": 46.6,
+      "tubule_score": 2,
+      "tumour_mm2": 2.393,
+      "lumens": 757,
+      "fields": 1
+    },
+    {
+      "patient": "10812",
+      "grade": 3,
+      "tubule_pct": 29.5,
+      "tubule_score": 2,
+      "tumour_mm2": 2.391,
+      "lumens": 382,
+      "fields": 1
+    },
+    {
+      "patient": "10836",
+      "grade": 1,
+      "tubule_pct": 5.7,
+      "tubule_score": 3,
+      "tumour_mm2": 1.701,
+      "lumens": 51,
+      "fields": 1
+    },
+    {
+      "patient": "10874",
+      "grade": 1,
+      "tubule_pct": 29.2,
+      "tubule_score": 2,
+      "tumour_mm2": 1.902,
+      "lumens": 422,
+      "fields": 1
+    },
+    {
+      "patient": "10876",
+      "grade": 3,
+      "tubule_pct": 12.4,
+      "tubule_score": 2,
+      "tumour_mm2": 1.871,
+      "lumens": 152,
+      "fields": 1
+    },
+    {
+      "patient": "10894",
+      "grade": 3,
+      "tubule_pct": 22.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.024,
+      "lumens": 309,
+      "fields": 1
+    },
+    {
+      "patient": "10898",
+      "grade": 3,
+      "tubule_pct": 0.5,
+      "tubule_score": 3,
+      "tumour_mm2": 2.249,
+      "lumens": 5,
+      "fields": 1
+    },
+    {
+      "patient": "10956",
+      "grade": 1,
+      "tubule_pct": 0.0,
+      "tubule_score": 3,
+      "tumour_mm2": 1.842,
+      "lumens": 0,
+      "fields": 1
+    },
+    {
+      "patient": "10959",
+      "grade": 1,
+      "tubule_pct": 22.1,
+      "tubule_score": 2,
+      "tumour_mm2": 2.3,
+      "lumens": 262,
+      "fields": 1
+    },
+    {
+      "patient": "11012",
+      "grade": 1,
+      "tubule_pct": 0.0,
+      "tubule_score": 3,
+      "tumour_mm2": 1.743,
+      "lumens": 0,
+      "fields": 1
+    },
+    {
+      "patient": "1110392",
+      "grade": 3,
+      "tubule_pct": 10.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.424,
+      "lumens": 133,
+      "fields": 1
+    },
+    {
+      "patient": "11247",
+      "grade": 3,
+      "tubule_pct": 19.8,
+      "tubule_score": 2,
+      "tumour_mm2": 2.063,
+      "lumens": 250,
+      "fields": 1
+    },
+    {
+      "patient": "11300",
+      "grade": 2,
+      "tubule_pct": 7.5,
+      "tubule_score": 3,
+      "tumour_mm2": 2.212,
+      "lumens": 101,
+      "fields": 1
+    },
+    {
+      "patient": "1154",
+      "grade": 1,
+      "tubule_pct": 24.7,
+      "tubule_score": 2,
+      "tumour_mm2": 1.377,
+      "lumens": 147,
+      "fields": 1
+    },
+    {
+      "patient": "11750",
+      "grade": 3,
+      "tubule_pct": 18.0,
+      "tubule_score": 2,
+      "tumour_mm2": 2.301,
+      "lumens": 226,
+      "fields": 1
+    },
+    {
+      "patient": "2467",
+      "grade": 2,
+      "tubule_pct": 7.4,
+      "tubule_score": 3,
+      "tumour_mm2": 2.473,
+      "lumens": 92,
+      "fields": 1
+    },
+    {
+      "patient": "2508",
+      "grade": 2,
+      "tubule_pct": 10.0,
+      "tubule_score": 3,
+      "tumour_mm2": 2.131,
+      "lumens": 111,
+      "fields": 1
+    },
+    {
+      "patient": "2528",
+      "grade": 2,
+      "tubule_pct": 10.5,
+      "tubule_score": 2,
+      "tumour_mm2": 1.831,
+      "lumens": 112,
+      "fields": 1
+    },
+    {
+      "patient": "2590",
+      "grade": 2,
+      "tubule_pct": 19.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.391,
+      "lumens": 215,
+      "fields": 1
+    },
+    {
+      "patient": "2603",
+      "grade": 2,
+      "tubule_pct": 4.2,
+      "tubule_score": 3,
+      "tumour_mm2": 2.2,
+      "lumens": 50,
+      "fields": 1
+    },
+    {
+      "patient": "2632",
+      "grade": 2,
+      "tubule_pct": 15.4,
+      "tubule_score": 2,
+      "tumour_mm2": 2.26,
+      "lumens": 112,
+      "fields": 1
+    },
+    {
+      "patient": "2655",
+      "grade": 1,
+      "tubule_pct": 23.3,
+      "tubule_score": 2,
+      "tumour_mm2": 1.806,
+      "lumens": 353,
+      "fields": 1
+    },
+    {
+      "patient": "2697",
+      "grade": 2,
+      "tubule_pct": 24.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.423,
+      "lumens": 146,
+      "fields": 1
+    },
+    {
+      "patient": "3053",
+      "grade": 2,
+      "tubule_pct": 33.8,
+      "tubule_score": 2,
+      "tumour_mm2": 2.169,
+      "lumens": 514,
+      "fields": 1
+    },
+    {
+      "patient": "3124",
+      "grade": 1,
+      "tubule_pct": 2.7,
+      "tubule_score": 3,
+      "tumour_mm2": 4.356,
+      "lumens": 54,
+      "fields": 2
+    },
+    {
+      "patient": "3346",
+      "grade": 2,
+      "tubule_pct": 0.1,
+      "tubule_score": 3,
+      "tumour_mm2": 2.294,
+      "lumens": 1,
+      "fields": 1
+    },
+    {
+      "patient": "3370",
+      "grade": 2,
+      "tubule_pct": 32.7,
+      "tubule_score": 2,
+      "tumour_mm2": 2.298,
+      "lumens": 483,
+      "fields": 1
+    },
+    {
+      "patient": "3373",
+      "grade": 3,
+      "tubule_pct": 33.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.396,
+      "lumens": 382,
+      "fields": 1
+    },
+    {
+      "patient": "3498",
+      "grade": 2,
+      "tubule_pct": 15.8,
+      "tubule_score": 2,
+      "tumour_mm2": 2.499,
+      "lumens": 220,
+      "fields": 1
+    },
+    {
+      "patient": "3657",
+      "grade": 1,
+      "tubule_pct": 8.5,
+      "tubule_score": 3,
+      "tumour_mm2": 3.664,
+      "lumens": 121,
+      "fields": 2
+    },
+    {
+      "patient": "3685",
+      "grade": 2,
+      "tubule_pct": 23.4,
+      "tubule_score": 2,
+      "tumour_mm2": 2.248,
+      "lumens": 268,
+      "fields": 1
+    },
+    {
+      "patient": "3801",
+      "grade": 2,
+      "tubule_pct": 26.7,
+      "tubule_score": 2,
+      "tumour_mm2": 2.723,
+      "lumens": 374,
+      "fields": 1
+    },
+    {
+      "patient": "5361",
+      "grade": 1,
+      "tubule_pct": 7.7,
+      "tubule_score": 3,
+      "tumour_mm2": 2.233,
+      "lumens": 66,
+      "fields": 1
+    },
+    {
+      "patient": "5387",
+      "grade": 1,
+      "tubule_pct": 29.1,
+      "tubule_score": 2,
+      "tumour_mm2": 2.173,
+      "lumens": 426,
+      "fields": 1
+    },
+    {
+      "patient": "6178",
+      "grade": 1,
+      "tubule_pct": 12.0,
+      "tubule_score": 2,
+      "tumour_mm2": 1.795,
+      "lumens": 151,
+      "fields": 1
+    },
+    {
+      "patient": "6279",
+      "grade": 2,
+      "tubule_pct": 25.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.275,
+      "lumens": 314,
+      "fields": 1
+    },
+    {
+      "patient": "6332",
+      "grade": 1,
+      "tubule_pct": 16.6,
+      "tubule_score": 2,
+      "tumour_mm2": 1.788,
+      "lumens": 178,
+      "fields": 1
+    },
+    {
+      "patient": "6358",
+      "grade": 2,
+      "tubule_pct": 43.7,
+      "tubule_score": 2,
+      "tumour_mm2": 2.311,
+      "lumens": 685,
+      "fields": 1
+    },
+    {
+      "patient": "6391",
+      "grade": 2,
+      "tubule_pct": 46.4,
+      "tubule_score": 2,
+      "tumour_mm2": 2.345,
+      "lumens": 735,
+      "fields": 1
+    },
+    {
+      "patient": "6437",
+      "grade": 1,
+      "tubule_pct": 26.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.304,
+      "lumens": 375,
+      "fields": 1
+    },
+    {
+      "patient": "6526",
+      "grade": 3,
+      "tubule_pct": 26.6,
+      "tubule_score": 2,
+      "tumour_mm2": 1.966,
+      "lumens": 315,
+      "fields": 1
+    },
+    {
+      "patient": "6682",
+      "grade": 2,
+      "tubule_pct": 5.1,
+      "tubule_score": 3,
+      "tumour_mm2": 2.593,
+      "lumens": 53,
+      "fields": 1
+    },
+    {
+      "patient": "6963",
+      "grade": 1,
+      "tubule_pct": 19.2,
+      "tubule_score": 2,
+      "tumour_mm2": 1.759,
+      "lumens": 246,
+      "fields": 1
+    },
+    {
+      "patient": "7433",
+      "grade": 2,
+      "tubule_pct": 6.3,
+      "tubule_score": 3,
+      "tumour_mm2": 1.933,
+      "lumens": 57,
+      "fields": 1
+    },
+    {
+      "patient": "7563",
+      "grade": 1,
+      "tubule_pct": 0.4,
+      "tubule_score": 3,
+      "tumour_mm2": 1.61,
+      "lumens": 5,
+      "fields": 1
+    },
+    {
+      "patient": "7567",
+      "grade": 2,
+      "tubule_pct": 8.6,
+      "tubule_score": 3,
+      "tumour_mm2": 2.198,
+      "lumens": 99,
+      "fields": 1
+    },
+    {
+      "patient": "7752",
+      "grade": 3,
+      "tubule_pct": 0.0,
+      "tubule_score": 3,
+      "tumour_mm2": 2.189,
+      "lumens": 0,
+      "fields": 1
+    },
+    {
+      "patient": "7891",
+      "grade": 3,
+      "tubule_pct": 0.9,
+      "tubule_score": 3,
+      "tumour_mm2": 2.574,
+      "lumens": 8,
+      "fields": 1
+    },
+    {
+      "patient": "7961",
+      "grade": 3,
+      "tubule_pct": 16.5,
+      "tubule_score": 2,
+      "tumour_mm2": 2.283,
+      "lumens": 274,
+      "fields": 1
+    },
+    {
+      "patient": "7967",
+      "grade": 1,
+      "tubule_pct": 23.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.038,
+      "lumens": 265,
+      "fields": 1
+    },
+    {
+      "patient": "8079",
+      "grade": 2,
+      "tubule_pct": 26.7,
+      "tubule_score": 2,
+      "tumour_mm2": 2.369,
+      "lumens": 310,
+      "fields": 1
+    },
+    {
+      "patient": "8153",
+      "grade": 3,
+      "tubule_pct": 29.0,
+      "tubule_score": 2,
+      "tumour_mm2": 1.91,
+      "lumens": 382,
+      "fields": 1
+    },
+    {
+      "patient": "8259",
+      "grade": 3,
+      "tubule_pct": 16.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.422,
+      "lumens": 225,
+      "fields": 1
+    },
+    {
+      "patient": "8262",
+      "grade": 2,
+      "tubule_pct": 13.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.426,
+      "lumens": 167,
+      "fields": 1
+    },
+    {
+      "patient": "8420",
+      "grade": 2,
+      "tubule_pct": 33.4,
+      "tubule_score": 2,
+      "tumour_mm2": 2.446,
+      "lumens": 463,
+      "fields": 1
+    },
+    {
+      "patient": "8540",
+      "grade": 3,
+      "tubule_pct": 34.2,
+      "tubule_score": 2,
+      "tumour_mm2": 2.149,
+      "lumens": 392,
+      "fields": 1
+    },
+    {
+      "patient": "8584",
+      "grade": 1,
+      "tubule_pct": 15.6,
+      "tubule_score": 2,
+      "tumour_mm2": 2.336,
+      "lumens": 202,
+      "fields": 1
+    },
+    {
+      "patient": "8585",
+      "grade": 2,
+      "tubule_pct": 28.5,
+      "tubule_score": 2,
+      "tumour_mm2": 2.313,
+      "lumens": 399,
+      "fields": 1
+    },
+    {
+      "patient": "8938",
+      "grade": 1,
+      "tubule_pct": 11.9,
+      "tubule_score": 2,
+      "tumour_mm2": 1.688,
+      "lumens": 94,
+      "fields": 1
+    },
+    {
+      "patient": "8945",
+      "grade": 3,
+      "tubule_pct": 38.7,
+      "tubule_score": 2,
+      "tumour_mm2": 2.412,
+      "lumens": 647,
+      "fields": 1
+    },
+    {
+      "patient": "8986",
+      "grade": 2,
+      "tubule_pct": 22.5,
+      "tubule_score": 2,
+      "tumour_mm2": 1.669,
+      "lumens": 185,
+      "fields": 1
+    },
+    {
+      "patient": "8998",
+      "grade": 1,
+      "tubule_pct": 35.2,
+      "tubule_score": 2,
+      "tumour_mm2": 1.97,
+      "lumens": 376,
+      "fields": 1
+    },
+    {
+      "patient": "9031",
+      "grade": 1,
+      "tubule_pct": 22.7,
+      "tubule_score": 2,
+      "tumour_mm2": 1.9,
+      "lumens": 233,
+      "fields": 1
+    },
+    {
+      "patient": "9057",
+      "grade": 1,
+      "tubule_pct": 52.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.123,
+      "lumens": 894,
+      "fields": 1
+    },
+    {
+      "patient": "9096",
+      "grade": 3,
+      "tubule_pct": 45.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.217,
+      "lumens": 626,
+      "fields": 1
+    },
+    {
+      "patient": "9098",
+      "grade": 2,
+      "tubule_pct": 32.9,
+      "tubule_score": 2,
+      "tumour_mm2": 2.238,
+      "lumens": 459,
+      "fields": 1
+    },
+    {
+      "patient": "9103",
+      "grade": 1,
+      "tubule_pct": 2.0,
+      "tubule_score": 3,
+      "tumour_mm2": 2.314,
+      "lumens": 27,
+      "fields": 1
+    },
+    {
+      "patient": "9106",
+      "grade": 1,
+      "tubule_pct": 11.2,
+      "tubule_score": 2,
+      "tumour_mm2": 2.303,
+      "lumens": 122,
+      "fields": 1
+    },
+    {
+      "patient": "9141",
+      "grade": 3,
+      "tubule_pct": 51.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.394,
+      "lumens": 1080,
+      "fields": 1
+    },
+    {
+      "patient": "9287",
+      "grade": 2,
+      "tubule_pct": 7.4,
+      "tubule_score": 3,
+      "tumour_mm2": 4.108,
+      "lumens": 127,
+      "fields": 2
+    },
+    {
+      "patient": "9324",
+      "grade": 3,
+      "tubule_pct": 36.5,
+      "tubule_score": 2,
+      "tumour_mm2": 2.238,
+      "lumens": 585,
+      "fields": 1
+    },
+    {
+      "patient": "9325",
+      "grade": 3,
+      "tubule_pct": 20.0,
+      "tubule_score": 2,
+      "tumour_mm2": 2.249,
+      "lumens": 199,
+      "fields": 1
+    },
+    {
+      "patient": "9329",
+      "grade": 3,
+      "tubule_pct": 16.2,
+      "tubule_score": 2,
+      "tumour_mm2": 2.535,
+      "lumens": 214,
+      "fields": 1
+    },
+    {
+      "patient": "9454",
+      "grade": 3,
+      "tubule_pct": 1.7,
+      "tubule_score": 3,
+      "tumour_mm2": 2.306,
+      "lumens": 19,
+      "fields": 1
+    },
+    {
+      "patient": "9458",
+      "grade": 3,
+      "tubule_pct": 16.4,
+      "tubule_score": 2,
+      "tumour_mm2": 2.523,
+      "lumens": 262,
+      "fields": 1
+    },
+    {
+      "patient": "9468",
+      "grade": 2,
+      "tubule_pct": 33.0,
+      "tubule_score": 2,
+      "tumour_mm2": 2.111,
+      "lumens": 415,
+      "fields": 1
+    },
+    {
+      "patient": "9500",
+      "grade": 2,
+      "tubule_pct": 1.8,
+      "tubule_score": 3,
+      "tumour_mm2": 2.306,
+      "lumens": 29,
+      "fields": 1
+    },
+    {
+      "patient": "9504",
+      "grade": 3,
+      "tubule_pct": 8.6,
+      "tubule_score": 3,
+      "tumour_mm2": 2.248,
+      "lumens": 109,
+      "fields": 1
+    },
+    {
+      "patient": "9603",
+      "grade": 3,
+      "tubule_pct": 6.4,
+      "tubule_score": 3,
+      "tumour_mm2": 2.153,
+      "lumens": 80,
+      "fields": 1
+    },
+    {
+      "patient": "9610",
+      "grade": 1,
+      "tubule_pct": 23.1,
+      "tubule_score": 2,
+      "tumour_mm2": 1.919,
+      "lumens": 266,
+      "fields": 1
+    },
+    {
+      "patient": "9612",
+      "grade": 3,
+      "tubule_pct": 17.1,
+      "tubule_score": 2,
+      "tumour_mm2": 2.336,
+      "lumens": 228,
+      "fields": 1
+    },
+    {
+      "patient": "9691",
+      "grade": 3,
+      "tubule_pct": 28.7,
+      "tubule_score": 2,
+      "tumour_mm2": 1.954,
+      "lumens": 345,
+      "fields": 1
+    },
+    {
+      "patient": "9912",
+      "grade": 3,
+      "tubule_pct": 12.7,
+      "tubule_score": 2,
+      "tumour_mm2": 2.273,
+      "lumens": 127,
+      "fields": 1
+    },
+    {
+      "patient": "9914",
+      "grade": 2,
+      "tubule_pct": 33.3,
+      "tubule_score": 2,
+      "tumour_mm2": 2.329,
+      "lumens": 429,
+      "fields": 1
+    },
+    {
+      "patient": "9964",
+      "grade": 1,
+      "tubule_pct": 16.6,
+      "tubule_score": 2,
+      "tumour_mm2": 1.741,
+      "lumens": 179,
+      "fields": 1
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "all_cells": {
+    "labels": "refined",
+    "n_train": 426,
+    "thresholds": {
+      "stain_od": 0.04,
+      "strong_min": 0.16,
+      "complete_min": 0.3,
+      "faint_max": 0.08,
+      "source": "fitted on BCI-train field labels"
+    },
+    "train_kappa": 0.7054779473527777,
+    "test": {
+      "n": 693,
+      "weighted_kappa": 0.7248065640158246,
+      "accuracy": 0.6406926406926406,
+      "within_one": 0.9812409812409812,
+      "confusion": [
+        [
+          6,
+          7,
+          0,
+          0
+        ],
+        [
+          31,
+          152,
+          89,
+          1
+        ],
+        [
+          8,
+          37,
+          132,
+          60
+        ],
+        [
+          1,
+          3,
+          12,
+          154
+        ]
+      ],
+      "zero_vs_1plus": {
+        "n": 286,
+        "accuracy": 0.8671328671328671,
+        "kappa": 0.18518518518518523
+      },
+      "positive_vs_rest": {
+        "sens_3plus": 0.9058823529411765,
+        "ish_triage": 0.7994227994227994
+      }
+    },
+    "test_original_labels": {
+      "n": 977,
+      "weighted_kappa": 0.45164898453268776,
+      "accuracy": 0.4626407369498465,
+      "within_one": 0.9037871033776868,
+      "confusion": [
+        [
+          14,
+          18,
+          2,
+          4
+        ],
+        [
+          32,
+          119,
+          83,
+          1
+        ],
+        [
+          40,
+          153,
+          173,
+          80
+        ],
+        [
+          3,
+          44,
+          65,
+          146
+        ]
+      ],
+      "zero_vs_1plus": {
+        "n": 273,
+        "accuracy": 0.7948717948717948,
+        "kappa": 0.21341839884749947
+      },
+      "positive_vs_rest": {
+        "sens_3plus": 0.5658914728682171,
+        "ish_triage": 0.6622313203684749
+      }
+    },
+    "test_default_thresholds": {
+      "n": 693,
+      "weighted_kappa": 0.5351956153865582,
+      "accuracy": 0.3217893217893218,
+      "within_one": 0.886002886002886,
+      "confusion": [
+        [
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          176,
+          97,
+          0,
+          0
+        ],
+        [
+          37,
+          168,
+          31,
+          1
+        ],
+        [
+          2,
+          40,
+          46,
+          82
+        ]
+      ],
+      "zero_vs_1plus": {
+        "n": 286,
+        "accuracy": 0.38461538461538464,
+        "kappa": 0.04771273979340873
+      },
+      "positive_vs_rest": {
+        "sens_3plus": 0.4823529411764706,
+        "ish_triage": 0.6435786435786436
+      }
+    },
+    "median_cells": 791.0
+  },
+  "chosen": "all_cells"
+}

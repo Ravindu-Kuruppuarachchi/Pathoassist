@@ -1,0 +1,178 @@
+{
+  "case_id": "DEMO-B1",
+  "specimen": "core biopsy",
+  "grade": {
+    "components": {
+      "tubules": {
+        "name": "tubules",
+        "score": 3,
+        "auto_score": 3,
+        "source": "auto",
+        "value": "tubules 0% of 2.9 mm\u00b2 invasive tumour",
+        "details": {
+          "score": 3,
+          "tubule_pct": 0.1,
+          "tumour_area_mm2": 2.85,
+          "tubule_area_mm2": 0.002,
+          "n_fields": 1,
+          "n_lumens": 7,
+          "warnings": [
+            "Tubule model trained on public data (BreCaHAD lumens); not validated against local tubule scores."
+          ]
+        },
+        "validated": false
+      },
+      "pleomorphism": {
+        "name": "pleomorphism",
+        "score": 3,
+        "auto_score": 3,
+        "source": "auto",
+        "value": "P(1/2/3) = [0.0, 0.087, 0.913], 3 fields, 3398 tumour nuclei",
+        "details": {
+          "score": 3,
+          "probs": [
+            0.0,
+            0.087,
+            0.913
+          ],
+          "expected": 2.91,
+          "n_fields": 3,
+          "n_tumour": 3398,
+          "field_scores": [
+            3,
+            3,
+            3
+          ],
+          "warnings": [
+            "Score model NOT validated against local pathologists (public data only): use the measurements, not the score, until it is refitted on local cases."
+          ],
+          "measurements": {
+            "area_median": 61.304,
+            "major_p90": 15.567,
+            "area_cv": 0.597,
+            "area_max_rel": 2.551,
+            "area_rel_lymph": 2.556,
+            "area_rel_ref": 1.613
+          }
+        },
+        "validated": false
+      },
+      "mitoses": {
+        "name": "mitoses",
+        "score": 3,
+        "auto_score": 3,
+        "source": "auto",
+        "value": "26 mitoses in 10 HPF (field diameter 0.339 mm)",
+        "details": {
+          "hpfs_counted": 10,
+          "mitoses": 26,
+          "area_mm2": 0.903,
+          "per_mm2": 28.78,
+          "field_diameter_mm": 0.339,
+          "rejected": 0,
+          "added": 0,
+          "warnings": [],
+          "score": 3,
+          "score1_max": 2.9,
+          "score3_min": 7.2,
+          "table_diameter_mm": 0.4,
+          "notes": [
+            "Field diameter 0.339 mm is outside the table (0.40-0.69 mm); thresholds scaled by field area.",
+            "Score table not yet verified by a pathologist (see mitotic_score_table.json)."
+          ]
+        },
+        "validated": false
+      }
+    },
+    "total": 9,
+    "grade": 3
+  },
+  "biomarkers": {
+    "HER2": {
+      "result": {
+        "score": "3+",
+        "subgroup": "",
+        "n_cells": 954,
+        "pct": [
+          14.88,
+          54.72,
+          16.98,
+          13.42
+        ],
+        "pct_any_staining": 85.12,
+        "pct_complete": 30.4,
+        "pct_intense_incomplete": 0.21,
+        "reflex_ish": false,
+        "her2_low": "HER2-positive",
+        "flags": [
+          "Field 2: High background DAB (0.32 OD outside cells): possible non-specific staining."
+        ],
+        "rules_version": "ASCO/CAP 2018 focused update + CAP 2023 HER2-low/ultralow wording",
+        "rules_verified": false
+      },
+      "validated": false,
+      "method": "membrane ring, ASCO/CAP rules"
+    },
+    "Ki67": {
+      "result": {
+        "global": {
+          "mode": "global",
+          "index_pct": 24.64,
+          "n_positive": 206,
+          "n_counted": 836,
+          "fields_used": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "band": "Intermediate (6-29%)",
+          "warnings": [
+            "Cell-type filter off: all detected nuclei were counted, not only tumour nuclei."
+          ]
+        },
+        "hotspot": {
+          "mode": "hotspot",
+          "index_pct": 36.06,
+          "n_positive": 181,
+          "n_counted": 502,
+          "fields_used": [
+            4,
+            3,
+            5,
+            1
+          ],
+          "band": "High (>=30%)",
+          "warnings": [
+            "Hotspot pooled over 4 fields to reach 500 nuclei; make sure they are adjacent fields from the same hotspot.",
+            "Cell-type filter off: all detected nuclei were counted, not only tumour nuclei."
+          ]
+        }
+      },
+      "validated": false,
+      "method": "DAB positivity, global + hotspot"
+    }
+  },
+  "snapshots": [
+    {
+      "file": "snapshots/01_tubules.jpg",
+      "caption": "tubules - 01_BC_G3_10349_10x_1.JPG",
+      "module": "tubules"
+    },
+    {
+      "file": "snapshots/02_pleomorphism.jpg",
+      "caption": "pleomorphism - 01_BC_G3_10349_40x_1.JPG",
+      "module": "pleomorphism"
+    },
+    {
+      "file": "snapshots/03_mitoses.jpg",
+      "caption": "mitoses - hpf_00.jpg",
+      "module": "mitoses"
+    }
+  ],
+  "signed_by": "Dr Demo",
+  "audit_head": "b0a3ed0b4d9736336e5d348089f20fbaa9bfe5e71b37462b3f8bfcbbd21f9052",
+  "saved": "2026-10-03T15:53:01"
+}

@@ -25,6 +25,9 @@ def thumbnail(frame_rgb: np.ndarray) -> np.ndarray:
     g = cv2.cvtColor(cv2.resize(frame_rgb, (round(w * s), round(h * s)), interpolation=cv2.INTER_AREA),
                      cv2.COLOR_RGB2GRAY).astype(np.float32)
     g = cv2.GaussianBlur(g, (0, 0), 1.0)
+    # remove illumination: vignetting / the dark eyepiece circle of camera photos is identical in
+    # every frame and would otherwise make unrelated fields look like the same field
+    g = g - cv2.GaussianBlur(g, (0, 0), 8.0)
     return (g - g.mean()) / (g.std() + 1e-6)
 
 

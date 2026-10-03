@@ -1,0 +1,9 @@
+{
+  "A image-mean 40x (current model)": 0.5702587965134338,
+  "B tile-mean 40x": 0.5474952684523207,
+  "C mean+std 40x": 0.5516497687635505,
+  "D tile-level 40x": 0.567825607777692,
+  "E tile-level 40x+20x": 0.5773231440789576,
+  "F tile-mean 40x+20x": 0.4985085917337487,
+  "G tile-level 40x+20x, PCA128": 0.57739580282352
+}
